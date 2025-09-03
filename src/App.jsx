@@ -141,26 +141,32 @@ function makeLandmarkIcon(url, name){
   return L.divIcon({ html, className:"", iconSize:[60,60], iconAnchor:[30,30] });
 }
 
-// User and sim pins
+// User and sim pins - Pokémon GO style (simple dot, map rotates instead)
 function userIconWithHeading(deg){
-  const rot = (typeof deg === 'number' && !Number.isNaN(deg)) ? deg : 0;
   const html = `
     <div style='position:relative;'>
-      <!-- iOS-style blue circle -->
-      <div style='width:16px;height:16px;border-radius:999px;background:#007AFF;border:2px solid #fff;box-shadow:0 0 0 2px rgba(0,122,255,0.3);position:absolute;left:16px;top:16px;'></div>
-      <!-- Directional cone with smoother rotation -->
-      <div style='position:absolute;left:16px;top:16px;transform:rotate(${rot}deg);transition:transform 0.2s ease-out;'>
-        <svg width="48" height="48" viewBox="0 0 48 48" style="position:absolute;left:-14.5px;top:-16px;">
-          <defs>
-            <linearGradient id="coneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#007AFF" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#007AFF" stop-opacity="0.4"/>
-            </linearGradient>
-          </defs>
-          <path d="M24 32 L8 2 L40 2 Z" fill="url(#coneGradient)" stroke="#007AFF" stroke-width="1"/>
-        </svg>
-      </div>
-    </div>`;
+      <!-- iOS-style blue circle with pulsing effect -->
+      <div style='
+        width:20px;height:20px;border-radius:999px;
+        background:#007AFF;border:3px solid #fff;
+        box-shadow:0 0 0 4px rgba(0,122,255,0.3), 0 0 20px rgba(0,122,255,0.5);
+        position:absolute;left:14px;top:14px;
+        animation:pulse 2s infinite;
+      '></div>
+      <!-- Inner white dot -->
+      <div style='
+        width:8px;height:8px;border-radius:999px;
+        background:#fff;
+        position:absolute;left:20px;top:20px;
+      '></div>
+    </div>
+    <style>
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 4px rgba(0,122,255,0.3), 0 0 20px rgba(0,122,255,0.5); }
+        50% { box-shadow: 0 0 0 8px rgba(0,122,255,0.1), 0 0 30px rgba(0,122,255,0.3); }
+        100% { box-shadow: 0 0 0 4px rgba(0,122,255,0.3), 0 0 20px rgba(0,122,255,0.5); }
+      }
+    </style>`;
   return L.divIcon({ html, className:"", iconSize:[48,48], iconAnchor:[24,24] });
 }
 
@@ -197,11 +203,11 @@ const DATA = {
       desc: "Industrialisation, leisure, and the West's weekend commons.",
       bbox: [103.7240, 1.3310, 103.7370, 1.3445],
       artefacts: [
-        { id:"black-ship", name:"Black Ship", kind:"fixed", points:10, radiusM:30, searchRadiusM:80, radiusColourM:"#22c55e", coords:{lat:1.34147,lng:103.72379}, img:"img/ship.jpg", images: ["img/perry.jpg"], blurb:"Gunboat Diplomacy", history:"In 1852–1853, Commodore Matthew Perry's American East India Squadron undertook its now-famous expedition that forced Japan to open to world trade. Less well-known is the fact that Perry's squadron stopped in Singapore beforeJapan, where its officers surveyed the Jurong River. The survey of Jurong produced what is today the earliest known illustration of the Jurong River. Created by the expedition's artists, Peter Wilhelm Heine and Eliphalet Brown, the lithograph depicts Malay stilt houses, a canoe flying the United States flag, and Jurong's dense vegetation. In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves." },
-        { id:"sandbag", name:"Sandbag", kind:"fixed", points:10, radiusM:15, searchRadiusM:60, radiusColourM:"#6b7280", coords:{lat:1.3429,lng:103.72288}, img:"img/sandbags.jpg", images: ["img/dam1.jpg", "img/dam2.jpg"], blurb:"Nation Building, Literally.", history:"The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities. Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape" },
-        { id:"prawn", name:"Prawn", kind:"fixed", points:10, radiusM:20, searchRadiusM:80, radiusColourM:"#22c55e", coords:{lat:1.34016,lng:103.7247}, img: "img/prawn.jpg", images: ["img/prawning.jpg"], blurb:"Ponds and More.", history:"farming. In the early 1900s, Chinese settlers introduced aquaculture practices, while Malay villagers combined net fishing with prawn ponds built in muddy estuaries and mangrove swamps. By the 1950s, Singapore had some 1,000 acres of prawn ponds, and half of them were in Jurong. These were the most productive in the country, yielding nearly 1,000 kilograms of prawns per acre compared to less than 45 kilograms at Pulau Ubin. The ponds you see around you today probably do not contain prawns, but they are meant to mimic tidal patterns, ripples, and currents similar to those at coastal shores where prawn ponds once stood. Clusia Cove, a three-hectare water playground in Jurong Lake Gardens, lets children experience water play while also learning about water cycles and ecological balance. Clusia Cove also demonstrates natural water cleansing. Water circulates in a closed loop through a cleansing biotope, the playground, and an eco-pond. Sand beds and semi-aquatic plants like the Common Susum (Hanguana malayanum) filter and oxygenate the water, while ultraviolet treatment ensures it remains safe. The eco-pond itself mimics a freshwater wetland, where substrate filters debris and plants provide further purification before the loop begins again. The cove is named after one such plant — the Autograph Tree (Clusia rosea)." },
+        { id:"black-ship", name:"Black Ship", kind:"fixed", points:10, radiusM:30, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.34147,lng:103.72379}, img:"img/ship.jpg", images: ["img/perry.jpg"], blurb:"Gunboat Diplomacy", history:"In 1852–1853, Commodore Matthew Perry's American East India Squadron undertook its now-famous expedition that forced Japan to open to world trade. Less well-known is the fact that Perry's squadron stopped in Singapore beforeJapan, where its officers surveyed the Jurong River. The survey of Jurong produced what is today the earliest known illustration of the Jurong River. Created by the expedition's artists, Peter Wilhelm Heine and Eliphalet Brown, the lithograph depicts Malay stilt houses, a canoe flying the United States flag, and Jurong's dense vegetation. In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves." },
+        { id:"sandbag", name:"Sandbag", kind:"fixed", points:10, radiusM:30, searchRadiusM:60, radiusColourM:"#6b7280", coords:{lat:1.3429,lng:103.72288}, img:"img/sandbags.jpg", images: ["img/dam1.jpg", "img/dam2.jpg"], blurb:"Nation Building, Literally.", history:"The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities. Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape" },
+        { id:"prawn", name:"Prawn", kind:"fixed", points:10, radiusM:30, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.34016,lng:103.7247}, img: "img/prawn.jpg", images: ["img/prawning.jpg"], blurb:"Ponds and More.", history:"farming. In the early 1900s, Chinese settlers introduced aquaculture practices, while Malay villagers combined net fishing with prawn ponds built in muddy estuaries and mangrove swamps. By the 1950s, Singapore had some 1,000 acres of prawn ponds, and half of them were in Jurong. These were the most productive in the country, yielding nearly 1,000 kilograms of prawns per acre compared to less than 45 kilograms at Pulau Ubin. The ponds you see around you today probably do not contain prawns, but they are meant to mimic tidal patterns, ripples, and currents similar to those at coastal shores where prawn ponds once stood. Clusia Cove, a three-hectare water playground in Jurong Lake Gardens, lets children experience water play while also learning about water cycles and ecological balance. Clusia Cove also demonstrates natural water cleansing. Water circulates in a closed loop through a cleansing biotope, the playground, and an eco-pond. Sand beds and semi-aquatic plants like the Common Susum (Hanguana malayanum) filter and oxygenate the water, while ultraviolet treatment ensures it remains safe. The eco-pond itself mimics a freshwater wetland, where substrate filters debris and plants provide further purification before the loop begins again. The cove is named after one such plant — the Autograph Tree (Clusia rosea)." },
         { id:"lantern", name:"Lantern", kind:"fixed", points:10, radiusM:25, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.33936,lng:103.72579}, img:"img/lantern.jpg", images: ["img/mid-a.jpg"], blurb:"Let there be light.", history:"Lanterns have long been a symbol of celebration at Jurong Lake. From the 1970s, Mid-Autumn Festivals were marked at the Chinese Garden with hundreds of lanterns illuminating the grounds. Each year carried a different theme, and from 1987 onwards the festivities regularly drew crowds of over 100,000 visitors. In 1999, the gardens hosted their largest Mid-Autumn Festival to date, importing more than 2,000 lanterns from Guangdong, China. Its centrepiece was the dramatic Dragon and Phoenix Pillar Millennium Lantern, measuring 10 metres in length. The tradition continues today under the banner of Lights by the Lake, which has since 2019 become the signature Mid-Autumn celebration in the Jurong Lake District. In 2024, the event attracted 280,000 visitors. Across the Lakeside Field, Eco Pond, Chinese Garden, and Japanese Garden, themed lantern sets light up the landscape each September to October. Highlights in recent years have included Reflections of Twilight, featuring animal lanterns mirrored on the water's surface; Birds of Wonderland, with kingfishers and other birdlife; Nezha and the Dragon King, a large-scale mythological tableau; and Chang'e and her Moon Palace, a glowing recreation of the moon goddess's celestial home. Bridges, pagodas, and lawns across the gardens are transformed during the festival. The White Rainbow Bridge becomes the Dragon and Phoenix Bridge, while projection mapping on the Chinese Garden's Main Arch creates the Blessing of the Moon show. Lanterns at the Japanese Garden include origami-inspired sets and floral displays at the Sunken Garden." },
-        { id:"tooth", name:"Crocodile Tooth", kind:"fixed", points:10, radiusM:20, searchRadiusM:55, radiusColourM:"#22c55e", coords:{lat:1.34059,lng:103.72588}, img:"img/tooth.jpg", blurb:"A stationary voyage; a scripted journey.", history:"Pavilion once used by ROM; journeys without moving." },
+        { id:"tooth", name:"Crocodile Tooth", kind:"fixed", points:10, radiusM:30, searchRadiusM:55, radiusColourM:"#22c55e", coords:{lat:1.34059,lng:103.72588}, img:"img/tooth.jpg", blurb:"A stationary voyage; a scripted journey.", history:"Pavilion once used by ROM; journeys without moving." },
         { id:"lake-lookout", name:"Lake Lookout", kind:"landmark", coords:{lat:1.3429,lng:103.72288}, img:"img/lookout.jpg", images: ["img/dam1.jpg", "img/dam2.jpg"], blurb:"Nation Building, Literally.", history:"The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities. Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape", nearbyItems: ["sandbag"] },
 
       ],
@@ -556,7 +562,7 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
   const [centerKey, setCenterKey] = useState(0);    // bump to recenter once
   const [compassOffset, setCompassOffset] = useState(0); // calibration offset
   const [lastHeadingUpdate, setLastHeadingUpdate] = useState(0);
-  const [mapStyle, setMapStyle] = useState('apple'); // 'apple', 'standard', 'satellite'
+  const [mapStyle, setMapStyle] = useState('satellite'); // 'apple', 'standard', 'satellite'
 
   // Confetti canvas over the map (so map-collect pops confetti)
   const mapConfettiRef = useRef(null);
@@ -800,8 +806,33 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
   const mapRef = useRef(null);
   const [labelFor, setLabelFor] = useState(null); // which fixed id has a label open
 
+  // Pokémon GO-style map rotation effect
+  useEffect(() => {
+    if (mapRef.current && compassOn && typeof heading === 'number') {
+      // Rotate the map container based on compass heading
+      const mapContainer = mapRef.current.getContainer();
+      if (mapContainer) {
+        // Apply smooth rotation with CSS transform
+        mapContainer.style.transition = 'transform 0.3s ease-out';
+        mapContainer.style.transform = `rotate(${-heading}deg)`;
+      }
+    } else if (mapRef.current && !compassOn) {
+      // Reset rotation when compass is disabled
+      const mapContainer = mapRef.current.getContainer();
+      if (mapContainer) {
+        mapContainer.style.transition = 'transform 0.3s ease-out';
+        mapContainer.style.transform = 'rotate(0deg)';
+      }
+    }
+  }, [heading, compassOn]);
+
   // Map style configurations
   const mapStyles = {
+    satellite: {
+      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
+      subdomains: ""
+    },
     apple: {
       url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -811,15 +842,10 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors',
       subdomains: "abc"
-    },
-    satellite: {
-      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-      attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
-      subdomains: ""
     }
   };
 
-  const currentStyle = mapStyles[mapStyle] || mapStyles.apple;
+  const currentStyle = mapStyles[mapStyle] || mapStyles.satellite;
 
   return (
     <MapContainer whenCreated={(m)=>mapRef.current=m} center={[center.lat, center.lng]} zoom={16} style={{ height:'100%', width:'100%' }} scrollWheelZoom>
@@ -931,14 +957,14 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
         </button>
         <button 
           onClick={() => {
-            const styles = ['apple', 'standard', 'satellite'];
+            const styles = ['satellite', 'apple', 'standard'];
             const currentIndex = styles.indexOf(mapStyle);
             const nextIndex = (currentIndex + 1) % styles.length;
             setMapStyle(styles[nextIndex]);
           }}
           style={{ 
             width:48, height:48, borderRadius:'50%', 
-            background: mapStyle === 'apple' ? '#007AFF' : mapStyle === 'satellite' ? '#8B4513' : '#6B7280', 
+            background: mapStyle === 'satellite' ? '#8B4513' : mapStyle === 'apple' ? '#007AFF' : '#6B7280', 
             border:'1px solid #ccc', 
             display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer',
             boxShadow:'0 2px 8px rgba(0,0,0,0.15)',
@@ -948,7 +974,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
           }}
           title={`Map style: ${mapStyle} (tap to change)`}
         >
-          {mapStyle === 'apple' ? '🍎' : mapStyle === 'satellite' ? '🛰️' : '🗺️'}
+          {mapStyle === 'satellite' ? '🛰️' : mapStyle === 'apple' ? '🍎' : '🗺️'}
         </button>
       </div>
     </MapContainer>
