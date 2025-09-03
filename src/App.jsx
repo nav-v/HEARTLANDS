@@ -809,19 +809,57 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
   // Pokémon GO-style map rotation effect
   useEffect(() => {
     if (mapRef.current && compassOn && typeof heading === 'number') {
-      // Rotate the map container based on compass heading
+      console.log('Compass enabled, heading:', heading);
+      
+      // Try multiple approaches to rotate the map
       const mapContainer = mapRef.current.getContainer();
       if (mapContainer) {
-        // Apply smooth rotation with CSS transform
+        // Method 1: Rotate the entire map container
         mapContainer.style.transition = 'transform 0.3s ease-out';
         mapContainer.style.transform = `rotate(${-heading}deg)`;
+        mapContainer.style.transformOrigin = 'center center';
+        
+        // Method 2: Also try rotating the map pane
+        const mapPane = mapContainer.querySelector('.leaflet-map-pane');
+        if (mapPane) {
+          mapPane.style.transition = 'transform 0.3s ease-out';
+          mapPane.style.transform = `rotate(${-heading}deg)`;
+          mapPane.style.transformOrigin = 'center center';
+        }
+        
+        // Method 3: Rotate the tile pane specifically
+        const tilePane = mapContainer.querySelector('.leaflet-tile-pane');
+        if (tilePane) {
+          tilePane.style.transition = 'transform 0.3s ease-out';
+          tilePane.style.transform = `rotate(${-heading}deg)`;
+          tilePane.style.transformOrigin = 'center center';
+        }
+        
+        console.log('Applied rotation transforms');
       }
     } else if (mapRef.current && !compassOn) {
-      // Reset rotation when compass is disabled
+      console.log('Compass disabled, resetting rotation');
+      
+      // Reset all rotation transforms
       const mapContainer = mapRef.current.getContainer();
       if (mapContainer) {
         mapContainer.style.transition = 'transform 0.3s ease-out';
         mapContainer.style.transform = 'rotate(0deg)';
+        mapContainer.style.transformOrigin = 'center center';
+        
+        const mapPane = mapContainer.querySelector('.leaflet-map-pane');
+        if (mapPane) {
+          mapPane.style.transition = 'transform 0.3s ease-out';
+          mapPane.style.transform = 'rotate(0deg)';
+          mapPane.style.transformOrigin = 'center center';
+        }
+        
+        const tilePane = mapContainer.querySelector('.leaflet-tile-pane');
+        if (tilePane) {
+          tilePane.style.transition = 'transform 0.3s ease-out';
+          tilePane.style.transform = 'rotate(0deg)';
+          tilePane.style.transformOrigin = 'center center';
+        }
       }
     }
   }, [heading, compassOn]);
