@@ -141,11 +141,29 @@ function makeLandmarkIcon(url, name){
   return L.divIcon({ html, className:"", iconSize:[60,60], iconAnchor:[30,30] });
 }
 
-// User and sim pins - simple pulsing dot
+// User and sim pins - pulsing dot with compass direction
 function userIconWithHeading(deg){
+  const rot = (typeof deg === 'number' && !Number.isNaN(deg)) ? deg : 0;
   const html = `
     <div style='position:relative;'>
-      <!-- iOS-style blue circle with pulsing effect -->
+      <!-- Outer ring that rotates with compass -->
+      <div style='
+        width:40px;height:40px;border-radius:999px;
+        border:2px solid rgba(0,122,255,0.3);
+        position:absolute;left:4px;top:4px;
+        transform:rotate(${rot}deg);
+        transition:transform 0.2s ease-out;
+        transform-origin:center center;
+      '>
+        <!-- Direction indicator dot on the ring -->
+        <div style='
+          width:6px;height:6px;border-radius:999px;
+          background:#007AFF;
+          position:absolute;left:17px;top:-3px;
+          box-shadow:0 0 8px rgba(0,122,255,0.8);
+        '></div>
+      </div>
+      <!-- Inner pulsing blue circle -->
       <div style='
         width:20px;height:20px;border-radius:999px;
         background:#007AFF;border:3px solid #fff;
@@ -625,6 +643,7 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
       normalizedHeading = (normalizedHeading + compassOffset) % 360;
       if (normalizedHeading < 0) normalizedHeading += 360;
       
+      console.log('Updating heading:', normalizedHeading, 'from raw:', newHeading);
       setHeading(normalizedHeading);
       setLastHeadingUpdate(now);
     }
@@ -910,7 +929,17 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
       ))}
 
       {/* User / Sim markers */}
-      {gpsLoc && !simOn && <Marker position={[gpsLoc.lat, gpsLoc.lng]} icon={userIconWithHeading(heading)} />}
+      {gpsLoc && !simOn && (
+        <Marker 
+          position={[gpsLoc.lat, gpsLoc.lng]} 
+          icon={userIconWithHeading(heading)} 
+          eventHandlers={{
+            click: () => {
+              console.log('User location clicked, heading:', heading, 'compassOn:', compassOn);
+            }
+          }}
+        />
+      )}
       {simOn && (
         <Marker
           position={[ (simLoc?.lat ?? center.lat), (simLoc?.lng ?? center.lng) ]}
