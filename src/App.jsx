@@ -215,23 +215,24 @@ const DATA = {
       desc: "Industrialisation, leisure, and the West's weekend commons.",
       bbox: [103.7240, 1.3310, 103.7370, 1.3445],
       artefacts: [
-        { id:"black-ship", name:"Black Ship", kind:"fixed", points:10, radiusM:30, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.34147,lng:103.72379}, img:"img/ship.jpg", images: ["img/perry.jpg"], blurb:"Gunboat Diplomacy", history:"In 1852–1853, Commodore Matthew Perry's American East India Squadron undertook its now-famous expedition that forced Japan to open to world trade. Less well-known is the fact that Perry's squadron stopped in Singapore beforeJapan, where its officers surveyed the Jurong River. The survey of Jurong produced what is today the earliest known illustration of the Jurong River. Created by the expedition's artists, Peter Wilhelm Heine and Eliphalet Brown, the lithograph depicts Malay stilt houses, a canoe flying the United States flag, and Jurong's dense vegetation. In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves." },
+        { id:"black-ship", name:"Black Ship", kind:"fixed", points:10, radiusM:30, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.34147,lng:103.72379}, img:"img/ship.jpg", images: ["img/perry.jpg"], blurb:"Gunboat Diplomacy", 
+          richHistory: `In 1852–1853, Commodore Matthew Perry's American East India Squadron undertook its now-famous expedition that forced Japan to open to world trade. Less well-known is the fact that Perry's squadron stopped in Singapore before Japan, where its officers surveyed the Jurong River.
+
+[img:perry.jpg:The earliest known illustration of the Jurong River, created by Perry's expedition artists in 1853]
+
+The survey of Jurong produced what is today the earliest known illustration of the Jurong River. Created by the expedition's artists, Peter Wilhelm Heine and Eliphalet Brown, the lithograph depicts Malay stilt houses, a canoe flying the United States flag, and Jurong's dense vegetation.
+
+https://www.youtube.com/watch?v=MaZ95O6RmAc
+
+In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves. This historical document provides a rare glimpse into Singapore's landscape before industrialization transformed the region.
+
+The Perry expedition's visit to Singapore was part of a broader American strategy to establish trade routes and diplomatic relations across Asia. The detailed surveys and illustrations created during this time remain valuable historical records of Southeast Asia's colonial period.` },
         { id:"sandbag", name:"Sandbag", kind:"fixed", points:10, radiusM:30, searchRadiusM:60, radiusColourM:"#6b7280", coords:{lat:1.3429,lng:103.72288}, img:"img/sandbags.jpg", images: ["img/dam1.jpg", "img/dam2.jpg"], blurb:"Nation Building, Literally.", history:"The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities. Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape" },
         { id:"prawn", name:"Prawn", kind:"fixed", points:10, radiusM:30, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.34016,lng:103.7247}, img: "img/prawn.jpg", images: ["img/prawning.jpg"], blurb:"Ponds and More.", history:"farming. In the early 1900s, Chinese settlers introduced aquaculture practices, while Malay villagers combined net fishing with prawn ponds built in muddy estuaries and mangrove swamps. By the 1950s, Singapore had some 1,000 acres of prawn ponds, and half of them were in Jurong. These were the most productive in the country, yielding nearly 1,000 kilograms of prawns per acre compared to less than 45 kilograms at Pulau Ubin. The ponds you see around you today probably do not contain prawns, but they are meant to mimic tidal patterns, ripples, and currents similar to those at coastal shores where prawn ponds once stood. Clusia Cove, a three-hectare water playground in Jurong Lake Gardens, lets children experience water play while also learning about water cycles and ecological balance. Clusia Cove also demonstrates natural water cleansing. Water circulates in a closed loop through a cleansing biotope, the playground, and an eco-pond. Sand beds and semi-aquatic plants like the Common Susum (Hanguana malayanum) filter and oxygenate the water, while ultraviolet treatment ensures it remains safe. The eco-pond itself mimics a freshwater wetland, where substrate filters debris and plants provide further purification before the loop begins again. The cove is named after one such plant — the Autograph Tree (Clusia rosea)." },
         { id:"lantern", name:"Lantern", kind:"fixed", points:10, radiusM:25, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.33936,lng:103.72579}, img:"img/lantern.jpg", images: ["img/mid-a.jpg"], blurb:"Let there be light.", history:"Lanterns have long been a symbol of celebration at Jurong Lake. From the 1970s, Mid-Autumn Festivals were marked at the Chinese Garden with hundreds of lanterns illuminating the grounds. Each year carried a different theme, and from 1987 onwards the festivities regularly drew crowds of over 100,000 visitors. In 1999, the gardens hosted their largest Mid-Autumn Festival to date, importing more than 2,000 lanterns from Guangdong, China. Its centrepiece was the dramatic Dragon and Phoenix Pillar Millennium Lantern, measuring 10 metres in length. The tradition continues today under the banner of Lights by the Lake, which has since 2019 become the signature Mid-Autumn celebration in the Jurong Lake District. In 2024, the event attracted 280,000 visitors. Across the Lakeside Field, Eco Pond, Chinese Garden, and Japanese Garden, themed lantern sets light up the landscape each September to October. Highlights in recent years have included Reflections of Twilight, featuring animal lanterns mirrored on the water's surface; Birds of Wonderland, with kingfishers and other birdlife; Nezha and the Dragon King, a large-scale mythological tableau; and Chang'e and her Moon Palace, a glowing recreation of the moon goddess's celestial home. Bridges, pagodas, and lawns across the gardens are transformed during the festival. The White Rainbow Bridge becomes the Dragon and Phoenix Bridge, while projection mapping on the Chinese Garden's Main Arch creates the Blessing of the Moon show. Lanterns at the Japanese Garden include origami-inspired sets and floral displays at the Sunken Garden." },
         { id:"tooth", name:"Crocodile Tooth", kind:"fixed", points:10, radiusM:30, searchRadiusM:55, radiusColourM:"#22c55e", coords:{lat:1.34059,lng:103.72588}, img:"img/tooth.jpg", blurb:"A stationary voyage; a scripted journey.", history:"Pavilion once used by ROM; journeys without moving." },
         { id:"lake-lookout", name:"Lake Lookout", kind:"landmark", coords:{lat:1.3429,lng:103.72288}, img:"img/lookout.jpg", images: ["img/dam1.jpg", "img/dam2.jpg"], blurb:"Nation Building, Literally.", history:"The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities. Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape", nearbyItems: ["sandbag"] },
 
-      ],
-    },
-    {
-      id: "civic",
-      name: "XXX",
-      cover: "/src/assets/Images/cbd cover.jpg",
-      desc: "Where land met sea, then policy.",
-      bbox: [103.8490, 1.2880, 103.8565, 1.2952],
-      artefacts: [
-        { },
       ],
     },
   ],
@@ -374,7 +375,7 @@ function Home({ stacks, progress, onPlay }){
       {/* HOW IT WORKS */}
       <section style={{ ...styles.container, paddingTop:18, paddingBottom:6 }}>
         <div style={{ display:'grid', gap:12, gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))' }}>
-          <HowItWorksStep n={1} title="Pick an expedition" text="Each area has fixed icons (known sites) and random circles (mystery spawns)." />
+          <HowItWorksStep n={1} title="Pick a quest" text="Each area has fixed icons (known sites) and random circles (mystery spawns)." />
           <HowItWorksStep n={2} title="Walk & hunt" text="Use the map. Fixed icons are visible; randoms appear as search radii. Get close to collect." />
           <HowItWorksStep n={3} title="Collect & share" text="Cards reveal context and debate prompts. Finish to export an Instagram story." />
         </div>
@@ -575,6 +576,13 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
   const [compassOffset, setCompassOffset] = useState(0); // calibration offset
   const [lastHeadingUpdate, setLastHeadingUpdate] = useState(0);
   const [mapStyle, setMapStyle] = useState('hybrid'); // 'hybrid', 'satellite', 'apple', 'standard'
+  
+  // Item collection popup state
+  const [itemPopup, setItemPopup] = useState(null); // { item, taps: 0, stage: 'crate' | 'opening' | 'item' }
+  const [crateTaps, setCrateTaps] = useState(0);
+  
+  // Finish warning state
+  const [showFinishWarning, setShowFinishWarning] = useState(false);
 
   // Confetti canvas over the map (so map-collect pops confetti)
   const mapConfettiRef = useRef(null);
@@ -703,9 +711,11 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
     const r = a.radiusM || 20; 
     
     if(d <= r){
-      runConfetti(mapConfettiRef.current);
-      actuallyCollect(a);
-      setTimeout(()=> { setModalA(a); }, 750); 
+      // Trigger full-screen popup instead of direct collection
+      // Randomize tap count between 3-8
+      const randomTapsNeeded = Math.floor(Math.random() * 6) + 3; // 3-8 taps
+      setItemPopup({ item: a, stage: 'crate', taps: 0, tapsNeeded });
+      setCrateTaps(0);
     }
   }
   function cardAttemptCollect(a){ 
@@ -739,7 +749,7 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
           </div>
           <div style={{ marginLeft:'auto', display:'flex', gap:8, alignItems:'center' }}>
             <div style={{ ...styles.subtle, fontSize:12 }}>{totals.gotItems}/{totals.totalItems} items • {totals.gotPts}/{totals.totalPts} pts</div>
-            <button onClick={onFinish} style={{ ...styles.button }}>Finish</button>
+            <button onClick={() => setShowFinishWarning(true)} style={{ ...styles.button }}>Finish</button>
           </div>
         </div>
 
@@ -767,6 +777,10 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
               compassOn={compassOn}
               mapStyle={mapStyle}
               setMapStyle={setMapStyle}
+              onAutoTriggerPopup={(item, tapsNeeded) => {
+                setItemPopup({ item, stage: 'crate', taps: 0, tapsNeeded });
+                setCrateTaps(0);
+              }}
             />
             {/* Confetti overlay for map collects */}
             <canvas ref={mapConfettiRef} width={800} height={600} style={{ position:'absolute', inset:0, width:'100%', height:'100%', pointerEvents:'none', zIndex:800 }} />
@@ -810,14 +824,386 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
 
       {/* Modal overlay for rich detail */}
       <ArtefactModal open={!!modalA} a={modalA} onClose={()=>setModalA(null)} />
+      
+      {/* Item collection popup */}
+      <ItemCollectionPopup 
+        popup={itemPopup}
+        onClose={() => setItemPopup(null)}
+        onCollect={(item) => {
+          runConfetti(mapConfettiRef.current);
+          actuallyCollect(item);
+          setTimeout(() => { setModalA(item); }, 750);
+        }}
+        onTapCrate={() => {
+          const newTaps = crateTaps + 1;
+          setCrateTaps(newTaps);
+          
+          if (newTaps >= itemPopup.tapsNeeded) {
+            // Play sound effect (if available)
+            try {
+              const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmGgU7k9n1unEiBS13yO/eizEIHWq+8+OWT');
+              audio.volume = 0.3;
+              audio.play().catch(() => {}); // Ignore errors if audio fails
+            } catch (e) {}
+            
+            // Transition to opening stage
+            setItemPopup(prev => ({ ...prev, stage: 'opening' }));
+            
+            // After opening animation, show item
+            setTimeout(() => {
+              setItemPopup(prev => ({ ...prev, stage: 'item' }));
+            }, 800);
+          } else {
+            // Update popup with new tap count
+            setItemPopup(prev => ({ ...prev, taps: newTaps }));
+          }
+        }}
+      />
+      
+      {/* Finish warning dialog */}
+      <FinishWarningDialog 
+        show={showFinishWarning}
+        onConfirm={() => {
+          setShowFinishWarning(false);
+          onFinish();
+        }}
+        onCancel={() => setShowFinishWarning(false)}
+      />
     </section>
   );
 }
 
-function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simLoc, setSimLoc, collectedSet, withinIds, onCollectFromMap, onOpenModal, heading, centerKey, onCenter, onEnableCompass, compassOn, mapStyle, setMapStyle }){
+// ============================
+// ITEM COLLECTION POPUP
+// ============================
+function ItemCollectionPopup({ popup, onClose, onCollect, onTapCrate }){
+  if (!popup) return null;
+
+  const { item, stage, taps, tapsNeeded } = popup;
+
+  const handleCrateTap = () => {
+    onTapCrate();
+  };
+
+  const handleCollect = () => {
+    onCollect(item);
+    onClose();
+  };
+
+  return (
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(0, 0, 0, 0.9)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 10000,
+      padding: 20
+    }}>
+      {/* Background blur effect */}
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
+        opacity: 0.95
+      }} />
+      
+      {/* Main content */}
+      <div style={{
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 30,
+        maxWidth: 400,
+        width: '100%'
+      }}>
+        
+        {/* Item name or discovery message */}
+        <h2 style={{
+          color: '#fff',
+          fontSize: 28,
+          fontWeight: 'bold',
+          textAlign: 'center',
+          margin: 0,
+          textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+        }}>
+          {stage === 'crate' ? 'You\'ve discovered a new item!' : item.name}
+        </h2>
+
+        {/* Crate or item display */}
+        <div style={{
+          position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: 200
+        }}>
+          
+          {stage === 'crate' && (
+            <div style={{
+              position: 'relative',
+              cursor: 'pointer',
+              transform: `scale(${1 + (taps * 0.1)})`,
+              transition: 'transform 0.2s ease-out'
+            }} onClick={handleCrateTap}>
+              {/* Crate image */}
+              <img 
+                src="img/crate.jpg" 
+                alt="Mystery Crate"
+                style={{
+                  width: 200,
+                  height: 200,
+                  objectFit: 'cover',
+                  borderRadius: 15,
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                  border: '3px solid #ffd700'
+                }}
+              />
+              
+              {/* Tap indicator */}
+              <div style={{
+                position: 'absolute',
+                bottom: -40,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                color: '#fff',
+                fontSize: 16,
+                textAlign: 'center',
+                background: 'rgba(0,0,0,0.7)',
+                padding: '8px 16px',
+                borderRadius: 20,
+                border: '1px solid #ffd700'
+              }}>
+                Tap to open!
+              </div>
+            </div>
+          )}
+
+          {stage === 'opening' && (
+            <div style={{
+              position: 'relative',
+              animation: 'crateBreak 0.8s ease-out forwards'
+            }}>
+              {/* Breaking crate effect */}
+              <img 
+                src="img/crate.jpg" 
+                alt="Breaking Crate"
+                style={{
+                  width: 200,
+                  height: 200,
+                  objectFit: 'cover',
+                  borderRadius: 15,
+                  filter: 'brightness(1.2) contrast(1.1)',
+                  transform: 'rotate(5deg) scale(1.1)'
+                }}
+              />
+              
+              {/* Sparkle effects */}
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%)',
+                animation: 'sparkle 0.8s ease-out'
+              }} />
+            </div>
+          )}
+
+          {stage === 'item' && (
+            <div style={{
+              position: 'relative',
+              animation: 'itemAppear 0.6s ease-out forwards'
+            }}>
+              {/* Item icon emerging from crate */}
+              <div style={{
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: 20
+              }}>
+                {/* Item image */}
+                <img 
+                  src={item.img || `img/${item.name.toLowerCase().replace(/\s+/g, '')}.jpg`}
+                  alt={item.name}
+                  style={{
+                    width: 120,
+                    height: 120,
+                    objectFit: 'cover',
+                    borderRadius: 15,
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                    border: '3px solid #22c55e',
+                    background: 'transparent'
+                  }}
+                />
+                
+                {/* Collect button */}
+                <button
+                  onClick={handleCollect}
+                  style={{
+                    background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+                    color: '#fff',
+                    border: 'none',
+                    padding: '15px 30px',
+                    borderRadius: 25,
+                    fontSize: 18,
+                    fontWeight: 'bold',
+                    cursor: 'pointer',
+                    boxShadow: '0 5px 15px rgba(34, 197, 94, 0.4)',
+                    transition: 'all 0.2s ease',
+                    textTransform: 'uppercase',
+                    letterSpacing: 1
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.boxShadow = '0 8px 20px rgba(34, 197, 94, 0.6)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 5px 15px rgba(34, 197, 94, 0.4)';
+                  }}
+                >
+                  Collect Item!
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          style={{
+            position: 'absolute',
+            top: 60,
+            right: 20,
+            background: 'rgba(255,255,255,0.1)',
+            border: '1px solid rgba(255,255,255,0.3)',
+            color: '#fff',
+            width: 40,
+            height: 40,
+            borderRadius: '50%',
+            cursor: 'pointer',
+            fontSize: 20,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minWidth: 40,
+            minHeight: 40,
+            padding: 0
+          }}
+        >
+          ×
+        </button>
+      </div>
+
+      {/* CSS Animations */}
+      <style>{`
+        @keyframes crateBreak {
+          0% { transform: scale(1) rotate(0deg); }
+          50% { transform: scale(1.1) rotate(5deg); }
+          100% { transform: scale(1) rotate(0deg); }
+        }
+        
+        @keyframes sparkle {
+          0% { opacity: 0; transform: scale(0.5); }
+          50% { opacity: 1; transform: scale(1.2); }
+          100% { opacity: 0; transform: scale(1); }
+        }
+        
+        @keyframes itemAppear {
+          0% { opacity: 0; transform: translateY(20px) scale(0.8); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function FinishWarningDialog({ show, onConfirm, onCancel }) {
+  if (!show) return null;
+
+  return (
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(0,0,0,0.8)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 10000
+    }}>
+      <div style={{
+        background: '#1a1a1a',
+        borderRadius: 20,
+        padding: 30,
+        maxWidth: 400,
+        width: '90%',
+        textAlign: 'center',
+        border: '1px solid rgba(255,255,255,0.1)'
+      }}>
+        <h3 style={{ color: '#fff', fontSize: 24, marginBottom: 16, fontWeight: 600 }}>
+          ⚠️ Finish Tour?
+        </h3>
+        <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: 16, lineHeight: 1.5, marginBottom: 24 }}>
+          Once you finish, your progress will be saved and you won't be able to continue collecting items. 
+          You can still view your collection and download your story, but the tour will be complete.
+        </p>
+        <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
+          <button
+            onClick={onCancel}
+            style={{
+              background: 'rgba(255,255,255,0.1)',
+              border: '1px solid rgba(255,255,255,0.3)',
+              color: '#fff',
+              padding: '12px 24px',
+              borderRadius: 8,
+              cursor: 'pointer',
+              fontSize: 16
+            }}
+          >
+            Cancel
+          </button>
+          <button
+            onClick={onConfirm}
+            style={{
+              background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+              border: 'none',
+              color: '#fff',
+              padding: '12px 24px',
+              borderRadius: 8,
+              cursor: 'pointer',
+              fontSize: 16,
+              fontWeight: 600
+            }}
+          >
+            Finish Tour
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simLoc, setSimLoc, collectedSet, withinIds, onCollectFromMap, onOpenModal, heading, centerKey, onCenter, onEnableCompass, compassOn, mapStyle, setMapStyle, onAutoTriggerPopup }){
   const center = fixedItems[0]?.coords || { lat: stack.bbox[1], lng: stack.bbox[0] };
   const mapRef = useRef(null);
   const [labelFor, setLabelFor] = useState(null); // which fixed id has a label open
+  const [triggeredItems, setTriggeredItems] = useState(new Set()); // Track which items have already triggered popup
 
 
 
@@ -894,6 +1280,15 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
           // radiusM determines how close you need to be to collect the item
           return distanceToItem <= (f.radiusM || 20);
         })();
+
+        // Auto-trigger popup when player gets close to item for the first time
+        if (playerCloseToItem && !triggeredItems.has(f.id) && !collectedSet.has(f.id)) {
+          console.log(`Auto-triggering popup for ${f.name}`);
+          setTriggeredItems(prev => new Set([...prev, f.id]));
+          // Randomize tap count between 3-8
+          const randomTapsNeeded = Math.floor(Math.random() * 6) + 3; // 3-8 taps
+          onAutoTriggerPopup(f, randomTapsNeeded);
+        }
         
         return (
           <React.Fragment key={f.id}>
@@ -1151,97 +1546,649 @@ function runConfetti(canvas){ if(!canvas) return; const ctx=canvas.getContext('2
 // MODAL — Fullscreen detail with images & links
 // ============================
 function ArtefactModal({ open, a, onClose }){
+  const [fullscreenImage, setFullscreenImage] = useState(null);
+  
   if(!open || !a) return null;
+  
+  // Parse rich content with images and videos
+  const parseRichContent = (content) => {
+    if (!content) return [];
+    
+    // Split by double line breaks to get paragraphs
+    const paragraphs = content.split('\n\n').filter(p => p.trim());
+    const elements = [];
+    
+    paragraphs.forEach((paragraph, index) => {
+      const trimmed = paragraph.trim();
+      
+      // Check if it's a YouTube link
+      const youtubeMatch = trimmed.match(/https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+      if (youtubeMatch) {
+        elements.push({
+          type: 'youtube',
+          videoId: youtubeMatch[1],
+          key: `youtube-${index}`
+        });
+        return;
+      }
+      
+      // Check if it's an image reference [img:filename.jpg] or [img:filename.jpg:caption]
+      const imgMatch = trimmed.match(/\[img:([^:\]]+)(?::([^\]]+))?\]/);
+      if (imgMatch) {
+        elements.push({
+          type: 'image',
+          src: `img/${imgMatch[1]}`,
+          caption: imgMatch[2] || null,
+          key: `img-${index}`
+        });
+        return;
+      }
+      
+      // Regular text paragraph
+      elements.push({
+        type: 'text',
+        content: trimmed,
+        key: `text-${index}`
+      });
+    });
+    
+    return elements;
+  };
+  
+  const richContent = a.richHistory ? parseRichContent(a.richHistory) : null;
   const imgs = a.images && a.images.length ? a.images : [a.img || thumb(a.name)];
+  
   return (
-    <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,.55)', zIndex:50, display:'grid', placeItems:'center' }}>
-      <div style={{ width:'min(920px, 94vw)', maxHeight:'86vh', overflow:'auto', background:'#0d0d0d', border:'1px solid #232323', borderRadius:16 }}>
-        <div style={{ padding:'12px 14px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid #1f1f1f' }}>
-          <div style={{ fontWeight:800 }}>{a.name || 'Artefact'}</div>
-          <button onClick={onClose} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>✕</button>
-        </div>
-        <div style={{ padding:16 }}>
-          {/* Images */}
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(180px,1fr))', gap:10 }}>
-            {imgs.map((src,i)=> (
-              <div key={i} style={{ borderRadius:12, overflow:'hidden', border:'1px solid #242424', height:160 }}>
-                <img src={asset(src)} alt={a.name} style={{ width:'100%', height:'100%', objectFit:'cover', display:'block' }} />
-              </div>
-            ))}
+    <>
+      <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,.55)', zIndex:50, display:'grid', placeItems:'center' }}>
+        <div style={{ width:'min(920px, 94vw)', maxHeight:'86vh', overflow:'auto', background:'#0d0d0d', border:'1px solid #232323', borderRadius:16 }}>
+          <div style={{ padding:'12px 14px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid #1f1f1f' }}>
+            <div style={{ fontWeight:800 }}>{a.name || 'Artefact'}</div>
+            <button onClick={onClose} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>✕</button>
           </div>
-          
-          {/* Collection Hint Box for Landmarks */}
-          {a.kind === 'landmark' && a.nearbyItems && a.nearbyItems.length > 0 && (
-            <div style={{ 
-              background:'rgba(34,197,94,0.1)', 
-              border:'1px solid rgba(34,197,94,0.3)', 
-              borderRadius:12, 
-              padding:16, 
-              marginTop:16 
-            }}>
-              <div style={{ fontWeight:600, fontSize:14, color:'#22c55e', marginBottom:12 }}>
-                🎯 Items to Collect Nearby
+          <div style={{ padding:16 }}>
+            {/* Main Icon - Centered */}
+            <div style={{ textAlign:'center', marginBottom:16 }}>
+              <div style={{ 
+                display:'inline-block',
+                width:120, 
+                height:120, 
+                borderRadius:20, 
+                overflow:'hidden', 
+                border:'3px solid #22c55e',
+                cursor:'pointer'
+              }} onClick={() => setFullscreenImage(a.img || thumb(a.name))}>
+                <img 
+                  src={asset(a.img || thumb(a.name))} 
+                  alt={a.name} 
+                  style={{ 
+                    width:'100%', 
+                    height:'100%', 
+                    objectFit:'contain', 
+                    display:'block' 
+                  }} 
+                />
               </div>
-              <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
-                {a.nearbyItems.map((itemId, index) => {
-                  // Find the item data by ID
-                  const item = findArtefactById(itemId);
-                  if (!item) return null;
-                  
-                  return (
-                    <div key={itemId} style={{ 
-                      display:'flex', 
-                      flexDirection:'column', 
-                      alignItems:'center', 
-                      gap:8 
-                    }}>
-                                        <div style={{ 
-                    width:48, height:48, 
-                    borderRadius:8, 
-                    overflow:'hidden', 
-                    border:'2px solid #22c55e',
-                    background:'#fff'
-                  }}>
-                    <img src={asset(item.img) || thumb(item.name)} alt={item.name} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
-                  </div>
-                      <div style={{ 
-                        fontSize:12, 
-                        fontWeight:600, 
-                        color:'#22c55e', 
-                        textAlign:'center',
-                        maxWidth:48
+            </div>
+            
+            {/* Collection Hint Box for Landmarks */}
+            {a.kind === 'landmark' && a.nearbyItems && a.nearbyItems.length > 0 && (
+              <div style={{ 
+                background:'rgba(34,197,94,0.1)', 
+                border:'1px solid rgba(34,197,94,0.3)', 
+                borderRadius:12, 
+                padding:16, 
+                marginTop:16 
+              }}>
+                <div style={{ fontWeight:600, fontSize:14, color:'#22c55e', marginBottom:12 }}>
+                  🎯 Items to Collect Nearby
+                </div>
+                <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
+                  {a.nearbyItems.map((itemId, index) => {
+                    // Find the item data by ID
+                    const item = findArtefactById(itemId);
+                    if (!item) return null;
+                    
+                    return (
+                      <div key={itemId} style={{ 
+                        display:'flex', 
+                        flexDirection:'column', 
+                        alignItems:'center', 
+                        gap:8 
                       }}>
-                        {item.name}
+                        <div style={{ 
+                          width:48, height:48, 
+                          borderRadius:8, 
+                          overflow:'hidden', 
+                          border:'2px solid #22c55e',
+                          background:'#fff'
+                        }}>
+                          <img src={asset(item.img) || thumb(item.name)} alt={item.name} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+                        </div>
+                        <div style={{ 
+                          fontSize:12, 
+                          fontWeight:600, 
+                          color:'#22c55e', 
+                          textAlign:'center',
+                          maxWidth:48
+                        }}>
+                          {item.name}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+            
+            {/* Blurb */}
+            {a.blurb && <p style={{ ...styles.subtle, fontSize:15, marginTop:12 }}>{a.blurb}</p>}
+            
+            {/* Rich Content or Regular History */}
+            {richContent ? (
+              <div style={{ marginTop:12 }}>
+                <div style={{ fontWeight:700, marginBottom:12 }}>History & context</div>
+                {richContent.map((element) => {
+                  switch (element.type) {
+                    case 'text':
+                      return (
+                        <p key={element.key} style={{ color:'#e5e5e5', fontSize:14, lineHeight:1.6, marginBottom:16 }}>
+                          {element.content}
+                        </p>
+                      );
+                    case 'image':
+                      return (
+                        <div key={element.key} style={{ marginBottom:16, textAlign:'center' }}>
+                          <img 
+                            src={asset(element.src)} 
+                            alt={element.caption || "Historical image"}
+                            style={{ 
+                              maxWidth:'100%', 
+                              height:'auto', 
+                              borderRadius:8, 
+                              border:'1px solid #242424',
+                              cursor:'pointer'
+                            }}
+                            onClick={() => setFullscreenImage(element.src)}
+                          />
+                          {element.caption && (
+                            <div style={{ 
+                              marginTop:8, 
+                              fontSize:12, 
+                              color:'rgba(255,255,255,0.6)', 
+                              fontStyle:'italic',
+                              lineHeight:1.4
+                            }}>
+                              {element.caption}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    case 'youtube':
+                      return (
+                        <div key={element.key} style={{ marginBottom:16, textAlign:'center' }}>
+                          <div style={{ 
+                            position:'relative', 
+                            width:'100%', 
+                            height:0, 
+                            paddingBottom:'56.25%', // 16:9 aspect ratio
+                            borderRadius:8,
+                            overflow:'hidden',
+                            border:'1px solid #242424'
+                          }}>
+                            <iframe
+                              src={`https://www.youtube.com/embed/${element.videoId}`}
+                              style={{
+                                position:'absolute',
+                                top:0,
+                                left:0,
+                                width:'100%',
+                                height:'100%',
+                                border:0
+                              }}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
+                        </div>
+                      );
+                    default:
+                      return null;
+                  }
+                })}
+              </div>
+            ) : a.history ? (
+              <div style={{ marginTop:12 }}>
+                <div style={{ fontWeight:700, marginBottom:6 }}>History & context</div>
+                <div style={{ color:'#e5e5e5', fontSize:14, lineHeight:1.6 }}>{a.history}</div>
+              </div>
+            ) : null}
+            
+            {/* Links */}
+            {Array.isArray(a.links) && a.links.length>0 && (
+              <div style={{ marginTop:12 }}>
+                <div style={{ fontWeight:700, marginBottom:6 }}>Further reading</div>
+                <ul style={{ paddingLeft:18, lineHeight:1.6 }}>
+                  {a.links.map((l,i)=> (
+                    <li key={i}><a href={l.href} target="_blank" rel="noreferrer" style={{ color:'#93c5fd' }}>{l.title || l.href}</a></li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+      
+      {/* Fullscreen Image Modal */}
+      {fullscreenImage && (
+        <div style={{
+          position:'fixed',
+          inset:0,
+          background:'rgba(0,0,0,0.9)',
+          zIndex:60,
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'center',
+          padding:20
+        }} onClick={() => setFullscreenImage(null)}>
+          <div style={{ position:'relative', maxWidth:'90vw', maxHeight:'90vh' }}>
+            <img 
+              src={asset(fullscreenImage)} 
+              alt="Fullscreen view"
+              style={{ 
+                maxWidth:'100%', 
+                maxHeight:'100%', 
+                objectFit:'contain',
+                borderRadius:8
+              }}
+            />
+            <button
+              onClick={() => setFullscreenImage(null)}
+              style={{
+                position:'absolute',
+                top:-10,
+                right:-10,
+                background:'rgba(0,0,0,0.7)',
+                border:'1px solid rgba(255,255,255,0.3)',
+                color:'#fff',
+                width:40,
+                height:40,
+                borderRadius:'50%',
+                cursor:'pointer',
+                fontSize:20,
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'center'
+              }}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+// ============================
+// FINISH ITEM MODAL — Rich content modal for finish screen
+// ============================
+function FinishItemModal({ item, onClose, collected, all, getDiscoveredLandmarks }){
+  const [fullscreenImage, setFullscreenImage] = useState(null);
+  
+  if(!item) return null;
+  
+  // Parse rich content with images and videos (same as ArtefactModal)
+  const parseRichContent = (content) => {
+    if (!content) return [];
+    
+    // Split by double line breaks to get paragraphs
+    const paragraphs = content.split('\n\n').filter(p => p.trim());
+    const elements = [];
+    
+    paragraphs.forEach((paragraph, index) => {
+      const trimmed = paragraph.trim();
+      
+      // Check if it's a YouTube link
+      const youtubeMatch = trimmed.match(/https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+      if (youtubeMatch) {
+        elements.push({
+          type: 'youtube',
+          videoId: youtubeMatch[1],
+          key: `youtube-${index}`
+        });
+        return;
+      }
+      
+      // Check if it's an image reference [img:filename.jpg] or [img:filename.jpg:caption]
+      const imgMatch = trimmed.match(/\[img:([^:\]]+)(?::([^\]]+))?\]/);
+      if (imgMatch) {
+        elements.push({
+          type: 'image',
+          src: `img/${imgMatch[1]}`,
+          caption: imgMatch[2] || null,
+          key: `img-${index}`
+        });
+        return;
+      }
+      
+      // Regular text paragraph
+      elements.push({
+        type: 'text',
+        content: trimmed,
+        key: `text-${index}`
+      });
+    });
+    
+    return elements;
+  };
+  
+  const richContent = item.richHistory ? parseRichContent(item.richHistory) : null;
+  
+  return (
+    <>
+      <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,.55)', zIndex:50, display:'grid', placeItems:'center' }}>
+        <div style={{ width:'min(920px, 94vw)', maxHeight:'86vh', overflow:'auto', background:'#0d0d0d', border:'1px solid #232323', borderRadius:16 }}>
+          <div style={{ padding:'12px 14px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid #1f1f1f' }}>
+            <div style={{ fontWeight:800 }}>{item.name || 'Artefact'}</div>
+            <button onClick={onClose} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>✕</button>
+          </div>
+          <div style={{ padding:16 }}>
+            {/* Main Icon - Centered */}
+            <div style={{ textAlign:'center', marginBottom:16 }}>
+              <div style={{ 
+                display:'inline-block',
+                width:120, 
+                height:120, 
+                borderRadius:20, 
+                overflow:'hidden', 
+                border:'3px solid #22c55e',
+                cursor:'pointer'
+              }} onClick={() => setFullscreenImage(item.img || thumb(item.name))}>
+                <img 
+                  src={asset(item.img || thumb(item.name))} 
+                  alt={item.name} 
+                  style={{ 
+                    width:'100%', 
+                    height:'100%', 
+                    objectFit:'contain', 
+                    display:'block' 
+                  }} 
+                />
+              </div>
+            </div>
+            
+            {/* Collection Hint Box for Landmarks */}
+            {item.kind === 'landmark' && item.nearbyItems && item.nearbyItems.length > 0 && (
+              <div style={{ 
+                background:'rgba(34,197,94,0.1)', 
+                border:'1px solid rgba(34,197,94,0.3)', 
+                borderRadius:12, 
+                padding:16, 
+                marginTop:16 
+              }}>
+                <div style={{ fontWeight:600, fontSize:14, color:'#22c55e', marginBottom:12 }}>
+                  🎯 Items to Collect Nearby
+                </div>
+                <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
+                  {item.nearbyItems.map((itemId, index) => {
+                    // Find the item data by ID
+                    const nearbyItem = all.find(a => a.id === itemId);
+                    if (!nearbyItem) return null;
+                    
+                    return (
+                      <div key={itemId} style={{ 
+                        display:'flex', 
+                        flexDirection:'column', 
+                        alignItems:'center', 
+                        gap:8 
+                      }}>
+                        <div style={{ 
+                          width:48, height:48, 
+                          borderRadius:8, 
+                          overflow:'hidden', 
+                          border:'2px solid #22c55e',
+                          background:'#fff'
+                        }}>
+                          <img src={asset(nearbyItem.img) || thumb(nearbyItem.name)} alt={nearbyItem.name} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+                        </div>
+                        <div style={{ 
+                          fontSize:12, 
+                          fontWeight:600, 
+                          color:'#22c55e', 
+                          textAlign:'center',
+                          maxWidth:48
+                        }}>
+                          {nearbyItem.name}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+            
+            {/* Blurb */}
+            {item.blurb && <p style={{ ...styles.subtle, fontSize:15, marginTop:12 }}>{item.blurb}</p>}
+            
+            {/* Rich Content or Regular History */}
+            {richContent ? (
+              <div style={{ marginTop:12 }}>
+                <div style={{ fontWeight:700, marginBottom:12 }}>History & context</div>
+                {richContent.map((element) => {
+                  switch (element.type) {
+                    case 'text':
+                      return (
+                        <p key={element.key} style={{ color:'#e5e5e5', fontSize:14, lineHeight:1.6, marginBottom:16 }}>
+                          {element.content}
+                        </p>
+                      );
+                    case 'image':
+                      return (
+                        <div key={element.key} style={{ marginBottom:16, textAlign:'center' }}>
+                          <img 
+                            src={asset(element.src)} 
+                            alt={element.caption || "Historical image"}
+                            style={{ 
+                              maxWidth:'100%', 
+                              height:'auto', 
+                              borderRadius:8, 
+                              border:'1px solid #242424',
+                              cursor:'pointer'
+                            }}
+                            onClick={() => setFullscreenImage(element.src)}
+                          />
+                          {element.caption && (
+                            <div style={{ 
+                              marginTop:8, 
+                              fontSize:12, 
+                              color:'rgba(255,255,255,0.6)', 
+                              fontStyle:'italic',
+                              lineHeight:1.4
+                            }}>
+                              {element.caption}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    case 'youtube':
+                      return (
+                        <div key={element.key} style={{ marginBottom:16, textAlign:'center' }}>
+                          <div style={{ 
+                            position:'relative', 
+                            width:'100%', 
+                            height:0, 
+                            paddingBottom:'56.25%', // 16:9 aspect ratio
+                            borderRadius:8,
+                            overflow:'hidden',
+                            border:'1px solid #242424'
+                          }}>
+                            <iframe
+                              src={`https://www.youtube.com/embed/${element.videoId}`}
+                              style={{
+                                position:'absolute',
+                                top:0,
+                                left:0,
+                                width:'100%',
+                                height:'100%',
+                                border:0
+                              }}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
+                        </div>
+                      );
+                    default:
+                      return null;
+                  }
+                })}
+              </div>
+            ) : item.history ? (
+              <div style={{ marginTop:12 }}>
+                <div style={{ fontWeight:700, marginBottom:6 }}>History & context</div>
+                <div style={{ color:'#e5e5e5', fontSize:14, lineHeight:1.6 }}>{item.history}</div>
+              </div>
+            ) : null}
+            
+            {/* Collection Status */}
+            <div style={{ marginTop:16 }}>
+              {item.kind === 'landmark' ? (
+                // Landmark status - based on discovery, not collection
+                (() => {
+                  const discoveredLandmarks = getDiscoveredLandmarks();
+                  const isDiscovered = discoveredLandmarks.includes(item.name);
+                  return isDiscovered ? (
+                    <div style={{
+                      background:'rgba(34,197,94,0.1)', 
+                      border:'1px solid rgba(34,197,94,0.3)', 
+                      borderRadius:12, 
+                      padding:16, 
+                      textAlign:'center'
+                    }}>
+                      <div style={{ fontWeight:600, fontSize:16, color:'#22c55e', marginBottom:4 }}>
+                        ✓ Seen
+                      </div>
+                      <div style={{ color:'#e5e5e5', fontSize:14 }}>
+                        Landmark discovered
+                      </div>
+                    </div>
+                  ) : (
+                    <div style={{
+                      background:'rgba(239,68,68,0.1)', 
+                      border:'1px solid rgba(239,68,68,0.3)', 
+                      borderRadius:12, 
+                      padding:16, 
+                      textAlign:'center'
+                    }}>
+                      <div style={{ fontWeight:600, fontSize:16, color:'#ef4444', marginBottom:4 }}>
+                        Not Seen
+                      </div>
+                      <div style={{ color:'#e5e5e5', fontSize:14 }}>
+                        Landmark not discovered
                       </div>
                     </div>
                   );
-                })}
+                })()
+              ) : (
+                // Item status - based on collection
+                collected.some(c => c.id === item.id) ? (
+                  <div style={{
+                    background:'rgba(34,197,94,0.1)', 
+                    border:'1px solid rgba(34,197,94,0.3)', 
+                    borderRadius:12, 
+                    padding:16, 
+                    textAlign:'center'
+                  }}>
+                    <div style={{ fontWeight:600, fontSize:16, color:'#22c55e', marginBottom:4 }}>
+                      ✓ Collected
+                    </div>
+                    <div style={{ color:'#e5e5e5', fontSize:14 }}>
+                      {item.points} points earned
+                    </div>
+                  </div>
+                ) : (
+                  <div style={{
+                    background:'rgba(249,115,22,0.1)', 
+                    border:'1px solid rgba(249,115,22,0.3)', 
+                    borderRadius:12, 
+                    padding:16, 
+                    textAlign:'center'
+                  }}>
+                    <div style={{ fontWeight:600, fontSize:16, color:'#f97316', marginBottom:4 }}>
+                      Not Collected
+                    </div>
+                    <div style={{ color:'#e5e5e5', fontSize:14 }}>
+                      {item.points} points available
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+            
+            {/* Links */}
+            {Array.isArray(item.links) && item.links.length>0 && (
+              <div style={{ marginTop:12 }}>
+                <div style={{ fontWeight:700, marginBottom:6 }}>Further reading</div>
+                <ul style={{ paddingLeft:18, lineHeight:1.6 }}>
+                  {item.links.map((l,i)=> (
+                    <li key={i}><a href={l.href} target="_blank" rel="noreferrer" style={{ color:'#93c5fd' }}>{l.title || l.href}</a></li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          )}
-          
-          {/* Text */}
-          {a.blurb && <p style={{ ...styles.subtle, fontSize:15, marginTop:12 }}>{a.blurb}</p>}
-          {a.history && (
-            <div style={{ marginTop:12 }}>
-              <div style={{ fontWeight:700, marginBottom:6 }}>History & context</div>
-              <div style={{ color:'#e5e5e5', fontSize:14 }}>{a.history}</div>
-            </div>
-          )}
-          {/* Links */}
-          {Array.isArray(a.links) && a.links.length>0 && (
-            <div style={{ marginTop:12 }}>
-              <div style={{ fontWeight:700, marginBottom:6 }}>Further reading</div>
-              <ul style={{ paddingLeft:18, lineHeight:1.6 }}>
-                {a.links.map((l,i)=> (
-                  <li key={i}><a href={l.href} target="_blank" rel="noreferrer" style={{ color:'#93c5fd' }}>{l.title || l.href}</a></li>
-                ))}
-              </ul>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
-    </div>
+      
+      {/* Fullscreen Image Modal */}
+      {fullscreenImage && (
+        <div style={{
+          position:'fixed',
+          inset:0,
+          background:'rgba(0,0,0,0.9)',
+          zIndex:60,
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'center',
+          padding:20
+        }} onClick={() => setFullscreenImage(null)}>
+          <div style={{ position:'relative', maxWidth:'90vw', maxHeight:'90vh' }}>
+            <img 
+              src={asset(fullscreenImage)} 
+              alt="Fullscreen view"
+              style={{ 
+                maxWidth:'100%', 
+                maxHeight:'100%', 
+                objectFit:'contain',
+                borderRadius:8
+              }}
+            />
+            <button
+              onClick={() => setFullscreenImage(null)}
+              style={{
+                position:'absolute',
+                top:-10,
+                right:-10,
+                background:'rgba(0,0,0,0.7)',
+                border:'1px solid rgba(255,255,255,0.3)',
+                color:'#fff',
+                width:40,
+                height:40,
+                borderRadius:'50%',
+                cursor:'pointer',
+                fontSize:20,
+                display:'flex',
+                alignItems:'center',
+                justifyContent:'center'
+              }}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -1252,29 +2199,242 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
   const all = enumerateArtefactsForStack(stack);
   const collected = all.filter(a=>progress[`${stack.id}:${a.id}`]);
   const totals = { totalItems: all.length, gotItems: collected.length, totalPts: all.reduce((s,x)=>s+x.points,0), gotPts: collected.reduce((s,x)=>s+x.points,0) };
+  
+  // State for selected item modal
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  // Determine which landmarks were discovered based on collected items
+  const getDiscoveredLandmarks = () => {
+    // Get all landmarks from the stack
+    const landmarks = all.filter(a => a.kind === 'landmark');
+    
+    // Find landmarks where all their nearbyItems have been collected
+    const discoveredLandmarks = landmarks.filter(landmark => {
+      if (!landmark.nearbyItems || landmark.nearbyItems.length === 0) {
+        return false;
+      }
+      
+      // Check if ALL nearby items for this landmark have been collected
+      return landmark.nearbyItems.every(nearbyItemId => 
+        collected.some(collectedItem => collectedItem.id === nearbyItemId)
+      );
+    });
+    
+    return discoveredLandmarks.map(landmark => landmark.name);
+  };
+
+  const discoveredLandmarks = getDiscoveredLandmarks();
+
+  // Format timestamp for display
+  const formatTimestamp = (timestamp) => {
+    const date = new Date(timestamp);
+    return {
+      date: date.toLocaleDateString('en-US', { 
+        month: 'short', 
+        day: 'numeric', 
+        year: 'numeric' 
+      }),
+      time: date.toLocaleTimeString('en-US', { 
+        hour: 'numeric', 
+        minute: '2-digit',
+        hour12: true 
+      })
+    };
+  };
 
   async function downloadStory(){
-    const canvas = document.createElement('canvas'); canvas.width=1080; canvas.height=1920; const ctx=canvas.getContext('2d');
-    // bg
-    const g = ctx.createLinearGradient(0,0,0,1920); g.addColorStop(0,'#0f172a'); g.addColorStop(1,'#111827'); ctx.fillStyle=g; ctx.fillRect(0,0,1080,1920);
-    // headings
-    ctx.fillStyle='#fff'; ctx.font='700 64px ui-sans-serif,system-ui'; ctx.fillText('HEARTLANDS',64,140);
-    ctx.font='600 50px ui-sans-serif,system-ui'; ctx.fillText(stack.name,64,220);
-    ctx.font='400 36px ui-sans-serif,system-ui'; ctx.fillText(`${totals.gotItems}/${totals.totalItems} items • ${totals.gotPts}/${totals.totalPts} pts`,64,280);
-    // grid of stamps
-    const cols=5, gap=14, cell=180; const gridW=cols*cell+(cols-1)*gap; let x0=(1080-gridW)/2, y0=340; let i=0;
-    const imgs = await Promise.all(collected.map(async a=>{ const src=a.img || thumb(a.name); const img=new Image(); img.crossOrigin='anonymous'; img.src = asset(src); await img.decode().catch(()=>{}); return { img, a }; }));
-    for(const {img,a} of imgs){ const cx=x0+(i%cols)*(cell+gap); const cy=y0+Math.floor(i/cols)*(cell+gap); ctx.fillStyle='rgba(255,255,255,0.08)'; ctx.fillRect(cx,cy,cell,cell); try{ ctx.drawImage(img,cx,cy,cell,cell); }catch{} ctx.strokeStyle='rgba(255,255,255,0.35)'; ctx.lineWidth=2; ctx.strokeRect(cx+2,cy+2,cell-4,cell-4); i++; }
-    // footer
-    ctx.fillStyle='rgba(255,255,255,0.75)'; ctx.font='400 28px ui-sans-serif,system-ui'; ctx.fillText('Walk. Collect. Argue with the city.',64,1860);
+    const canvas = document.createElement('canvas'); 
+    canvas.width=1080; 
+    canvas.height=1920; 
+    const ctx=canvas.getContext('2d');
+    
+    // Clean dark background
+    ctx.fillStyle='#0a0a0a'; 
+    ctx.fillRect(0,0,1080,1920);
+    
+    let yPos = 60;
+    
+    // Main title - bigger and more prominent
+    ctx.fillStyle='#ffffff'; 
+    ctx.font='700 64px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+    ctx.fillText('HEARTLANDS', 60, yPos);
+    yPos += 80;
+    
+    // Stack name - clean typography
+    ctx.fillStyle='#ffffff'; 
+    ctx.font='600 36px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+    ctx.fillText(stack.name, 60, yPos);
+    yPos += 50;
+    
+    // Stack blurb/description
+    if(stack.desc) {
+      ctx.fillStyle='rgba(255,255,255,0.7)'; 
+      ctx.font='400 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+      const descLines = stack.desc.match(/.{1,60}/g) || [stack.desc];
+      for(const line of descLines) {
+        ctx.fillText(line, 60, yPos);
+        yPos += 28;
+      }
+      yPos += 20;
+    }
+    
+    // Progress summary - clean stats
+    ctx.fillStyle='rgba(255,255,255,0.8)'; 
+    ctx.font='500 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+    ctx.fillText(`${totals.gotItems}/${totals.totalItems} items • ${totals.gotPts}/${totals.totalPts} pts`, 60, yPos);
+    yPos += 60;
+    
+    // Landmarks Section - First
+    const allLandmarks = all.filter(a => a.kind === 'landmark');
+    if(allLandmarks.length > 0) {
+      // Section title - larger
+      ctx.fillStyle='#ffffff'; 
+      ctx.font='600 32px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+      ctx.fillText('🏛️ Landmarks', 60, yPos);
+      yPos += 50;
+      
+      // Landmarks grid - 5 columns like items
+      const landmarkCols = 5;
+      const landmarkSize = 160;
+      const landmarkGap = 20;
+      const landmarkGridWidth = landmarkCols * landmarkSize + (landmarkCols - 1) * landmarkGap;
+      const landmarkStartX = (1080 - landmarkGridWidth) / 2;
+      
+      for(let i = 0; i < allLandmarks.length; i++) {
+        const landmark = allLandmarks[i];
+        const isDiscovered = discoveredLandmarks.includes(landmark.name);
+        const x = landmarkStartX + (i % landmarkCols) * (landmarkSize + landmarkGap);
+        const cy = yPos + Math.floor(i / landmarkCols) * (landmarkSize + 50);
+        
+        // Simple square background
+        ctx.fillStyle = isDiscovered ? 'rgba(34,197,94,0.1)' : 'rgba(255,255,255,0.05)';
+        ctx.fillRect(x, cy, landmarkSize, landmarkSize);
+        
+        // Simple border
+        ctx.strokeStyle = isDiscovered ? '#22c55e' : 'rgba(255,255,255,0.2)';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(x, cy, landmarkSize, landmarkSize);
+        
+        // Landmark image
+        if(landmark.img) {
+          try {
+            const landmarkImg = new Image();
+            landmarkImg.crossOrigin = 'anonymous';
+            landmarkImg.src = asset(landmark.img);
+            await landmarkImg.decode();
+            const imgSize = landmarkSize - 30;
+            const imgX = x + (landmarkSize - imgSize) / 2;
+            const imgY = cy + (landmarkSize - imgSize) / 2;
+            ctx.drawImage(landmarkImg, imgX, imgY, imgSize, imgSize);
+          } catch(e) {
+            console.log('Landmark image failed to load');
+          }
+        }
+        
+        // Discovered indicator - simple dot
+        if(isDiscovered) {
+          ctx.fillStyle = '#22c55e';
+          ctx.beginPath();
+          ctx.arc(x + landmarkSize - 12, cy + 12, 6, 0, 2 * Math.PI);
+          ctx.fill();
+        }
+        
+        // Landmark name below - larger
+        ctx.fillStyle = isDiscovered ? '#22c55e' : 'rgba(255,255,255,0.7)';
+        ctx.font = '500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(landmark.name, x + landmarkSize/2, cy + landmarkSize + 25);
+        ctx.textAlign = 'left';
+      }
+      
+      yPos += Math.ceil(allLandmarks.length / landmarkCols) * (landmarkSize + 50) + 60;
+    }
+    
+    // Items Section
+    const allFixedItems = all.filter(a => a.kind === 'fixed');
+    if(allFixedItems.length > 0) {
+      // Section title - larger
+      ctx.fillStyle='#ffffff'; 
+      ctx.font='600 32px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+      ctx.fillText('📖 Collection', 60, yPos);
+      yPos += 50;
+      
+      // Items grid - simple squares with names
+      const cols = 5;
+      const itemSize = 160;
+      const itemGap = 20;
+      const gridWidth = cols * itemSize + (cols - 1) * itemGap;
+      const startX = (1080 - gridWidth) / 2;
+      
+      const imgs = await Promise.all(allFixedItems.map(async a => {
+        const src = a.img || thumb(a.name);
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.src = asset(src);
+        await img.decode().catch(() => {});
+        return { img, a };
+      }));
+      
+      for(let i = 0; i < imgs.length; i++) {
+        const {img, a} = imgs[i];
+        const isCollected = collected.some(c => c.id === a.id);
+        const x = startX + (i % cols) * (itemSize + itemGap);
+        const cy = yPos + Math.floor(i / cols) * (itemSize + 50);
+        
+        // Simple square background
+        ctx.fillStyle = isCollected ? 'rgba(34,197,94,0.1)' : 'rgba(255,255,255,0.05)';
+        ctx.fillRect(x, cy, itemSize, itemSize);
+        
+        // Simple border
+        ctx.strokeStyle = isCollected ? '#22c55e' : 'rgba(255,255,255,0.2)';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(x, cy, itemSize, itemSize);
+        
+        // Item image - centered
+        try {
+          const imgSize = itemSize - 30;
+          const imgX = x + (itemSize - imgSize) / 2;
+          const imgY = cy + (itemSize - imgSize) / 2;
+          ctx.drawImage(img, imgX, imgY, imgSize, imgSize);
+        } catch(e) {
+          console.log('Item image failed to draw');
+        }
+        
+        // Collected indicator - simple dot
+        if(isCollected) {
+          ctx.fillStyle = '#22c55e';
+          ctx.beginPath();
+          ctx.arc(x + itemSize - 12, cy + 12, 6, 0, 2 * Math.PI);
+          ctx.fill();
+        }
+        
+        // Item name below - larger
+        ctx.fillStyle = isCollected ? '#22c55e' : 'rgba(255,255,255,0.7)';
+        ctx.font = '500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(a.name, x + itemSize/2, cy + itemSize + 25);
+        ctx.textAlign = 'left';
+      }
+      
+      yPos += Math.ceil(allFixedItems.length / cols) * (itemSize + 50) + 40;
+    }
+    
+    // Footer - clean and minimal
+    ctx.fillStyle='rgba(255,255,255,0.5)'; 
+    ctx.font='400 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+    ctx.fillText('Walk. Collect. Argue with the city.', 60, 1850);
 
-    const url = canvas.toDataURL('image/png'); const a=document.createElement('a'); a.href=url; a.download=`heartlands-${stack.id}-story.png`; a.click(); onDownloadDone && onDownloadDone();
+    const url = canvas.toDataURL('image/png'); 
+    const a = document.createElement('a'); 
+    a.href = url; 
+    a.download = `heartlands-${stack.id}-story.png`; 
+    a.click(); 
+    onDownloadDone && onDownloadDone();
   }
 
   return (
     <section style={{ ...styles.container, paddingTop:24, paddingBottom:24 }}>
               <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:12 }}>
-          <button onClick={onBack} style={{ ...styles.button, background:'#0b0b0b', color:'#e5e5e5' }}>← Back</button>
           <div>
             <h2 style={{ fontWeight:800, fontSize:22, marginBottom:2 }}>
               Finish — {stack.id === 'jurong' ? 'Jurong Lake' : stack.name}
@@ -1282,25 +2442,246 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
             <div style={{ ...styles.subtle, fontSize:14, color:'#a3a3a3' }}>
               {stack.id === 'jurong' ? 'The Worker\'s Garden' : 'Historical Expedition'}
             </div>
+            <div style={{ ...styles.subtle, fontSize:16, color:'#e5e5e5', marginTop:8, lineHeight:1.4 }}>
+              🎉 Congratulations! You've completed your journey through {stack.id === 'jurong' ? 'Jurong Lake' : 'the historical sites'}. 
+              Your collection tells the story of {stack.id === 'jurong' ? 'Singapore\'s industrial transformation and the people who built it' : 'the rich history you\'ve discovered'}.
+            </div>
           </div>
           <div style={{ marginLeft:'auto', ...styles.subtle, fontSize:12 }}>{totals.gotItems}/{totals.totalItems} items • {totals.gotPts}/{totals.totalPts} pts</div>
         </div>
 
-      <div style={{ ...styles.card }}>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(140px,1fr))', gap:12 }}>
-          {collected.map(a=> (
-            <div key={a.id} style={{ border:'1px solid #2a2a2a', borderRadius:12, overflow:'hidden' }}>
-              <img src={asset(a.img || thumb(a.name))} alt={a.name} style={{ width:'100%', height:140, objectFit:'cover', display:'block' }} />
-              <div style={{ padding:'8px 10px', fontSize:13 }}>{a.name}</div>
-            </div>
-          ))}
+      {/* Landmarks Section - First */}
+      <div style={{ ...styles.card, marginBottom: 16 }}>
+        <div style={{ marginBottom: 16 }}>
+          <h3 style={{ fontSize: 18, fontWeight: 600, marginBottom: 8, color: '#fff' }}>Landmark Seen</h3>
+          <div style={{ ...styles.subtle, fontSize: 14 }}>Places you've explored on your journey</div>
         </div>
-        <div style={{ marginTop:14, ...styles.subtle, fontSize:13 }}>{collected.length} collected • {totals.gotPts} pts</div>
-        <div style={{ marginTop:12, display:'flex', gap:10, flexWrap:'wrap' }}>
-          <button onClick={downloadStory} style={{ ...styles.button }}>Download Story</button>
-          <button onClick={onReset} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>Return Home & Reset</button>
+        
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', 
+          gap: 12 
+        }}>
+          {all.filter(a => a.kind === 'landmark').map(landmark => {
+            const isDiscovered = discoveredLandmarks.includes(landmark.name);
+            
+            return (
+              <div 
+                key={landmark.id} 
+                onClick={() => setSelectedItem(landmark)}
+                style={{
+                  background: isDiscovered 
+                    ? 'linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(34,197,94,0.05) 100%)'
+                    : 'linear-gradient(135deg, rgba(239,68,68,0.1) 0%, rgba(239,68,68,0.05) 100%)',
+                  border: isDiscovered ? '2px solid #22c55e' : '2px solid #ef4444',
+                  borderRadius: 12,
+                  padding: 12,
+                  textAlign: 'center',
+                  position: 'relative',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = 'none';
+                }}
+              >
+                {/* Discovered badge */}
+                {isDiscovered && (
+                  <div style={{
+                    position: 'absolute',
+                    top: 6,
+                    right: 6,
+                    background: '#22c55e',
+                    color: '#fff',
+                    fontSize: 9,
+                    fontWeight: 'bold',
+                    padding: '2px 5px',
+                    borderRadius: 6,
+                    textTransform: 'uppercase',
+                    letterSpacing: 0.5,
+                    zIndex: 10
+                  }}>
+                    ✓ Seen
+                  </div>
+                )}
+                
+                <img 
+                  src={asset(landmark.img || 'img/compass.png')} 
+                  alt={landmark.name}
+                  style={{
+                    width: 60,
+                    height: 60,
+                    objectFit: 'cover',
+                    borderRadius: 8,
+                    marginBottom: 8,
+                    display: 'block',
+                    margin: '0 auto 8px auto'
+                  }}
+                />
+                <div style={{
+                  fontSize: 12,
+                  fontWeight: 600,
+                  color: isDiscovered ? '#22c55e' : '#ef4444'
+                }}>
+                  {landmark.name}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
+
+      {/* Collection Stamp Book - Second */}
+      <div style={{ ...styles.card }}>
+        <div style={{ marginBottom: 20 }}>
+          <h3 style={{ fontSize: 18, fontWeight: 600, marginBottom: 8, color: '#fff' }}> Items Collected</h3>
+          <div style={{ ...styles.subtle, fontSize: 14 }}>All items from your journey</div>
+        </div>
+
+        {/* All Items Grid (Collected + Uncollected) */}
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(140px,1fr))', gap:12, marginBottom: 24 }}>
+          {all.filter(a => a.kind === 'fixed').map(a => {
+            const isCollected = collected.some(c => c.id === a.id);
+            const progressData = progress[`${stack.id}:${a.id}`];
+            const timestamp = progressData ? formatTimestamp(progressData.when) : null;
+            
+            return (
+              <div 
+                key={a.id} 
+                onClick={() => setSelectedItem(a)}
+                style={{ 
+                  border: isCollected ? '2px solid #22c55e' : '2px solid #f97316', 
+                  borderRadius:12, 
+                  overflow:'hidden',
+                  background: isCollected 
+                    ? 'linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(34,197,94,0.05) 100%)'
+                    : 'linear-gradient(135deg, rgba(249,115,22,0.1) 0%, rgba(249,115,22,0.05) 100%)',
+                  position: 'relative',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseOver={(e) => {
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = 'none';
+                }}
+              >
+                {/* Stamp effect for collected items */}
+                {isCollected && (
+                  <div style={{
+                    position: 'absolute',
+                    top: 6,
+                    right: 6,
+                    background: '#22c55e',
+                    color: '#fff',
+                    fontSize: 9,
+                    fontWeight: 'bold',
+                    padding: '2px 5px',
+                    borderRadius: 6,
+                    textTransform: 'uppercase',
+                    letterSpacing: 0.5,
+                    zIndex: 10
+                  }}>
+                    ✓ Collected
+                  </div>
+                )}
+                
+                <img 
+                  src={asset(a.img || thumb(a.name))} 
+                  alt={a.name} 
+                  style={{ 
+                    width:'100%', 
+                    height:100, 
+                    objectFit:'cover', 
+                    display:'block',
+                    borderBottom: isCollected 
+                      ? '1px solid rgba(34,197,94,0.2)' 
+                      : '1px solid rgba(249,115,22,0.2)'
+                  }} 
+                />
+                
+                <div style={{ padding:'10px' }}>
+                  <div style={{ 
+                    fontSize:12, 
+                    fontWeight:600, 
+                    marginBottom:4,
+                    color: '#fff'
+                  }}>
+                    {a.name}
+                  </div>
+                  
+                  {isCollected && timestamp && (
+                    <div style={{ 
+                      fontSize:10, 
+                      color:'#a3a3a3',
+                      lineHeight: 1.2
+                    }}>
+                      <div>📅 {timestamp.date}</div>
+                      <div>🕐 {timestamp.time}</div>
+                    </div>
+                  )}
+                  
+                  <div style={{ 
+                    fontSize:10, 
+                    color: isCollected ? '#22c55e' : '#f97316',
+                    fontWeight: 500,
+                    marginTop: 4
+                  }}>
+                    {isCollected ? `+${a.points} pts` : `${a.points} pts`}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Summary Stats */}
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center',
+          padding: '16px 0',
+          borderTop: '1px solid #2a2a2a',
+          marginBottom: 16
+        }}>
+          <div style={{ ...styles.subtle, fontSize: 14 }}>
+            <div>📦 {collected.length}/{all.filter(a => a.kind === 'fixed').length} items collected</div>
+            <div>🏛️ {discoveredLandmarks.length} landmarks discovered</div>
+          </div>
+          <div style={{ 
+            fontSize: 18, 
+            fontWeight: 700, 
+            color: '#22c55e' 
+          }}>
+            {totals.gotPts} pts
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div style={{ display:'flex', gap:10, flexWrap:'wrap' }}>
+          <button onClick={downloadStory} style={{ ...styles.button }}>📱 Download Story</button>
+          <button onClick={onReset} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>🏠 Return Home & Reset</button>
+        </div>
+      </div>
+      
+      {/* Selected Item Modal - Same as ArtefactModal with Rich Content */}
+      {selectedItem && (
+        <FinishItemModal 
+          item={selectedItem} 
+          onClose={() => setSelectedItem(null)} 
+          collected={collected}
+          all={all}
+          getDiscoveredLandmarks={getDiscoveredLandmarks}
+        />
+      )}
     </section>
   );
 }
