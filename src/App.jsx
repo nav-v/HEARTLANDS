@@ -556,6 +556,7 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
   const [centerKey, setCenterKey] = useState(0);    // bump to recenter once
   const [compassOffset, setCompassOffset] = useState(0); // calibration offset
   const [lastHeadingUpdate, setLastHeadingUpdate] = useState(0);
+  const [mapStyle, setMapStyle] = useState('apple'); // 'apple', 'standard', 'satellite'
 
   // Confetti canvas over the map (so map-collect pops confetti)
   const mapConfettiRef = useRef(null);
@@ -745,6 +746,8 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
               onCenter={()=>setCenterKey(k=>k+1)}
               onEnableCompass={enableCompass}
               compassOn={compassOn}
+              mapStyle={mapStyle}
+              setMapStyle={setMapStyle}
             />
             {/* Confetti overlay for map collects */}
             <canvas ref={mapConfettiRef} width={800} height={600} style={{ position:'absolute', inset:0, width:'100%', height:'100%', pointerEvents:'none', zIndex:800 }} />
@@ -792,14 +795,41 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
   );
 }
 
-function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simLoc, setSimLoc, collectedSet, withinIds, onCollectFromMap, onOpenModal, heading, centerKey, onCenter, onEnableCompass, compassOn }){
+function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simLoc, setSimLoc, collectedSet, withinIds, onCollectFromMap, onOpenModal, heading, centerKey, onCenter, onEnableCompass, compassOn, mapStyle, setMapStyle }){
   const center = fixedItems[0]?.coords || { lat: stack.bbox[1], lng: stack.bbox[0] };
   const mapRef = useRef(null);
   const [labelFor, setLabelFor] = useState(null); // which fixed id has a label open
 
+  // Map style configurations
+  const mapStyles = {
+    apple: {
+      url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: "abcd"
+    },
+    standard: {
+      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors',
+      subdomains: "abc"
+    },
+    satellite: {
+      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
+      subdomains: ""
+    }
+  };
+
+  const currentStyle = mapStyles[mapStyle] || mapStyles.apple;
+
   return (
     <MapContainer whenCreated={(m)=>mapRef.current=m} center={[center.lat, center.lng]} zoom={16} style={{ height:'100%', width:'100%' }} scrollWheelZoom>
-      <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      {/* Dynamic map tiles based on selected style */}
+      <TileLayer 
+        attribution={currentStyle.attribution}
+        url={currentStyle.url}
+        subdomains={currentStyle.subdomains}
+        maxZoom={20}
+      />
 
       {/* Fixed artefacts with search radius circles and random collection points */}
       {fixedItems.map(f => {
@@ -864,7 +894,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
 
       <Recenter userLoc={userLoc || simLoc || gpsLoc} centerKey={centerKey} />
       
-      {/* Map Controls - Center and Compass buttons */}
+      {/* Map Controls - Center, Compass, and Map Style buttons */}
       <div style={{ position:'absolute', bottom:20, right:20, display:'flex', flexDirection:'column', gap:8, zIndex:1000 }}>
         <button 
           onClick={onCenter} 
@@ -898,6 +928,27 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
           title={compassOn ? 'Compass enabled (right-click to calibrate)' : 'Enable compass'}
         >
           <img src={asset('img/compass.png')} alt="Compass" width="20" height="20" style={{ display:'block' }} />
+        </button>
+        <button 
+          onClick={() => {
+            const styles = ['apple', 'standard', 'satellite'];
+            const currentIndex = styles.indexOf(mapStyle);
+            const nextIndex = (currentIndex + 1) % styles.length;
+            setMapStyle(styles[nextIndex]);
+          }}
+          style={{ 
+            width:48, height:48, borderRadius:'50%', 
+            background: mapStyle === 'apple' ? '#007AFF' : mapStyle === 'satellite' ? '#8B4513' : '#6B7280', 
+            border:'1px solid #ccc', 
+            display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer',
+            boxShadow:'0 2px 8px rgba(0,0,0,0.15)',
+            color: '#fff',
+            fontSize: '12px',
+            fontWeight: 'bold'
+          }}
+          title={`Map style: ${mapStyle} (tap to change)`}
+        >
+          {mapStyle === 'apple' ? '🍎' : mapStyle === 'satellite' ? '🛰️' : '🗺️'}
         </button>
       </div>
     </MapContainer>
