@@ -148,8 +148,8 @@ function userIconWithHeading(deg){
     <div style='position:relative;'>
       <!-- iOS-style blue circle -->
       <div style='width:16px;height:16px;border-radius:999px;background:#007AFF;border:2px solid #fff;box-shadow:0 0 0 2px rgba(0,122,255,0.3);position:absolute;left:16px;top:16px;'></div>
-      <!-- Directional cone -->
-      <div style='position:absolute;left:16px;top:16px;transform:rotate(${rot}deg);'>
+      <!-- Directional cone with smoother rotation -->
+      <div style='position:absolute;left:16px;top:16px;transform:rotate(${rot}deg);transition:transform 0.2s ease-out;'>
         <svg width="48" height="48" viewBox="0 0 48 48" style="position:absolute;left:-14.5px;top:-16px;">
           <defs>
             <linearGradient id="coneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -554,6 +554,8 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
   const [heading, setHeading]     = useState(null); // degrees
   const [compassOn, setCompassOn] = useState(false);
   const [centerKey, setCenterKey] = useState(0);    // bump to recenter once
+  const [compassOffset, setCompassOffset] = useState(0); // calibration offset
+  const [lastHeadingUpdate, setLastHeadingUpdate] = useState(0);
 
   // Confetti canvas over the map (so map-collect pops confetti)
   const mapConfettiRef = useRef(null);
@@ -569,37 +571,89 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
       (pos)=>{
         const { latitude, longitude, speed, heading:hdg } = pos.coords;
         setGpsLoc({ lat: latitude, lng: longitude, speed: speed ?? 0, heading: hdg });
-        if (typeof hdg === 'number' && !Number.isNaN(hdg)) setHeading(hdg);
+        
+        // Only use GPS heading if compass is not enabled (GPS heading is less accurate)
+        if (!compassOn && typeof hdg === 'number' && !Number.isNaN(hdg)) {
+          updateHeading(hdg);
+        }
       },
       (err)=> setError(err.message||'Location error'),
       { enableHighAccuracy:true, maximumAge:2000, timeout:10000 }
     );
     return ()=> navigator.geolocation.clearWatch(id);
-  },[]);
+  },[compassOn]);
 
-  // Compass / heading fallback (requires user gesture on iOS)
+  // Improved compass / heading implementation
   function enableCompass(){
     try{
       if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function'){
-        DeviceOrientationEvent.requestPermission().then((state)=>{ if(state==='granted') setCompassOn(true); });
-      } else { setCompassOn(true); }
-    } catch { setCompassOn(true); }
+        DeviceOrientationEvent.requestPermission().then((state)=>{ 
+          if(state==='granted') {
+            setCompassOn(true);
+            // Reset offset when enabling compass
+            setCompassOffset(0);
+          }
+        });
+      } else { 
+        setCompassOn(true);
+        setCompassOffset(0);
+      }
+    } catch { 
+      setCompassOn(true);
+      setCompassOffset(0);
+    }
   }
+
+  // Smooth heading updates with filtering
+  function updateHeading(newHeading) {
+    const now = Date.now();
+    if (now - lastHeadingUpdate < 100) return; // Throttle updates to max 10Hz
+    
+    if (typeof newHeading === 'number' && !Number.isNaN(newHeading)) {
+      // Normalize heading to 0-360
+      let normalizedHeading = newHeading % 360;
+      if (normalizedHeading < 0) normalizedHeading += 360;
+      
+      // Apply offset calibration
+      normalizedHeading = (normalizedHeading + compassOffset) % 360;
+      if (normalizedHeading < 0) normalizedHeading += 360;
+      
+      setHeading(normalizedHeading);
+      setLastHeadingUpdate(now);
+    }
+  }
+
   useEffect(()=>{
     if (!compassOn) return;
-    function onOri(e){
+    
+    function onOrientation(e){
       let h = null;
-      if (typeof e.webkitCompassHeading === 'number') h = e.webkitCompassHeading; // iOS Safari
-      else if (typeof e.alpha === 'number') h = e.alpha; // fallback
-      if (h != null && !Number.isNaN(h)) setHeading(h);
+      
+      // iOS Safari - use webkitCompassHeading if available (most accurate)
+      if (typeof e.webkitCompassHeading === 'number' && !Number.isNaN(e.webkitCompassHeading)) {
+        h = e.webkitCompassHeading;
+      }
+      // Android/Chrome - use alpha with proper coordinate system conversion
+      else if (typeof e.alpha === 'number' && !Number.isNaN(e.alpha)) {
+        // Convert device orientation alpha to compass heading
+        // Alpha: 0° = North, 90° = East, 180° = South, 270° = West
+        h = (360 - e.alpha) % 360;
+      }
+      
+      if (h !== null) {
+        updateHeading(h);
+      }
     }
-    window.addEventListener('deviceorientationabsolute', onOri);
-    window.addEventListener('deviceorientation', onOri);
+    
+    // Try absolute orientation first (more accurate)
+    window.addEventListener('deviceorientationabsolute', onOrientation, { passive: true });
+    window.addEventListener('deviceorientation', onOrientation, { passive: true });
+    
     return ()=>{
-      window.removeEventListener('deviceorientationabsolute', onOri);
-      window.removeEventListener('deviceorientation', onOri);
+      window.removeEventListener('deviceorientationabsolute', onOrientation);
+      window.removeEventListener('deviceorientation', onOrientation);
     };
-  }, [compassOn]);
+  }, [compassOn, compassOffset, lastHeadingUpdate]);
 
   const effective = simOn && simLoc ? simLoc : gpsLoc;
   // Ensure we always have a fallback location for collection logic
@@ -824,7 +878,16 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
           <img src={asset('img/target.png')} alt="Center" width="24" height="24" style={{ display:'block' }} />
         </button>
         <button 
-          onClick={onEnableCompass} 
+          onClick={onEnableCompass}
+          onContextMenu={(e) => {
+            e.preventDefault();
+            // Right-click or long-press to calibrate compass
+            if (compassOn) {
+              setCompassOffset(0);
+              setHeading(null);
+              console.log('Compass calibrated');
+            }
+          }}
           style={{ 
             width:48, height:48, borderRadius:'50%', 
             background: compassOn ? '#22c55e' : '#fff', 
@@ -832,7 +895,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
             display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer',
             boxShadow:'0 2px 8px rgba(0,0,0,0.15)'
           }}
-          title={compassOn ? 'Compass enabled' : 'Enable compass'}
+          title={compassOn ? 'Compass enabled (right-click to calibrate)' : 'Enable compass'}
         >
           <img src={asset('img/compass.png')} alt="Compass" width="20" height="20" style={{ display:'block' }} />
         </button>
