@@ -141,9 +141,8 @@ function makeLandmarkIcon(url, name){
   return L.divIcon({ html, className:"", iconSize:[60,60], iconAnchor:[30,30] });
 }
 
-// User and sim pins - with compass direction arrow
+// User and sim pins - simple pulsing dot
 function userIconWithHeading(deg){
-  const rot = (typeof deg === 'number' && !Number.isNaN(deg)) ? deg : 0;
   const html = `
     <div style='position:relative;'>
       <!-- iOS-style blue circle with pulsing effect -->
@@ -154,23 +153,12 @@ function userIconWithHeading(deg){
         position:absolute;left:14px;top:14px;
         animation:pulse 2s infinite;
       '></div>
-      <!-- Directional arrow -->
+      <!-- Inner white dot -->
       <div style='
-        position:absolute;left:24px;top:24px;
-        transform:rotate(${rot}deg);
-        transition:transform 0.2s ease-out;
-        transform-origin:center center;
-      '>
-        <svg width="24" height="24" viewBox="0 0 24 24" style="position:absolute;left:-12px;top:-12px;">
-          <defs>
-            <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#007AFF" stop-opacity="0.9"/>
-              <stop offset="100%" stop-color="#007AFF" stop-opacity="0.6"/>
-            </linearGradient>
-          </defs>
-          <path d="M12 2 L8 6 L10 6 L10 10 L14 10 L14 6 L16 6 Z" fill="url(#arrowGradient)" stroke="#fff" stroke-width="1"/>
-        </svg>
-      </div>
+        width:8px;height:8px;border-radius:999px;
+        background:#fff;
+        position:absolute;left:20px;top:20px;
+      '></div>
     </div>
     <style>
       @keyframes pulse {
@@ -574,7 +562,7 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
   const [centerKey, setCenterKey] = useState(0);    // bump to recenter once
   const [compassOffset, setCompassOffset] = useState(0); // calibration offset
   const [lastHeadingUpdate, setLastHeadingUpdate] = useState(0);
-  const [mapStyle, setMapStyle] = useState('satellite'); // 'apple', 'standard', 'satellite'
+  const [mapStyle, setMapStyle] = useState('hybrid'); // 'hybrid', 'satellite', 'apple', 'standard'
 
   // Confetti canvas over the map (so map-collect pops confetti)
   const mapConfettiRef = useRef(null);
@@ -822,6 +810,16 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
 
   // Map style configurations
   const mapStyles = {
+    hybrid: {
+      url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
+      subdomains: "",
+      overlay: {
+        url: "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}",
+        attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
+        subdomains: ""
+      }
+    },
     satellite: {
       url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
       attribution: '&copy; <a href="https://www.esri.com/">Esri</a>',
@@ -839,7 +837,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
     }
   };
 
-  const currentStyle = mapStyles[mapStyle] || mapStyles.satellite;
+  const currentStyle = mapStyles[mapStyle] || mapStyles.hybrid;
 
   return (
     <MapContainer whenCreated={(m)=>mapRef.current=m} center={[center.lat, center.lng]} zoom={16} style={{ height:'100%', width:'100%' }} scrollWheelZoom>
@@ -850,6 +848,16 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
         subdomains={currentStyle.subdomains}
         maxZoom={20}
       />
+      {/* Overlay for hybrid map (roads and labels on satellite) */}
+      {currentStyle.overlay && (
+        <TileLayer 
+          attribution={currentStyle.overlay.attribution}
+          url={currentStyle.overlay.url}
+          subdomains={currentStyle.overlay.subdomains}
+          maxZoom={20}
+          opacity={0.7}
+        />
+      )}
 
       {/* Fixed artefacts with search radius circles and random collection points */}
       {fixedItems.map(f => {
@@ -951,7 +959,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
         </button>
         <button 
           onClick={() => {
-            const styles = ['satellite', 'apple', 'standard'];
+            const styles = ['hybrid', 'satellite', 'apple', 'standard'];
             const currentIndex = styles.indexOf(mapStyle);
             const nextIndex = (currentIndex + 1) % styles.length;
             const newStyle = styles[nextIndex];
@@ -960,7 +968,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
           }}
           style={{ 
             width:48, height:48, borderRadius:'50%', 
-            background: mapStyle === 'satellite' ? '#8B4513' : mapStyle === 'apple' ? '#007AFF' : '#6B7280', 
+            background: mapStyle === 'hybrid' ? '#2E8B57' : mapStyle === 'satellite' ? '#8B4513' : mapStyle === 'apple' ? '#007AFF' : '#6B7280', 
             border:'1px solid #ccc', 
             display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer',
             boxShadow:'0 2px 8px rgba(0,0,0,0.15)',
@@ -970,7 +978,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
           }}
           title={`Map style: ${mapStyle} (tap to change)`}
         >
-          {mapStyle === 'satellite' ? '🛰️' : mapStyle === 'apple' ? '🍎' : '🗺️'}
+          {mapStyle === 'hybrid' ? '🛰️🏷️' : mapStyle === 'satellite' ? '🛰️' : mapStyle === 'apple' ? '🍎' : '🗺️'}
         </button>
       </div>
     </MapContainer>
