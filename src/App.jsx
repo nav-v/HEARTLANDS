@@ -141,8 +141,9 @@ function makeLandmarkIcon(url, name){
   return L.divIcon({ html, className:"", iconSize:[60,60], iconAnchor:[30,30] });
 }
 
-// User and sim pins - Pokémon GO style (simple dot, map rotates instead)
+// User and sim pins - with compass direction arrow
 function userIconWithHeading(deg){
+  const rot = (typeof deg === 'number' && !Number.isNaN(deg)) ? deg : 0;
   const html = `
     <div style='position:relative;'>
       <!-- iOS-style blue circle with pulsing effect -->
@@ -153,12 +154,23 @@ function userIconWithHeading(deg){
         position:absolute;left:14px;top:14px;
         animation:pulse 2s infinite;
       '></div>
-      <!-- Inner white dot -->
+      <!-- Directional arrow -->
       <div style='
-        width:8px;height:8px;border-radius:999px;
-        background:#fff;
-        position:absolute;left:20px;top:20px;
-      '></div>
+        position:absolute;left:24px;top:24px;
+        transform:rotate(${rot}deg);
+        transition:transform 0.2s ease-out;
+        transform-origin:center center;
+      '>
+        <svg width="24" height="24" viewBox="0 0 24 24" style="position:absolute;left:-12px;top:-12px;">
+          <defs>
+            <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#007AFF" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#007AFF" stop-opacity="0.6"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 2 L8 6 L10 6 L10 10 L14 10 L14 6 L16 6 Z" fill="url(#arrowGradient)" stroke="#fff" stroke-width="1"/>
+        </svg>
+      </div>
     </div>
     <style>
       @keyframes pulse {
@@ -806,63 +818,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
   const mapRef = useRef(null);
   const [labelFor, setLabelFor] = useState(null); // which fixed id has a label open
 
-  // Pokémon GO-style map rotation effect
-  useEffect(() => {
-    if (mapRef.current && compassOn && typeof heading === 'number') {
-      console.log('Compass enabled, heading:', heading);
-      
-      // Try multiple approaches to rotate the map
-      const mapContainer = mapRef.current.getContainer();
-      if (mapContainer) {
-        // Method 1: Rotate the entire map container
-        mapContainer.style.transition = 'transform 0.3s ease-out';
-        mapContainer.style.transform = `rotate(${-heading}deg)`;
-        mapContainer.style.transformOrigin = 'center center';
-        
-        // Method 2: Also try rotating the map pane
-        const mapPane = mapContainer.querySelector('.leaflet-map-pane');
-        if (mapPane) {
-          mapPane.style.transition = 'transform 0.3s ease-out';
-          mapPane.style.transform = `rotate(${-heading}deg)`;
-          mapPane.style.transformOrigin = 'center center';
-        }
-        
-        // Method 3: Rotate the tile pane specifically
-        const tilePane = mapContainer.querySelector('.leaflet-tile-pane');
-        if (tilePane) {
-          tilePane.style.transition = 'transform 0.3s ease-out';
-          tilePane.style.transform = `rotate(${-heading}deg)`;
-          tilePane.style.transformOrigin = 'center center';
-        }
-        
-        console.log('Applied rotation transforms');
-      }
-    } else if (mapRef.current && !compassOn) {
-      console.log('Compass disabled, resetting rotation');
-      
-      // Reset all rotation transforms
-      const mapContainer = mapRef.current.getContainer();
-      if (mapContainer) {
-        mapContainer.style.transition = 'transform 0.3s ease-out';
-        mapContainer.style.transform = 'rotate(0deg)';
-        mapContainer.style.transformOrigin = 'center center';
-        
-        const mapPane = mapContainer.querySelector('.leaflet-map-pane');
-        if (mapPane) {
-          mapPane.style.transition = 'transform 0.3s ease-out';
-          mapPane.style.transform = 'rotate(0deg)';
-          mapPane.style.transformOrigin = 'center center';
-        }
-        
-        const tilePane = mapContainer.querySelector('.leaflet-tile-pane');
-        if (tilePane) {
-          tilePane.style.transition = 'transform 0.3s ease-out';
-          tilePane.style.transform = 'rotate(0deg)';
-          tilePane.style.transformOrigin = 'center center';
-        }
-      }
-    }
-  }, [heading, compassOn]);
+
 
   // Map style configurations
   const mapStyles = {
@@ -998,7 +954,9 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
             const styles = ['satellite', 'apple', 'standard'];
             const currentIndex = styles.indexOf(mapStyle);
             const nextIndex = (currentIndex + 1) % styles.length;
-            setMapStyle(styles[nextIndex]);
+            const newStyle = styles[nextIndex];
+            console.log('Changing map style from', mapStyle, 'to', newStyle);
+            setMapStyle(newStyle);
           }}
           style={{ 
             width:48, height:48, borderRadius:'50%', 
