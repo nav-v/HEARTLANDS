@@ -3,6 +3,14 @@ import { MapContainer, TileLayer, Marker, Circle, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
+// Fix for default markers in Leaflet
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+});
+
 /**
  * HEARTLANDS — v0.8
  * ----------------------------------------------------------------------
@@ -266,6 +274,13 @@ export default function App(){
   const [view, setView] = useState({ page:'home', stackId:null });
   const [progress, setProgress] = useState(loadProgress);
   const hidden = useHideOnScroll();
+
+  // Debug logging
+  useEffect(() => {
+    console.log('HEARTLANDS App loaded successfully');
+    console.log('Current view:', view);
+    console.log('Progress:', progress);
+  }, [view, progress]);
 
   function onCollect(stackId, artId, points){ const key=`${stackId}:${artId}`; if(progress[key]) return; const next={...progress, [key]:{ when:Date.now(), points }}; setProgress(next); saveProgress(next); }
   function goFinish(stackId){ setView({ page:'finish', stackId }); }
