@@ -171,12 +171,6 @@ function userIconWithHeading(deg){
         position:absolute;left:14px;top:14px;
         animation:pulse 2s infinite;
       '></div>
-      <!-- Inner white dot -->
-      <div style='
-        width:8px;height:8px;border-radius:999px;
-        background:#fff;
-        position:absolute;left:20px;top:20px;
-      '></div>
     </div>
     <style>
       @keyframes pulse {
