@@ -372,8 +372,6 @@ Sam Goi's own story is tied to Jurong. Arriving in Singapore as a child migrant,
         { id:"stoneboat", name:"Stoneboat", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.338935,lng:103.7288695}, img:"img/stoneboat.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
           richHistory: `The Stoneboat is a famous feature of traditional Chinese architecture, designed so visitors can admire the surrounding scenery while feeling as if they were aboard a vessel floating on water. The version here in Jurong's Chinese Garden follows the Beijing style, with some adaptations in its materials and design.
 
-Stone boats are not just ornamental. Their boat-like form, blending seamlessly with the water, reflects Taoist ideals of harmony with nature. At the same time, the paradox of a vessel that cannot sail plays with the theme of illusion and reality, so central to Chinese art and literature. These pavilions also served as scholarly retreats, places for poetry and quiet contemplation, and their solidity came to symbolise permanence — an eternal counterpoint to wooden boats that decay or sink.
-
 [img:stoneboat.jpg]
 
 In Singapore, the Stoneboat also served another purpose. In the late 1970s, the Chinese Garden became a popular destination for wedding photography. It was estimated that around 200 couples each month came here in their wedding finery to pose amid the bridges, pavilions, and lakeside views. To serve this demand, in June 1982 the Registry of Marriages opened a branch in the garden's Stone Boat itself. The location offered couples the convenience of solemnising their marriages and taking photographs in the same picturesque setting.
