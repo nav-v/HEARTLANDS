@@ -215,8 +215,29 @@ const DATA = {
       desc: "Industrialisation, leisure, and the West's weekend commons.",
       bbox: [103.7240, 1.3310, 103.7370, 1.3445],
       artefacts: [
-        { id:"black-ship", name:"Black Ship", kind:"fixed", points:10, radiusM:30, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.34147,lng:103.72379}, img:"img/ship.jpg", images: ["img/perry.jpg"], blurb:"Gunboat Diplomacy", 
-          richHistory: `In 1852–1853, Commodore Matthew Perry's American East India Squadron undertook its now-famous expedition that forced Japan to open to world trade. Less well-known is the fact that Perry's squadron stopped in Singapore before Japan, where its officers surveyed the Jurong River.
+
+        // New items from database.csv
+        { id:"fishing-rod", name:"Fishing Rod", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3401631,lng:103.7247079}, img:"img/rod.jpg", blurb:"Prawn Ponds & More", history:"Prawn Ponds & More" },
+        { id:"latex-cup", name:"Latex Cup", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.334457,lng:103.7280321}, img:"img/compass.png", blurb:"Allotment gardens and rubber history", 
+          richHistory: `You are now standing in Jurong Lake Gardens' allotment gardens. These are green spaces where aspiring gardeners can lease small plots to grow vegetables, herbs, and fruits. Across Singapore, there are now more than 2,400 allotment plots in 28 parks and gardens. Under NParks' Allotment Gardening Scheme, households can ballot for a raised planter bed, complete with soil and storage space, at just over $62 a year. Schemes like Gardening with Edibles have encouraged more Singaporeans to grow their own food, with a goal of 3,000 allotment plots by 2030.
+
+This is not the first time the banks of the Jurong River have been used for farming. In the 19th century, plantations of gambier and pepper cleared the surrounding jungles, but the crop quickly exhausted the soil. By the early 1900s, global demand for rubber transformed Jurong again. With the booming automobile industry requiring rubber for tyres, Malaya supplied half the world's production by 1920. Much of it was traded through Singapore, which became the "rubber capital of the world."
+
+Rubber estates soon dominated Jurong's landscape, owned by figures such as Chew Boon Lay, Tan Lark Sye, and members of the Chettiar community. Chew's plantation was so extensive and prominent that the area itself, and later the Boon Lay MRT station, took his name from him. Latex cups, small vessels attached to the bark of rubber trees to collect dripping sap, became a familiar tool of plantation workers across these estates.` },
+
+ 
+        { id:"yin-and-yang-token", name:"Yin and Yang Token", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3396371,lng:103.7283051}, img:"img/yinyang.png", blurb:"Balance is one of the guiding principles", 
+          richHistory: `Balance is one of the guiding principles of the Chinese Garden, and it greets you from the very entrance. Guarding the gates are two mighty marble lions, symbols of authority and felicity. They always appear in pairs, manifesting yin and yang. The male lion rests his paw on an embroidered ball, representing the external and material world. The female steadies a cub beneath her paw, symbolising the cycle of life and the living spirit within. Together, they protect both the structure and the soul. In some traditions the male's mouth is open while the female's is closed, forming the sacred syllable "om" - creation and completion.
+
+The theme of balance continues deeper inside. In front of you, the Twin Pagodas embody yin and yang in architectural form. The broader Cloud Draping Tower (Pi Yun Ge) represents Yang, active and expansive, its very name evoking clouds enveloping the sky. Opposite it, the slender Moon Receiving Tower (Yeh Yueh Lou) represents Yin, receptive and nurturing, welcoming the moon's gentle light. Both rise three storeys high, reflecting the auspicious use of odd numbers in Chinese architecture.
+
+More generally, during the construction of the Chinese Garden in the early 1970s, great attention was paid to harmony and proportion. Traditional Chinese architects decreed that every structure must be balanced in height and size, and that buildings should harmonise with plants, flowing streams, and winding pebble paths. The contractors overseeing construction made multiple trips to China to study classical styles and consult experts, ensuring that every element of Jurong's Chinese Garden reflected this enduring principle of balance.
+
+On a grander level, when looking at the lake as a whole, where the Chinese Garden is designed to be visually exciting, the Japanese Gardens are designed with a calmness to evoke inner peace and a meditative state.` },
+
+        // New items from database_2.csv
+        { id:"cannon", name:"Cannon", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3414779,lng:103.7237969}, img:"img/cannon.jpg", blurb:"Commodore Matthew Perry's American East India Squadron", 
+          richHistory: `Commodore Matthew Perry's American East India Squadron undertook its now-famous expedition that forced Japan to open to world trade. Less well-known is the fact that Perry's squadron stopped in Singapore before Japan, where its officers surveyed the Jurong River.
 
 [img:perry.jpg:The earliest known illustration of the Jurong River, created by Perry's expedition artists in 1853]
 
@@ -224,14 +245,287 @@ The survey of Jurong produced what is today the earliest known illustration of t
 
 https://www.youtube.com/watch?v=MaZ95O6RmAc
 
-In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves. This historical document provides a rare glimpse into Singapore's landscape before industrialization transformed the region.
+In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves. This historical document provides a rare glimpse into Singapore's landscape before industrialization transformed the region.` },
 
-The Perry expedition's visit to Singapore was part of a broader American strategy to establish trade routes and diplomatic relations across Asia. The detailed surveys and illustrations created during this time remain valuable historical records of Southeast Asia's colonial period.` },
-        { id:"sandbag", name:"Sandbag", kind:"fixed", points:10, radiusM:30, searchRadiusM:60, radiusColourM:"#6b7280", coords:{lat:1.3429,lng:103.72288}, img:"img/sandbags.jpg", images: ["img/dam1.jpg", "img/dam2.jpg"], blurb:"Nation Building, Literally.", history:"The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities. Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape" },
-        { id:"prawn", name:"Prawn", kind:"fixed", points:10, radiusM:30, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.34016,lng:103.7247}, img: "img/prawn.jpg", images: ["img/prawning.jpg"], blurb:"Ponds and More.", history:"farming. In the early 1900s, Chinese settlers introduced aquaculture practices, while Malay villagers combined net fishing with prawn ponds built in muddy estuaries and mangrove swamps. By the 1950s, Singapore had some 1,000 acres of prawn ponds, and half of them were in Jurong. These were the most productive in the country, yielding nearly 1,000 kilograms of prawns per acre compared to less than 45 kilograms at Pulau Ubin. The ponds you see around you today probably do not contain prawns, but they are meant to mimic tidal patterns, ripples, and currents similar to those at coastal shores where prawn ponds once stood. Clusia Cove, a three-hectare water playground in Jurong Lake Gardens, lets children experience water play while also learning about water cycles and ecological balance. Clusia Cove also demonstrates natural water cleansing. Water circulates in a closed loop through a cleansing biotope, the playground, and an eco-pond. Sand beds and semi-aquatic plants like the Common Susum (Hanguana malayanum) filter and oxygenate the water, while ultraviolet treatment ensures it remains safe. The eco-pond itself mimics a freshwater wetland, where substrate filters debris and plants provide further purification before the loop begins again. The cove is named after one such plant — the Autograph Tree (Clusia rosea)." },
-        { id:"lantern", name:"Lantern", kind:"fixed", points:10, radiusM:25, searchRadiusM:70, radiusColourM:"#22c55e", coords:{lat:1.33936,lng:103.72579}, img:"img/lantern.jpg", images: ["img/mid-a.jpg"], blurb:"Let there be light.", history:"Lanterns have long been a symbol of celebration at Jurong Lake. From the 1970s, Mid-Autumn Festivals were marked at the Chinese Garden with hundreds of lanterns illuminating the grounds. Each year carried a different theme, and from 1987 onwards the festivities regularly drew crowds of over 100,000 visitors. In 1999, the gardens hosted their largest Mid-Autumn Festival to date, importing more than 2,000 lanterns from Guangdong, China. Its centrepiece was the dramatic Dragon and Phoenix Pillar Millennium Lantern, measuring 10 metres in length. The tradition continues today under the banner of Lights by the Lake, which has since 2019 become the signature Mid-Autumn celebration in the Jurong Lake District. In 2024, the event attracted 280,000 visitors. Across the Lakeside Field, Eco Pond, Chinese Garden, and Japanese Garden, themed lantern sets light up the landscape each September to October. Highlights in recent years have included Reflections of Twilight, featuring animal lanterns mirrored on the water's surface; Birds of Wonderland, with kingfishers and other birdlife; Nezha and the Dragon King, a large-scale mythological tableau; and Chang'e and her Moon Palace, a glowing recreation of the moon goddess's celestial home. Bridges, pagodas, and lawns across the gardens are transformed during the festival. The White Rainbow Bridge becomes the Dragon and Phoenix Bridge, while projection mapping on the Chinese Garden's Main Arch creates the Blessing of the Moon show. Lanterns at the Japanese Garden include origami-inspired sets and floral displays at the Sunken Garden." },
-        { id:"tooth", name:"Crocodile Tooth", kind:"fixed", points:10, radiusM:30, searchRadiusM:55, radiusColourM:"#22c55e", coords:{lat:1.34059,lng:103.72588}, img:"img/tooth.jpg", blurb:"A stationary voyage; a scripted journey.", history:"Pavilion once used by ROM; journeys without moving." },
-        { id:"lake-lookout", name:"Lake Lookout", kind:"landmark", coords:{lat:1.3429,lng:103.72288}, img:"img/lookout.jpg", images: ["img/dam1.jpg", "img/dam2.jpg"], blurb:"Nation Building, Literally.", history:"The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities. Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape", nearbyItems: ["sandbag"] },
+        { id:"lake-lookout", name:"Lake Lookout", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3430237,lng:103.7227063}, img:"img/lookout.jpg", blurb:"The lake in front of you today did not exist 50 years ago", 
+          richHistory: `The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities.
+
+[img: river.jpg]
+
+Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape`, nearbyItems: ["sandbag"] },
+
+        { id:"sandbag", name:"Sandbag", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3430237,lng:103.7227063}, img:"img/sandbag.jpg", blurb:"The lake in front of you today did not exist 50 years ago", 
+          richHistory: `The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities.
+
+Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape` },
+
+ 
+        { id:"chainsaw", name:"Chainsaw", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3381212,lng:103.7320312}, img:"img/chainsaw.png", blurb:"You're now at Cascading Creek, a facsimile of a Southeast Asian river", 
+          richHistory: `You're now at Cascading Creek, a facsimile of a Southeast Asian river. It hints at what Jurong once was: a tangle of jungle and swamp stitched by the old Jurong River. An amusing account of a police raid on a Jurong counterfeiting den in 1904 captures this:
+
+"Last night at 10.45 Insp. Branagan and a party of detectives raided a house … in the jungle. It would have been a difficult matter even in daylight to get to the house, but at night it was extremely dangerous as the path led through dense jungle and swamp … when the party arrived at the house they were rather done up and some presented a wretched appearance, having been unfortunate enough to fall into swamp holes."
+
+[img:cascadingcreek.jpg]
+
+Jurong's river story is one of twin clearings. Up to the 1820s, Orang Laut and Malay villages lined the river mouths while the interior stayed a green. The first big clearing came in the 19th century: gambier and pepper estates chewed through forest, exhausting soils and shifting on. By the early 1900s, rubber took over; with tyres fuelling the automobile age, Malaya supplied about half the world's rubber by 1920, and Singapore styled itself the "rubber capital of the world." Forest fell to rows of plantation trees; streams were tapped, straightened, and tamed.
+
+[img:industrialisation.jpg]
+
+The second upheaval was industrialisation in the 1960s–70s. As Finance Minister Hon Sui Sen noted at the Chinese Garden's opening, Jurong once "possessed those elements" of lakes, streams, woods, hills, and plains – yet development demanded earth and access. Some corridors, like the upper Jurong River, were set aside; beyond them, many hills were levelled and lowlands infilled with millions of tons of earth. The lake you see today is a by-product of this remaking – Economic Development Board officers converted Sungei Jurong into a managed lake to supply industry and create new leisure on its shores.` },
+
+
+        { id:"movie-ticket", name:"Movie Ticket", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3311575,lng:103.7267383}, img:"img/ticket.png", blurb:"Where you are standing once housed the Jurong Drive-In Cinema", 
+          richHistory: `Where you are standing once housed the Jurong Drive-In Cinema, run by the Cathay Organisation. Opened on 14 July 1971, it was Singapore's first and only drive-in theatre.
+
+The drive-in could accommodate 900 cars and 300 walk-in visitors in a front gallery, all watching an elevated screen 14.3 by 30.4 metres wide. Tickets cost $2 for adults and $1 for children. Sound was played over nearly 900 standing speakers, with some cars having individual speakers clipped to their windows.
+
+For courting couples, the cinema quickly became a popular destination due to the long drive to the west. Sales executive Felix Goh recalled going on a double date, where the prized back seats were in demand. "We tossed a coin over which couple should occupy the back seat. My friend won," he quipped.
+
+The venue also became notorious for antisocial behaviour, from car and motorcycle racing before shows to sleepless nights for nearby residents. In 1982, a police crackdown impounded 84 motorcycles and issued 20 speeding tickets. Even crime played out here, though not always successfully: in 1977, eight masked youths armed with parangs broke into the cinema office, escaping with only a torchlight worth $5.25.
+
+Practical problems plagued the venue. Without air-conditioning, cars became stifling in Singapore's humid nights, while rain left windscreens fogged or splashed. By the 1980s, attendance had dwindled to 200 viewers a night. The arrival of cheap pirated videotapes sealed its fate, and on 30 September 1985, the Jurong Drive-In closed with just 50 cars present at its final screenings.
+
+Today, both the cinema and the Cathay Organisation that ran it are gone` },
+
+        { id:"bonsai-garden", name:"Bonsai Garden", kind:"landmark", points:0, radiusM:20, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3382391,lng:103.7301145}, img:"img/bonsai.png", blurb:"Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden", 
+          richHistory: `Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden is the largest Suzhou-style bonsai garden outside of China. It houses a curated collection of beautifully manicured miniature trees, shaped with artistry and patience.
+
+As you walk through this section, you may notice a shift in atmosphere. The rest of the Chinese Garden was built in the grand, symmetrical Imperial style. In Imperial gardens, glazed tiles, elaborate carvings, and bright colours such as red and yellow dominate, as these were traditionally associated with royalty. By contrast, the Suzhou section is more subdued. Here, dark grey unglazed clay tiles, plainer roofs, and meandering paths create a quieter, humbler aesthetic that complements the bonsai on display.
+
+In its original plans, the Bonsai Garden was meant to showcase over 2,000 bonsai from around the world, arranged in groups according to style and the rocks and plants used. Another 400 bonsai were to be created locally, using raw material from across ASEAN. Although bonsai is a Japanese word, the art itself originated in China, where it is known as penjing or penzai. Penjing often presents miniature landscapes combining rocks, trees, and figurines in a wilder, natural style, while bonsai tends toward a more refined, stylised depiction of single trees. To learn more about bonsai and penjing, visit the Visitors Centre at the western end of this section.
+
+img: sip.jpg
+
+Beyond this garden, Jurong has another connection to Suzhou. In the early 1990s, Singapore was deepening its engagement with China as it began to see investment in China as a natural extension of its economic strategy. In fact, plans for this Bonsai Garden were first unveiled in Suzhou during a two-week trip to China by then-Deputy Prime Minister Lee Hsien Loong. Soon after, then-Senior Minister Lee Kuan Yew proposed a government-to-government venture to build a modern industrial estate in Suzhou, blending Singapore's Jurong Industrial Estate expertise with China's development needs. The China–Singapore Suzhou Industrial Park (CS-SIP) was formally launched on 26 February 1994. Though ultimately successful, the project was highly controversial, with the elder Lee himself criticising bureaucratic hurdles, weak local support, and competition from cheaper nearby sites.`, nearbyItems: ["bonsai"] },
+
+        { id:"bonsai", name:"Bonsai", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3382391,lng:103.7301145}, img:"img/bonsai.png", blurb:"Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden", 
+          richHistory: `Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden is the largest Suzhou-style bonsai garden outside of China. It houses a curated collection of beautifully manicured miniature trees, shaped with artistry and patience.
+
+As you walk through this section, you may notice a shift in atmosphere. The rest of the Chinese Garden was built in the grand, symmetrical Imperial style. In Imperial gardens, glazed tiles, elaborate carvings, and bright colours such as red and yellow dominate, as these were traditionally associated with royalty. By contrast, the Suzhou section is more subdued. Here, dark grey unglazed clay tiles, plainer roofs, and meandering paths create a quieter, humbler aesthetic that complements the bonsai on display.
+
+In its original plans, the Bonsai Garden was meant to showcase over 2,000 bonsai from around the world, arranged in groups according to style and the rocks and plants used. Another 400 bonsai were to be created locally, using raw material from across ASEAN. Although bonsai is a Japanese word, the art itself originated in China, where it is known as penjing or penzai. Penjing often presents miniature landscapes combining rocks, trees, and figurines in a wilder, natural style, while bonsai tends toward a more refined, stylised depiction of single trees. To learn more about bonsai and penjing, visit the Visitors Centre at the western end of this section.
+
+img: sip.jpg
+
+Beyond this garden, Jurong has another connection to Suzhou. In the early 1990s, Singapore was deepening its engagement with China as it began to see investment in China as a natural extension of its economic strategy. In fact, plans for this Bonsai Garden were first unveiled in Suzhou during a two-week trip to China by then-Deputy Prime Minister Lee Hsien Loong. Soon after, then-Senior Minister Lee Kuan Yew proposed a government-to-government venture to build a modern industrial estate in Suzhou, blending Singapore's Jurong Industrial Estate expertise with China's development needs. The China–Singapore Suzhou Industrial Park (CS-SIP) was formally launched on 26 February 1994. Though ultimately successful, the project was highly controversial, with the elder Lee himself criticising bureaucratic hurdles, weak local support, and competition from cheaper nearby sites.` },
+
+        { id:"rasau-walk", name:"Rasau Walk", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3318083,lng:103.7281636}, img:"img/rasau.png", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
+          richHistory: `You're now at Rasau Walk, a 300m boardwalk that showcases a restored freshwater swamp. Before heavy industry reached Jurong, mangroves like these were part of the range of the estuarine crocodile (Crocodylus porosus). Even the old place-names hint at this. Pulau Buaya (Malay for "Crocodile Island") appears on maps dating back all the way to the early 1800s. Reclamation has folded the islet into today's Jurong Island.
+
+[img:crocs.jpg]
+
+Through the 1970s–90s, crocodiles were still occasionally reported around Jurong Lake and the Chinese/Japanese Gardens. Warning signs were still up in the 1980s, and a 1992 news report noted at least three crocodiles seen here over several years (one was even captured by a professional "croc hunter"). Today, you won't find crocodiles in Jurong Lake, with their stronghold in Singapore being up north around Sungei Buloh and the Straits of Johor. If you see a big, scaly reptile here, it's almost certainly the Malayan/Asian water monitor - a cousin of the Komodo dragon and a common sight in Jurong Lake Gardens.
+
+Jurong also had another connection to crocodiles. In the 70s and 80s, the crocodile trade was flourishing in Singapore, with about 90 farms raising crocodiles, exporting over 92,000 kg of crocodile skin in 1980. Crocodile leather handbags and clothing hence became popular items sold to tourists in this period.
+
+[img:crocparadise.jpg]
+
+To capitalise on this interest, the Jurong Town Corporation (JTC) announced plans to open Jurong Crocodile Paradise in 1986. The $10 million park project, which was situated on a plot next to Jurong Bird Park, aimed to provide both entertainment and education, featuring an amusement center, tanning workshops, and a 200-seat auditorium for visitors. The park ultimately closed in 2006 due to financial reasons, being unable to compete with the Singapore Zoo or Bird Park.
+
+Though there is only one crocodile farm left in Singapore, the city-state continues to play a large role in the crocodile skin trade. In 2018, for instance, Singapore was the largest importer of reptile skins from Africa, accounting for 60% of all reptile skins exported. This dominance is largely due to the presence of major tanneries in the country - chief among them, Heng Long Leather. Heng Long has long been a global player, supplying tanned crocodile leather to fashion houses like Hermès and Gucci, even before LVMH (Louis Vuitton Moët Hennessy) acquired a 51% stake in the company in 2011. As Heng Long's executive director Koh Choon Heong once remarked to The Straits Times:
+
+"Few Singaporeans realise that if they own a crocodile-skin bag, it was most likely dyed in their very own backyard."`, nearbyItems: ["crocodile-tooth"] },
+
+        { id:"crocodile-tooth", name:"Crocodile Tooth", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3318083,lng:103.7281636}, img:"img/tooth.jpg", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
+          richHistory: `You're now at Rasau Walk, a 300m boardwalk that showcases a restored freshwater swamp. Before heavy industry reached Jurong, mangroves like these were part of the range of the estuarine crocodile (Crocodylus porosus). Even the old place-names hint at this. Pulau Buaya (Malay for "Crocodile Island") appears on maps dating back all the way to the early 1800s. Reclamation has folded the islet into today's Jurong Island.
+
+[img:crocs.jpg]
+
+Through the 1970s–90s, crocodiles were still occasionally reported around Jurong Lake and the Chinese/Japanese Gardens. Warning signs were still up in the 1980s, and a 1992 news report noted at least three crocodiles seen here over several years (one was even captured by a professional "croc hunter"). Today, you won't find crocodiles in Jurong Lake, with their stronghold in Singapore being up north around Sungei Buloh and the Straits of Johor. If you see a big, scaly reptile here, it's almost certainly the Malayan/Asian water monitor - a cousin of the Komodo dragon and a common sight in Jurong Lake Gardens.
+
+Jurong also had another connection to crocodiles. In the 70s and 80s, the crocodile trade was flourishing in Singapore, with about 90 farms raising crocodiles, exporting over 92,000 kg of crocodile skin in 1980. Crocodile leather handbags and clothing hence became popular items sold to tourists in this period.
+
+[img:crocparadise.jpg]
+
+To capitalise on this interest, the Jurong Town Corporation (JTC) announced plans to open Jurong Crocodile Paradise in 1986. The $10 million park project, which was situated on a plot next to Jurong Bird Park, aimed to provide both entertainment and education, featuring an amusement center, tanning workshops, and a 200-seat auditorium for visitors. The park ultimately closed in 2006 due to financial reasons, being unable to compete with the Singapore Zoo or Bird Park.
+
+Though there is only one crocodile farm left in Singapore, the city-state continues to play a large role in the crocodile skin trade. In 2018, for instance, Singapore was the largest importer of reptile skins from Africa, accounting for 60% of all reptile skins exported. This dominance is largely due to the presence of major tanneries in the country - chief among them, Heng Long Leather. Heng Long has long been a global player, supplying tanned crocodile leather to fashion houses like Hermès and Gucci, even before LVMH (Louis Vuitton Moët Hennessy) acquired a 51% stake in the company in 2011. As Heng Long's executive director Koh Choon Heong once remarked to The Straits Times:
+
+"Few Singaporeans realise that if they own a crocodile-skin bag, it was most likely dyed in their very own backyard."` },
+
+        { id:"twin-pagoda", name:"Twin Pagoda", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3396371,lng:103.7283051}, img:"img/twinp.png", blurb:"Balance is one of the guiding principles of the Chinese Garden", 
+          richHistory: `Balance is one of the guiding principles of the Chinese Garden, and it greets you from the very entrance. Guarding the gates are two mighty marble lions, symbols of authority and felicity. They always appear in pairs, manifesting yin and yang. The male lion rests his paw on an embroidered ball, representing the external and material world. The female steadies a cub beneath her paw, symbolising the cycle of life and the living spirit within. Together, they protect both the structure and the soul. In some traditions the male's mouth is open while the female's is closed, forming the sacred syllable "om" - creation and completion.
+
+The Chinese phrase 乾坤清气 (qián kūn qīng qì) gracing the Grand Arch symbolises "the pure energy of Heaven and Earth", represents the balance of masculine and feminine energies (乾坤).
+
+The theme of balance continues deeper inside. In front of you, the Twin Pagodas embody yin and yang in architectural form. The broader Cloud Draping Tower (Pi Yun Ge) represents Yang, active and expansive, its very name evoking clouds enveloping the sky. Opposite it, the slender Moon Receiving Tower (Yeh Yueh Lou) represents Yin, receptive and nurturing, welcoming the moon's gentle light. Both rise three storeys high, reflecting the auspicious use of odd numbers in Chinese architecture.
+
+More generally, during the construction of the Chinese Garden in the early 1970s, great attention was paid to harmony and proportion. Traditional Chinese architects decreed that every structure must be balanced in height and size, and that buildings should harmonise with plants, flowing streams, and winding pebble paths. The contractors overseeing construction made multiple trips to China to study classical styles and consult experts, ensuring that every element of Jurong's Chinese Garden reflected this enduring principle of balance.
+
+On a grander level, when looking at the lake as a whole, where the Chinese Garden is designed to be visually exciting, the Japanese Gardens are designed with a calmness to evoke inner peace and a meditative state.`, nearbyItems: ["yin-and-yang-token"] },
+
+        { id:"crown", name:"Crown", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3382861,lng:103.7297358}, img:"img/crown.png", blurb:"Along this path you will find eight sculptures of legendary Chinese heroes", 
+          richHistory: `Along this path you will find eight sculptures of legendary Chinese heroes, each chosen to embody virtues such as loyalty, righteousness, and patriotism. Among them are Lin Zexu, the Qing official who fought the opium trade in 1840; Zheng He, the Ming navigator whose voyages brought him to Southeast Asia and Africa; Wen Tianxiang, a Song general who resisted the invading Mongols; Hua Mulan, the woman warrior who disguised herself as a man; and Guan Yu, celebrated in the Romance of the Three Kingdoms for loyalty and courage.
+
+[img:statues.jpg]
+
+These sculptures were not state commissions but gifts. In 1991, businessman Goi Seng Hui, better known as Sam Goi, the "Popiah King," donated S$1 million to create and install the statues at Marina City Park, then envisioned as Singapore's premier "City in a Garden" park. Goi expressed hope that they would not be "just another backdrop for wedding photos," but a permanent showcase of values such as filial piety, loyalty, righteousness, benevolence, and love for all races.
+
+Their unveiling sparked public debate. Prime Minister Goh Chok Tong, who officiated the ceremony, said he hoped to see a multicultural representation of heroes at the park, including figures from Malay and Indian traditions. Community leaders suggested that their own legendary heroes, such as the Malay warrior Hang Tuah and the Indian sage Thiruvalluvar, could one day be represented alongside the Chinese figures. Others, however, argued that statues were a low priority compared to urgent needs like improving children's education. MUIS President Zainul Abidin Rasheed added that Malay heroes should be honoured in symbolic rather than physical form.
+
+When Marina City Park closed in 2007 to make way for Gardens by the Bay, the statues were relocated here.
+
+[img:sam_g.jpg]
+
+Sam Goi's own story is tied to Jurong. Arriving in Singapore as a child migrant, he began with little, eventually setting up a mechanical engineering workshop serving businesses in Jurong. In 1977, he diversified by acquiring a small popiah skin factory, Tee Yih Jia, which he transformed into a global frozen foods leader. Its flagship brand Spring Home is now sold worldwide.` },
+
+        { id:"stoneboat", name:"Stoneboat", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.338935,lng:103.7288695}, img:"img/stoneboat.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
+          richHistory: `The Stoneboat is a famous feature of traditional Chinese architecture, designed so visitors can admire the surrounding scenery while feeling as if they were aboard a vessel floating on water. The version here in Jurong's Chinese Garden follows the Beijing style, with some adaptations in its materials and design.
+
+Stone boats are not just ornamental. Their boat-like form, blending seamlessly with the water, reflects Taoist ideals of harmony with nature. At the same time, the paradox of a vessel that cannot sail plays with the theme of illusion and reality, so central to Chinese art and literature. These pavilions also served as scholarly retreats, places for poetry and quiet contemplation, and their solidity came to symbolise permanence — an eternal counterpoint to wooden boats that decay or sink.
+
+[img:stoneboat.jpg]
+
+In Singapore, the Stoneboat also served another purpose. In the late 1970s, the Chinese Garden became a popular destination for wedding photography. It was estimated that around 200 couples each month came here in their wedding finery to pose amid the bridges, pavilions, and lakeside views. To serve this demand, in June 1982 the Registry of Marriages opened a branch in the garden's Stone Boat itself. The location offered couples the convenience of solemnising their marriages and taking photographs in the same picturesque setting.
+
+At its peak, at least 100 couples used the Stone Boat registry each month, especially on weekends. But the numbers dwindled after 1984, as couples found it more convenient to marry at the centrally located Fort Canning registry, and the branch soon close.
+
+Across the pond, you'll see the Tea Pavilion, featuring three pavilions connected by a winding corridor, seemingly floating above the Lotus Pond – a design inspired by the Summer Palace. A poetic stone inscription greets visitors, inviting contemplation of the serene surroundings, including views of the Stoneboat.`, nearbyItems: ["wedding-ring"] },
+
+        { id:"wedding-ring", name:"Wedding Ring", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.338935,lng:103.7288695}, img:"img/ring.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
+          richHistory: `The Stoneboat is a famous feature of traditional Chinese architecture, designed so visitors can admire the surrounding scenery while feeling as if they were aboard a vessel floating on water. The version here in Jurong's Chinese Garden follows the Beijing style, with some adaptations in its materials and design.
+
+Stone boats are not just ornamental. Their boat-like form, blending seamlessly with the water, reflects Taoist ideals of harmony with nature. At the same time, the paradox of a vessel that cannot sail plays with the theme of illusion and reality, so central to Chinese art and literature. These pavilions also served as scholarly retreats, places for poetry and quiet contemplation, and their solidity came to symbolise permanence — an eternal counterpoint to wooden boats that decay or sink.
+
+[img:stoneboat.jpg]
+
+In Singapore, the Stoneboat also served another purpose. In the late 1970s, the Chinese Garden became a popular destination for wedding photography. It was estimated that around 200 couples each month came here in their wedding finery to pose amid the bridges, pavilions, and lakeside views. To serve this demand, in June 1982 the Registry of Marriages opened a branch in the garden's Stone Boat itself. The location offered couples the convenience of solemnising their marriages and taking photographs in the same picturesque setting.
+
+At its peak, at least 100 couples used the Stone Boat registry each month, especially on weekends. But the numbers dwindled after 1984, as couples found it more convenient to marry at the centrally located Fort Canning registry, and the branch soon close.
+
+Across the pond, you'll see the Tea Pavilion, featuring three pavilions connected by a winding corridor, seemingly floating above the Lotus Pond – a design inspired by the Summer Palace. A poetic stone inscription greets visitors, inviting contemplation of the serene surroundings, including views of the Stoneboat.` },
+
+        { id:"cloud-piercing-pagoda", name:"Cloud Piercing Pagoda", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3391409,lng:103.7309275}, img:"img/cloudp.png", blurb:"You are now standing in front of the Cloud Piercing Pagoda", 
+          richHistory: `You are now standing in front of the Cloud Piercing Pagoda (Ru Yun T'a), the seven-storey pagoda that rises over the Chinese Garden. Its design is a faithful replica of the Linggu Temple Pagoda in Nanjing, one of many landmarks carefully copied here in Jurong when the garden opened in 1975. Faithful replication was the guiding principle. As Mr Tan, the engineer in charge, explained at the time: "Everything is designed to be as authentic as possible. We don't want a watered-down version."The garden's design principles were based on classical northern Chinese imperial architecture, particular the Song Dynasty period (960-1279).
+
+The 13-arch White Rainbow Bridge echoes Beijing's Seventeen-Arch Bridge. The tea house recreates the meandering corridors of the Summer Palace. On the northern shore, the twin pagodas mirrores the Spring and Autumn Pagodas in Kaohsiung, Taiwan. Together they created, in one reporter's words, a "many-splendoured thing."
+
+But these structures were hard to build. This was the first project of its kind in Singapore, and local labourers had little experience with traditional Chinese architectural techniques. Translating two-dimensional plans into timber, stone, and tile required specialised skills. Workers were trained on the job, guided by Taiwanese mentors who brought their expertise to Jurong.`, nearbyItems: ["hardhat"] },
+
+        { id:"hardhat", name:"Hardhat", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3391409,lng:103.7309275}, img:"img/hardhat.png", blurb:"You are now standing in front of the Cloud Piercing Pagoda", 
+          richHistory: `You are now standing in front of the Cloud Piercing Pagoda (Ru Yun T'a), the seven-storey pagoda that rises over the Chinese Garden. Its design is a faithful replica of the Linggu Temple Pagoda in Nanjing, one of many landmarks carefully copied here in Jurong when the garden opened in 1975. Faithful replication was the guiding principle. As Mr Tan, the engineer in charge, explained at the time: "Everything is designed to be as authentic as possible. We don't want a watered-down version."The garden's design principles were based on classical northern Chinese imperial architecture, particular the Song Dynasty period (960-1279).
+
+The 13-arch White Rainbow Bridge echoes Beijing's Seventeen-Arch Bridge. The tea house recreates the meandering corridors of the Summer Palace. On the northern shore, the twin pagodas mirrores the Spring and Autumn Pagodas in Kaohsiung, Taiwan. Together they created, in one reporter's words, a "many-splendoured thing."
+
+But these structures were hard to build. This was the first project of its kind in Singapore, and local labourers had little experience with traditional Chinese architectural techniques. Translating two-dimensional plans into timber, stone, and tile required specialised skills. Workers were trained on the job, guided by Taiwanese mentors who brought their expertise to Jurong.` },
+
+        { id:"giftbox", name:"Giftbox", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.335076,lng:103.7295396}, img:"img/giftbox.png", blurb:"The Japanese Garden was the first island to be built out on Jurong Lake", 
+          richHistory: `The Japanese Garden was the first island to be built out on Jurong Lake, opening in 1973 as the largest Japanese garden outside of Japan at the time. It is also known as Seiwaen, a name derived from Sei (Singapore), Wa (Japan), and En (Garden) — literally "Singapore's Japanese Garden."
+
+The project cost about $3 million, with $1.8 million provided by a Singapore Government grant and the remainder donated, largely by the Japanese Government. Through its Overseas Technical Cooperation Agency, Japan contributed the expertise of Professor Kinsaku Nakane, the country's leading garden and landscape artist at the time. Designing the garden with his assistants, he took inspiration from the aesthetics of gardens during the Muromachi period (1392-1568) and the Momoyama period (1568-1615).
+
+The Japanese Chamber of Commerce also contributed 500 tons of rocks, valued at over $180,000, along with 10 stone lanterns. Some of these lanterns can still be seen in front of you today.
+
+This tradition of gifting continues. In 2021, US chipmaker Micron Technology donated S$1 million to support the development of the Water Lily Pond at the Japanese Garden. Their contribution funded a smart water management system that uses natural vegetation and microbes to filter the water, with sensors monitoring quality in real time.` },
+
+        { id:"grasslands", name:"Grasslands", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3326227,lng:103.7274602}, img:"img/grassland.png", blurb:"You're now in the Grasslands of Lakeside Gardens", 
+          richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
+
+Three bird hides ring the area, perfect for observing the over 205 bird species that have spotting at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
+
+[img:brahminy.jpg]
+
+Keep an eye out for grassland regulars: paddyfield pipit (a brown ground-runner that tail-bobs between clumps) and the long-tailed shrike (the black-masked perch-hunter. Listen for the zitting cisticola (making its "zit-zit" display flights overhead). Over the mounds, raptors patrol – black-winged kite (hovering white-grey in the wind, and the brahminy kite (chestnut body, white head and breast) which has even been seen perching on the Lone Tree. Speaking of the Lone Tree, it is a sculpture, forged from recycled iron reinforcing bars salvaged from the old Jurong Lake Park, alluding to Jurong's industrial origins.
+
+[img:lonetree.jpg]
+
+This area also links to a bigger bird story. In 1967–68, Finance Minister Goh Keng Swee floated the idea of starting an aviary after visits to similar facilities in Rio and Bangkok. While a 20.4-hectare site on Jurong Hill became Jurong Bird Park in 1971, an early notion was to situate the park on the island just across the water from here. That land instead hosted a golf course from the 1970s till 2017, when it was cleared for the planned Singapore–Kuala Lumpur High-Speed Rail terminus. With the HSR cancelled, the site today remains a white plot, held for detailed planning.`, nearbyItems: ["feather"] },
+
+        { id:"feather", name:"Feather", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3326227,lng:103.7274602}, img:"img/feather.png", blurb:"You're now in the Grasslands of Lakeside Gardens", 
+          richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
+
+Three bird hides ring the area, perfect for observing the over 205 bird species that have spotting at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
+
+[img:brahminy.jpg]
+
+Keep an eye out for grassland regulars: paddyfield pipit (a brown ground-runner that tail-bobs between clumps) and the long-tailed shrike (the black-masked perch-hunter. Listen for the zitting cisticola (making its "zit-zit" display flights overhead). Over the mounds, raptors patrol – black-winged kite (hovering white-grey in the wind, and the brahminy kite (chestnut body, white head and breast) which has even been seen perching on the Lone Tree. Speaking of the Lone Tree, it is a sculpture, forged from recycled iron reinforcing bars salvaged from the old Jurong Lake Park, alluding to Jurong's industrial origins.
+
+[img:lonetree.jpg]
+
+This area also links to a bigger bird story. In 1967–68, Finance Minister Goh Keng Swee floated the idea of starting an aviary after visits to similar facilities in Rio and Bangkok. While a 20.4-hectare site on Jurong Hill became Jurong Bird Park in 1971, an early notion was to situate the park on the island just across the water from here. That land instead hosted a golf course from the 1970s till 2017, when it was cleared for the planned Singapore–Kuala Lumpur High-Speed Rail terminus. With the HSR cancelled, the site today remains a white plot, held for detailed planning.` },
+
+        { id:"megaphone", name:"Megaphone", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3353566,lng:103.7306983}, img:"img/megaphone.png", blurb:"You're now in the Sunken Garden, a gorge-like passage", 
+          richHistory: `You're now in the Sunken Garden, a gorge-like passage where walls rise to 3.5 m and drip with more than 200 epiphyte species (plants that grow on other plants or structures). A living moss wall of Paras stone keeps the air cool and damp. At its heart, a cenote-inspired water feature acts as both showpiece and rain-harvesting system – an air-well that draws daylight down to a still pool and recycles stormwater through the garden (a "cenote" is a natural sinkhole formed when limestone collapses to expose groundwater, most famously on Mexico's Yucatán Peninsula).
+
+[img:cenote.jpg]
+
+Walk out of the passage and you enter the Floral Garden, a showcase partly imagined and laid out by students from ITE College East, NAFA, and Singapore Polytechnic. The garden is used as a practical learning platform to let students design planting plots and learn about the evolution of a landscape.
+
+Both spaces were shaped by the community. NParks set out to make Jurong Lake "a people's garden", by the people, for the people, and "more than 32,000 voices" fed into its design. During the design stage, a roaming exhibition and townhall sessions surfaced priorities; during construction, tree-planting days and public displays kept the loop open. One clear preference - "water-sensitive" landscapes - now runs through the precinct: from the cenote lightwell and rain-recycling pool in the Sunken Gardens to the Water Lily Garden beyond.` },
+
+        { id:"cobwebs", name:"Cobwebs", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3363554,lng:103.7307327}, img:"img/cobwebs.png", blurb:"You're now walking the newly rejuvenated Japanese Garden", 
+          richHistory: `You're now walking the newly rejuvenated Japanese Garden. In the late 1980s–2000s, these once-showpiece islands drifted into neglect; peeling paint, thinning crowds, and a murky lake.
+
+[img:news1.jpg]
+
+A 1994 letter to The Straits Times caught the mood: the "grand" approach from Chinese Garden MRT felt flat - a small ticket kiosk, a tired bridge. Inside, debris floated on the lake, paint flaked from bridges, and rest spots were scarce. Another visitor called the Japanese Garden "run down and neglected": carp gone from the ponds, a forlorn shelter with a lone hawker, stonework and bridges in disrepair. Two beautiful and historic gardens - starved of care.
+
+The turn began in 2008, when URA unveiled the Jurong Lake District blueprint, Singapore's "second CBD" wrapped around a 220-hectare lakeside with 70 hectares of water. Plans promised new green space, an enhanced promenade, and a waterfront park by Lakeside MRT, with the Chinese and Japanese Gardens earmarked for fresh facilities and livelier programming.
+
+[https://www.youtube.com/watch?v=LFCubeVXzYQ]
+
+A decade on, momentum became mandate. In June 2014, then-PM Lee Hsien Loong apparently visited the gardens and noted that "still looked basically the same as they did in the 1970s", asking planners to consider rework the gardens. At the National Day Rally that year a single National Garden, Jurong Lake Gardens, uniting the Chinese Garden, Japanese Garden, and Jurong Lake Park, alongside a new Science Centre on the lake's north shore was announced. In September 2024, the rejuvenated Chinese and Japanese Gardens finally reopened, officiated by Senior Minister Lee Hsien Loong.` },
+
+        { id:"bamboo", name:"Bamboo", kind:"fixed", points:10, radiusM:20, searchRadiusM:25, radiusColourM:"#22c55e", coords:{lat:1.33767,lng:103.72968}, img:"img/bamboo.png", blurb:"You're now at the Bamboo Grove and waterfall", 
+          richHistory: `You're now at the Bamboo Grove and waterfall, where wind off the falling water is intended to turn the bamboo tunnel into a "cool corridor."
+
+[img:oldwaterfall.jpg]
+
+But did you know that Jurong might have once had an actual waterfall? On two historic maps (1873 and 1911), the label "Ayer Toorjoon" appears at a meander of Sungei Jurong - likely a misspelling of Air Terjun (Malay for "waterfall")- opposite the river, southeast of today's Japanese Garden and near the current Science Centre site. The name vanishes from maps after 1911, and not much else is known about the mystery waterfall.
+
+[img:waterfall.jpg]
+
+Jurong has another connection to waterfalls. When Jurong Bird Park opened in 1971, its aviary carried a 30-metre man-made waterfall - then among the tallest anywhere. Though the Bird Park has now shifted to Mandai, planners have said they'll consider existing features like the waterfall and Jurong Hill Tower as they rethink the hill, and will seek public feedback to shape what comes next.
+
+Singapore's obsession with artificial large waterfalls (literally) reached new heights in 2019, when Jewel Changi Airport – a nature-themed entertainment and retail complex – opened with a a 40-metre indoor waterfall, that is the world's largest.` },
+
+        { id:"film-camera", name:"Film Camera", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3280068,lng:103.728657}, img:"img/camera.png", blurb:"You're looking at a construction site that was once a theme park and film set", 
+          richHistory: `You're looking at a construction site that was once a theme park and film set. Tang Dynasty City was a film-town theme park was built to jump-start a local screen industry, with backing from Economic Development Board and the Singapore Tourism Promotion Board. The park had many attractions – a 3m tall life-size replica of the Great Wall of China, arched bridges, pagodas, and, later, replica terracotta warriors.
+
+[img:tangcity.jpg]
+
+During construction, budgets swelled from the original S$50 million to S$70 million, with talk of a S$100 million war chest and a hotel next door. The park opened in 1992, but the part studio, part heritage set never quite worked as a theme park. Few rides, a steep S$15 ticket (then far pricier than Sentosa), and exhibits that felt static. What thrilled visitors were the live shows, acrobats vaulting through courtyards, sword fights erupting on the arch bridge and
+
+[https://www.youtube.com/watch?v=B8HFN2H73EU&themeRefresh=1]
+
+As a studio, it saw little camera time. One notable feature film, the 1993 Hong Kong New Year comedy All's Well, Ends Well Too, used the sets, most productions looked elsewhere. Attendance ebbed through the mid-90s and the Asian Financial Crisis dealt the final blow.
+
+[img:abandoned.jpg]
+
+Closing in 1999, the park remained abandoned till 2008, when it was levelled. Today the plot is being remade as Taman Jurong Skyline, a new HDB blocks with views over Jurong Lake Gardens.
+
+[Hyperlink: Check out this blog post from the early internet (1994) from an American couple visiting the attraction: http://www.anniebees.com/Asia/Asia6.htm]` },
+
+        { id:"grand-arch", name:"Grand Arch", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3382537,lng:103.7281902}, img:"img/arch.png", blurb:"You're now standing before the Grand Arch of the Chinese Garden", 
+          richHistory: `You're now standing before the Grand Arch of the Chinese Garden. The four characters above you, 乾坤清气 (qián kūn qīng qì), speak of "the pure energy of Heaven and Earth": 乾坤 for the cosmic pair (yang and yin), 清气 for pure vitality.
+
+Look up at the roofline. Two open-mouthed dragons bite the main ridge to "hold" it fast against ill winds, while a procession of mythical roof beasts—set out at the corners in order of seniority—stand watch.
+
+[img:turtle.jpg]
+
+Just behind this arch once sat a beloved oddity: the Live Turtle & Tortoise Museum, started in 2001 by Connie and Danny Tan to share their pet collection. At its peak it held some 800 animals across 50-plus species such as the long-necked snake-headed turtles, the otherworldly mata-mata, even a regal golden softshell. These animals spread through ponds and tanks where visitors could buy greens to feed (and were warned to mind their fingers). In 2019, as the islands closed for renovation, the museum relocated to Yishun.
+
+[img:foodfactory.jpg]
+
+Today the space behind the Grand Arch hosts a few attractions -the Jurong Lake Gardens Gallery with stories of the lake and its making; the Plant Factory, an indoor showcase for sustainable horticulture; and Canopy, a pet- and family-friendly spot looking over the Edible Garden.`, nearbyItems: ["turtle-shell"] },
+
+        { id:"turtle-shell", name:"Turtle Shell", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3382537,lng:103.7281902}, img:"img/shell.png", blurb:"You're now standing before the Grand Arch of the Chinese Garden", 
+          richHistory: `You're now standing before the Grand Arch of the Chinese Garden. The four characters above you, 乾坤清气 (qián kūn qīng qì), speak of "the pure energy of Heaven and Earth": 乾坤 for the cosmic pair (yang and yin), 清气 for pure vitality.
+
+Look up at the roofline. Two open-mouthed dragons bite the main ridge to "hold" it fast against ill winds, while a procession of mythical roof beasts—set out at the corners in order of seniority—stand watch.
+
+[img:turtle.jpg]
+
+Just behind this arch once sat a beloved oddity: the Live Turtle & Tortoise Museum, started in 2001 by Connie and Danny Tan to share their pet collection. At its peak it held some 800 animals across 50-plus species such as the long-necked snake-headed turtles, the otherworldly mata-mata, even a regal golden softshell. These animals spread through ponds and tanks where visitors could buy greens to feed (and were warned to mind their fingers). In 2019, as the islands closed for renovation, the museum relocated to Yishun.
+
+[img:foodfactory.jpg]
+
+Today the space behind the Grand Arch hosts a few attractions -the Jurong Lake Gardens Gallery with stories of the lake and its making; the Plant Factory, an indoor showcase for sustainable horticulture; and Canopy, a pet- and family-friendly spot looking over the Edible Garden.` },
+
+        { id:"snake", name:"Snake", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.334165,lng:103.7332092}, img:"img/snake.png", blurb:"Where you are standing lies one of the original bends of the Sungei Jurong", 
+          richHistory: `Where you are standing lies one of the original bends of the Sungei Jurong, the river that was later dammed and reshaped into Jurong Lake. Before its transformation, the river wound its way across the landscape, forming a distinctive "S" shape — curving east of today's Japanese Garden and then west of the Chinese Garden.
+
+This serpentine course inspired the plans to convert the meandering river into a managed lake. At the inaugural meeting of the Jurong Town Corporation in June 1968, Finance Minister Goh Keng Swee described the vision: "A large park is being constructed on the west bank of the river. Eight man-made islands will be created in the river by dredging the necks of the promontories produced by the winding shape of the river; the river will then be converted into a lake."` },
 
       ],
     },
@@ -711,11 +1005,9 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
     const r = a.radiusM || 20; 
     
     if(d <= r){
-      // Trigger full-screen popup instead of direct collection
-      // Randomize tap count between 3-8
-      const randomTapsNeeded = Math.floor(Math.random() * 6) + 3; // 3-8 taps
-      setItemPopup({ item: a, stage: 'crate', taps: 0, tapsNeeded });
-      setCrateTaps(0);
+      // Directly collect the item and show modal
+      actuallyCollect(a);
+      setModalA(a);
     }
   }
   function cardAttemptCollect(a){ 
@@ -814,7 +1106,7 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
       <div style={{ marginTop:12 }}>
         <div style={{ display:'grid', gap:12 }}>
           {tab==='landmarks' && landmarkItems.map((a)=> (
-            <LandmarkCard key={a.id} a={a} onOpenModal={()=>setModalA(a)} />
+            <LandmarkCard key={a.id} a={a} progress={progress} stackId={stack.id} onOpenModal={()=>setModalA(a)} />
           ))}
           {tab==='collected' && collectedList.map(({a,d})=> (
             <ArtefactCard key={a.id} a={a} d={d} collected={!!progress[`${stack.id}:${a.id}`]} onCollect={()=>cardAttemptCollect(a)} onOpenModal={()=>setModalA(a)} />
@@ -1033,10 +1325,11 @@ function ItemCollectionPopup({ popup, onClose, onCollect, onTapCrate }){
                 alignItems: 'center',
                 gap: 20
               }}>
-                {/* Item image */}
+                {/* Item image - clickable */}
                 <img 
                   src={item.img || `img/${item.name.toLowerCase().replace(/\s+/g, '')}.jpg`}
                   alt={item.name}
+                  onClick={handleCollect}
                   style={{
                     width: 120,
                     height: 120,
@@ -1044,7 +1337,17 @@ function ItemCollectionPopup({ popup, onClose, onCollect, onTapCrate }){
                     borderRadius: 15,
                     boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
                     border: '3px solid #22c55e',
-                    background: 'transparent'
+                    background: 'transparent',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.transform = 'scale(1.05)';
+                    e.target.style.boxShadow = '0 15px 40px rgba(34, 197, 94, 0.4)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.transform = 'scale(1)';
+                    e.target.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
                   }}
                 />
                 
@@ -1200,7 +1503,7 @@ function FinishWarningDialog({ show, onConfirm, onCancel }) {
 }
 
 function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simLoc, setSimLoc, collectedSet, withinIds, onCollectFromMap, onOpenModal, heading, centerKey, onCenter, onEnableCompass, compassOn, mapStyle, setMapStyle, onAutoTriggerPopup }){
-  const center = fixedItems[0]?.coords || { lat: stack.bbox[1], lng: stack.bbox[0] };
+  const center = { lat: (stack.bbox[1] + stack.bbox[3]) / 2, lng: (stack.bbox[0] + stack.bbox[2]) / 2 };
   const mapRef = useRef(null);
   const [labelFor, setLabelFor] = useState(null); // which fixed id has a label open
   const [triggeredItems, setTriggeredItems] = useState(new Set()); // Track which items have already triggered popup
@@ -1354,7 +1657,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
           <img src={asset('img/target.png')} alt="Center" width="24" height="24" style={{ display:'block' }} />
         </button>
         <button 
-          onClick={onEnableCompass}
+          onClick={onEnableCompass} 
           onContextMenu={(e) => {
             e.preventDefault();
             // Right-click or long-press to calibrate compass
@@ -1408,16 +1711,40 @@ function Recenter({ userLoc, centerKey }){ const map = useMap(); useEffect(()=>{
 // ============================
 // Landmark Card (non-collectible landmarks)
 // ============================
-function LandmarkCard({ a, onOpenModal }){
+function LandmarkCard({ a, progress, stackId, onOpenModal }){
+  // Check if landmark is seen (all nearby items are collected)
+  const isSeen = a.nearbyItems && a.nearbyItems.length > 0 && 
+    a.nearbyItems.every(itemId => progress[`${stackId}:${itemId}`]);
+  
   return (
     <div style={{ ...styles.card, position:'relative', overflow:'hidden' }}>
+      {/* Seen Badge */}
+      {isSeen && (
+        <div style={{
+          position: 'absolute',
+          top: 12,
+          right: 12,
+          background: '#22c55e',
+          color: '#fff',
+          fontSize: 9,
+          fontWeight: 'bold',
+          padding: '4px 8px',
+          borderRadius: 8,
+          textTransform: 'uppercase',
+          letterSpacing: 0.5,
+          zIndex: 10
+        }}>
+          ✓ Seen
+        </div>
+      )}
+      
       {/* Landmark Icon */}
       <div style={{ display:'flex', alignItems:'center', gap:16, marginBottom:16, padding:'16px 0' }}>
         <div style={{ 
           width:80, height:80, 
           borderRadius:12, 
           overflow:'hidden',
-          border:'1px solid #2a2a2a',
+          border: isSeen ? '2px solid #22c55e' : '1px solid #2a2a2a',
           flexShrink:0
         }}>
           <img 
@@ -1600,13 +1927,13 @@ function ArtefactModal({ open, a, onClose }){
   
   return (
     <>
-      <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,.55)', zIndex:50, display:'grid', placeItems:'center' }}>
-        <div style={{ width:'min(920px, 94vw)', maxHeight:'86vh', overflow:'auto', background:'#0d0d0d', border:'1px solid #232323', borderRadius:16 }}>
-          <div style={{ padding:'12px 14px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid #1f1f1f' }}>
-            <div style={{ fontWeight:800 }}>{a.name || 'Artefact'}</div>
-            <button onClick={onClose} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>✕</button>
-          </div>
-          <div style={{ padding:16 }}>
+    <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,.55)', zIndex:50, display:'grid', placeItems:'center' }}>
+      <div style={{ width:'min(920px, 94vw)', maxHeight:'86vh', overflow:'auto', background:'#0d0d0d', border:'1px solid #232323', borderRadius:16 }}>
+        <div style={{ padding:'12px 14px', display:'flex', alignItems:'center', justifyContent:'space-between', borderBottom:'1px solid #1f1f1f' }}>
+          <div style={{ fontWeight:800 }}>{a.name || 'Artefact'}</div>
+          <button onClick={onClose} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>✕</button>
+        </div>
+        <div style={{ padding:16 }}>
             {/* Main Icon - Centered */}
             <div style={{ textAlign:'center', marginBottom:16 }}>
               <div style={{ 
@@ -1629,64 +1956,64 @@ function ArtefactModal({ open, a, onClose }){
                   }} 
                 />
               </div>
-            </div>
-            
-            {/* Collection Hint Box for Landmarks */}
-            {a.kind === 'landmark' && a.nearbyItems && a.nearbyItems.length > 0 && (
-              <div style={{ 
-                background:'rgba(34,197,94,0.1)', 
-                border:'1px solid rgba(34,197,94,0.3)', 
-                borderRadius:12, 
-                padding:16, 
-                marginTop:16 
-              }}>
-                <div style={{ fontWeight:600, fontSize:14, color:'#22c55e', marginBottom:12 }}>
-                  🎯 Items to Collect Nearby
-                </div>
-                <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
-                  {a.nearbyItems.map((itemId, index) => {
-                    // Find the item data by ID
-                    const item = findArtefactById(itemId);
-                    if (!item) return null;
-                    
-                    return (
-                      <div key={itemId} style={{ 
-                        display:'flex', 
-                        flexDirection:'column', 
-                        alignItems:'center', 
-                        gap:8 
-                      }}>
-                        <div style={{ 
-                          width:48, height:48, 
-                          borderRadius:8, 
-                          overflow:'hidden', 
-                          border:'2px solid #22c55e',
-                          background:'#fff'
-                        }}>
-                          <img src={asset(item.img) || thumb(item.name)} alt={item.name} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
-                        </div>
-                        <div style={{ 
-                          fontSize:12, 
-                          fontWeight:600, 
-                          color:'#22c55e', 
-                          textAlign:'center',
-                          maxWidth:48
-                        }}>
-                          {item.name}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+          </div>
+          
+          {/* Collection Hint Box for Landmarks */}
+          {a.kind === 'landmark' && a.nearbyItems && a.nearbyItems.length > 0 && (
+            <div style={{ 
+              background:'rgba(34,197,94,0.1)', 
+              border:'1px solid rgba(34,197,94,0.3)', 
+              borderRadius:12, 
+              padding:16, 
+              marginTop:16 
+            }}>
+              <div style={{ fontWeight:600, fontSize:14, color:'#22c55e', marginBottom:12 }}>
+                🎯 Items to Collect Nearby
               </div>
-            )}
-            
+              <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
+                {a.nearbyItems.map((itemId, index) => {
+                  // Find the item data by ID
+                  const item = findArtefactById(itemId);
+                  if (!item) return null;
+                  
+                  return (
+                    <div key={itemId} style={{ 
+                      display:'flex', 
+                      flexDirection:'column', 
+                      alignItems:'center', 
+                      gap:8 
+                    }}>
+                                        <div style={{ 
+                    width:48, height:48, 
+                    borderRadius:8, 
+                    overflow:'hidden', 
+                    border:'2px solid #22c55e',
+                    background:'#fff'
+                  }}>
+                    <img src={asset(item.img) || thumb(item.name)} alt={item.name} style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+                  </div>
+                      <div style={{ 
+                        fontSize:12, 
+                        fontWeight:600, 
+                        color:'#22c55e', 
+                        textAlign:'center',
+                        maxWidth:48
+                      }}>
+                        {item.name}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          
             {/* Blurb */}
-            {a.blurb && <p style={{ ...styles.subtle, fontSize:15, marginTop:12 }}>{a.blurb}</p>}
+          {a.blurb && <p style={{ ...styles.subtle, fontSize:15, marginTop:12 }}>{a.blurb}</p>}
             
             {/* Rich Content or Regular History */}
             {richContent ? (
-              <div style={{ marginTop:12 }}>
+            <div style={{ marginTop:12 }}>
                 <div style={{ fontWeight:700, marginBottom:12 }}>History & context</div>
                 {richContent.map((element) => {
                   switch (element.type) {
@@ -1720,8 +2047,8 @@ function ArtefactModal({ open, a, onClose }){
                               lineHeight:1.4
                             }}>
                               {element.caption}
-                            </div>
-                          )}
+            </div>
+          )}
                         </div>
                       );
                     case 'youtube':
@@ -1764,20 +2091,20 @@ function ArtefactModal({ open, a, onClose }){
               </div>
             ) : null}
             
-            {/* Links */}
-            {Array.isArray(a.links) && a.links.length>0 && (
-              <div style={{ marginTop:12 }}>
-                <div style={{ fontWeight:700, marginBottom:6 }}>Further reading</div>
-                <ul style={{ paddingLeft:18, lineHeight:1.6 }}>
-                  {a.links.map((l,i)=> (
-                    <li key={i}><a href={l.href} target="_blank" rel="noreferrer" style={{ color:'#93c5fd' }}>{l.title || l.href}</a></li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
+          {/* Links */}
+          {Array.isArray(a.links) && a.links.length>0 && (
+            <div style={{ marginTop:12 }}>
+              <div style={{ fontWeight:700, marginBottom:6 }}>Further reading</div>
+              <ul style={{ paddingLeft:18, lineHeight:1.6 }}>
+                {a.links.map((l,i)=> (
+                  <li key={i}><a href={l.href} target="_blank" rel="noreferrer" style={{ color:'#93c5fd' }}>{l.title || l.href}</a></li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
+    </div>
       
       {/* Fullscreen Image Modal */}
       {fullscreenImage && (
@@ -2541,7 +2868,7 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
         <div style={{ marginBottom: 20 }}>
           <h3 style={{ fontSize: 18, fontWeight: 600, marginBottom: 8, color: '#fff' }}> Items Collected</h3>
           <div style={{ ...styles.subtle, fontSize: 14 }}>All items from your journey</div>
-        </div>
+            </div>
 
         {/* All Items Grid (Collected + Uncollected) */}
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(140px,1fr))', gap:12, marginBottom: 24 }}>
@@ -2591,7 +2918,7 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
                     zIndex: 10
                   }}>
                     ✓ Collected
-                  </div>
+        </div>
                 )}
                 
                 <img 
@@ -2616,7 +2943,7 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
                     color: '#fff'
                   }}>
                     {a.name}
-                  </div>
+        </div>
                   
                   {isCollected && timestamp && (
                     <div style={{ 
@@ -2626,7 +2953,7 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
                     }}>
                       <div>📅 {timestamp.date}</div>
                       <div>🕐 {timestamp.time}</div>
-                    </div>
+      </div>
                   )}
                   
                   <div style={{ 
