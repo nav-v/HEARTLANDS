@@ -65,3 +65,37 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Icon Ticker Animation - TRULY SEAMLESS LOOP */
+@keyframes scroll {
+  0% { 
+    transform: translateX(0%); 
+  }
+  100% { 
+    transform: translateX(-100%); 
+  }
+}
+
+/* Mobile adjustments for icon ticker row spacing */
+@media (max-width: 768px) {
+  .ticker-row-1 {
+    top: 0% !important;
+  }
+  .ticker-row-2 {
+    top: 35% !important;
+  }
+  .ticker-row-3 {
+    top: 70% !important;
+  }
+  
+  /* Make icons bigger on mobile but not too big */
+  .ticker-icon-container {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  
+  .ticker-icon {
+    width: 64px !important;
+    height: 64px !important;
+  }
+}

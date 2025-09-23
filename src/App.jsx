@@ -122,7 +122,7 @@ function asset(p){
 
 function makeImageIcon(url){
   const html = `
-    <div style="width:42px; height:42px; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,.35)">
+    <div style="width:42px; height:42px; border-radius:10px; overflow:hidden;">
       <img src='${asset(url)}' style='width:100%;height:100%;object-fit:cover;display:block' />
     </div>`;
   return L.divIcon({ html, className:"", iconSize:[42,42], iconAnchor:[21,21] });
@@ -134,7 +134,7 @@ function makeLandmarkIcon(url, name){
       <div style="width:42px; height:42px; overflow:hidden; margin:0 auto;">
         <img src='${asset(url)}' style='width:100%;height:100%;object-fit:cover;display:block' />
       </div>
-      <div style="margin-top:4px; font-size:11px; font-weight:600; color:#333; text-shadow:0 1px 2px rgba(255,255,255,0.8); background:rgba(255,255,255,0.9); padding:2px 8px; border-radius:4px; border:1px solid rgba(0,0,0,0.1); display:inline-block; max-width:80px; word-wrap:break-word; text-align:center; line-height:1.2;">
+      <div style="margin-top:4px; font-size:11px; font-weight:600; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.8); display:inline-block; max-width:80px; word-wrap:break-word; text-align:center; line-height:1.2;">
         ${name}
       </div>
     </div>`;
@@ -217,16 +217,16 @@ const DATA = {
       artefacts: [
 
         // New items from database.csv
-        { id:"fishing-rod", name:"Fishing Rod", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3401631,lng:103.7247079}, img:"img/rod.jpg", blurb:"Prawn Ponds & More", history:"Prawn Ponds & More" },
-        { id:"latex-cup", name:"Latex Cup", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.334457,lng:103.7280321}, img:"img/compass.png", blurb:"Allotment gardens and rubber history", 
+        { id:"fishing-rod", name:"Fishing Rod", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3401631,lng:103.7247079}, img:"img/rod.png", blurb:"Prawn Ponds & More", history:"Prawn Ponds & More" },
+        { id:"tire", name:"Car Tire", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.334457,lng:103.7280321}, img:"img/tire.png", blurb:"Allotment gardens and rubber history", 
           richHistory: `You are now standing in Jurong Lake Gardens' allotment gardens. These are green spaces where aspiring gardeners can lease small plots to grow vegetables, herbs, and fruits. Across Singapore, there are now more than 2,400 allotment plots in 28 parks and gardens. Under NParks' Allotment Gardening Scheme, households can ballot for a raised planter bed, complete with soil and storage space, at just over $62 a year. Schemes like Gardening with Edibles have encouraged more Singaporeans to grow their own food, with a goal of 3,000 allotment plots by 2030.
 
 This is not the first time the banks of the Jurong River have been used for farming. In the 19th century, plantations of gambier and pepper cleared the surrounding jungles, but the crop quickly exhausted the soil. By the early 1900s, global demand for rubber transformed Jurong again. With the booming automobile industry requiring rubber for tyres, Malaya supplied half the world's production by 1920. Much of it was traded through Singapore, which became the "rubber capital of the world."
 
-Rubber estates soon dominated Jurong's landscape, owned by figures such as Chew Boon Lay, Tan Lark Sye, and members of the Chettiar community. Chew's plantation was so extensive and prominent that the area itself, and later the Boon Lay MRT station, took his name from him. Latex cups, small vessels attached to the bark of rubber trees to collect dripping sap, became a familiar tool of plantation workers across these estates.` },
+Rubber estates soon dominated Jurong's landscape, owned by figures such as Chew Boon Lay, Tan Lark Sye, and members of the Chettiar community. Chew's plantation was so extensive and prominent that the area itself, and later the Boon Lay MRT station, took his name from him.` },
 
  
-        { id:"yin-and-yang-token", name:"Yin and Yang Token", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3396371,lng:103.7283051}, img:"img/yinyang.png", blurb:"Balance is one of the guiding principles", 
+        { id:"yin-and-yang-token", name:"Yin and Yang Token", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#FFBF00", coords:{lat:1.3396371,lng:103.7283051}, img:"img/yinyang.png", blurb:"Balance is one of the guiding principles", 
           richHistory: `Balance is one of the guiding principles of the Chinese Garden, and it greets you from the very entrance. Guarding the gates are two mighty marble lions, symbols of authority and felicity. They always appear in pairs, manifesting yin and yang. The male lion rests his paw on an embroidered ball, representing the external and material world. The female steadies a cub beneath her paw, symbolising the cycle of life and the living spirit within. Together, they protect both the structure and the soul. In some traditions the male's mouth is open while the female's is closed, forming the sacred syllable "om" - creation and completion.
 
 The theme of balance continues deeper inside. In front of you, the Twin Pagodas embody yin and yang in architectural form. The broader Cloud Draping Tower (Pi Yun Ge) represents Yang, active and expansive, its very name evoking clouds enveloping the sky. Opposite it, the slender Moon Receiving Tower (Yeh Yueh Lou) represents Yin, receptive and nurturing, welcoming the moon's gentle light. Both rise three storeys high, reflecting the auspicious use of odd numbers in Chinese architecture.
@@ -236,7 +236,7 @@ More generally, during the construction of the Chinese Garden in the early 1970s
 On a grander level, when looking at the lake as a whole, where the Chinese Garden is designed to be visually exciting, the Japanese Gardens are designed with a calmness to evoke inner peace and a meditative state.` },
 
         // New items from database_2.csv
-        { id:"cannon", name:"Cannon", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3414779,lng:103.7237969}, img:"img/cannon.jpg", blurb:"Commodore Matthew Perry's American East India Squadron", 
+        { id:"cannon", name:"Cannon", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3414779,lng:103.7237969}, img:"img/cannon.png", blurb:"Commodore Matthew Perry's American East India Squadron", 
           richHistory: `Commodore Matthew Perry's American East India Squadron undertook its now-famous expedition that forced Japan to open to world trade. Less well-known is the fact that Perry's squadron stopped in Singapore before Japan, where its officers surveyed the Jurong River.
 
 [img:perry.jpg:The earliest known illustration of the Jurong River, created by Perry's expedition artists in 1853]
@@ -247,15 +247,17 @@ https://www.youtube.com/watch?v=MaZ95O6RmAc
 
 In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves. This historical document provides a rare glimpse into Singapore's landscape before industrialization transformed the region.` },
 
-        { id:"lake-lookout", name:"Lake Lookout", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3430237,lng:103.7227063}, img:"img/lookout.jpg", blurb:"The lake in front of you today did not exist 50 years ago", 
+        { id:"lake-lookout", name:"Lake Lookout", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3430237,lng:103.7227063}, img:"img/lookout.jpg", blurb:"The lake in front of you today did not exist 50 years ago", 
           richHistory: `The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities.
 
-[img: river.jpg]
+[img: river.png]
 
 Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape`, nearbyItems: ["sandbag"] },
 
-        { id:"sandbag", name:"Sandbag", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3430237,lng:103.7227063}, img:"img/sandbag.jpg", blurb:"The lake in front of you today did not exist 50 years ago", 
+        { id:"sandbag", name:"Sandbag", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3430237,lng:103.7227063}, img:"img/sandbags.jpg", blurb:"The lake in front of you today did not exist 50 years ago", 
           richHistory: `The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities.
+
+          [img: river.png]
 
 Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape` },
 
@@ -287,7 +289,7 @@ Practical problems plagued the venue. Without air-conditioning, cars became stif
 
 Today, both the cinema and the Cathay Organisation that ran it are gone` },
 
-        { id:"bonsai-garden", name:"Bonsai Garden", kind:"landmark", points:0, radiusM:20, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3382391,lng:103.7301145}, img:"img/bonsai.png", blurb:"Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden", 
+        { id:"bonsai-garden", name:"Bonsai Garden", kind:"landmark", points:0, radiusM:20, searchRadiusM:30, radiusColourM:"#808080", coords:{lat:1.3382391,lng:103.7301145}, img:"img/bonsai.png", blurb:"Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden", 
           richHistory: `Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden is the largest Suzhou-style bonsai garden outside of China. It houses a curated collection of beautifully manicured miniature trees, shaped with artistry and patience.
 
 As you walk through this section, you may notice a shift in atmosphere. The rest of the Chinese Garden was built in the grand, symmetrical Imperial style. In Imperial gardens, glazed tiles, elaborate carvings, and bright colours such as red and yellow dominate, as these were traditionally associated with royalty. By contrast, the Suzhou section is more subdued. Here, dark grey unglazed clay tiles, plainer roofs, and meandering paths create a quieter, humbler aesthetic that complements the bonsai on display.
@@ -298,7 +300,7 @@ img: sip.jpg
 
 Beyond this garden, Jurong has another connection to Suzhou. In the early 1990s, Singapore was deepening its engagement with China as it began to see investment in China as a natural extension of its economic strategy. In fact, plans for this Bonsai Garden were first unveiled in Suzhou during a two-week trip to China by then-Deputy Prime Minister Lee Hsien Loong. Soon after, then-Senior Minister Lee Kuan Yew proposed a government-to-government venture to build a modern industrial estate in Suzhou, blending Singapore's Jurong Industrial Estate expertise with China's development needs. The China–Singapore Suzhou Industrial Park (CS-SIP) was formally launched on 26 February 1994. Though ultimately successful, the project was highly controversial, with the elder Lee himself criticising bureaucratic hurdles, weak local support, and competition from cheaper nearby sites.`, nearbyItems: ["bonsai"] },
 
-        { id:"bonsai", name:"Bonsai", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3382391,lng:103.7301145}, img:"img/bonsai.png", blurb:"Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden", 
+        { id:"bonsai", name:"Bonsai", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3382391,lng:103.7301145}, img:"img/bonsai.png", blurb:"Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden", 
           richHistory: `Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden is the largest Suzhou-style bonsai garden outside of China. It houses a curated collection of beautifully manicured miniature trees, shaped with artistry and patience.
 
 As you walk through this section, you may notice a shift in atmosphere. The rest of the Chinese Garden was built in the grand, symmetrical Imperial style. In Imperial gardens, glazed tiles, elaborate carvings, and bright colours such as red and yellow dominate, as these were traditionally associated with royalty. By contrast, the Suzhou section is more subdued. Here, dark grey unglazed clay tiles, plainer roofs, and meandering paths create a quieter, humbler aesthetic that complements the bonsai on display.
@@ -309,7 +311,7 @@ img: sip.jpg
 
 Beyond this garden, Jurong has another connection to Suzhou. In the early 1990s, Singapore was deepening its engagement with China as it began to see investment in China as a natural extension of its economic strategy. In fact, plans for this Bonsai Garden were first unveiled in Suzhou during a two-week trip to China by then-Deputy Prime Minister Lee Hsien Loong. Soon after, then-Senior Minister Lee Kuan Yew proposed a government-to-government venture to build a modern industrial estate in Suzhou, blending Singapore's Jurong Industrial Estate expertise with China's development needs. The China–Singapore Suzhou Industrial Park (CS-SIP) was formally launched on 26 February 1994. Though ultimately successful, the project was highly controversial, with the elder Lee himself criticising bureaucratic hurdles, weak local support, and competition from cheaper nearby sites.` },
 
-        { id:"rasau-walk", name:"Rasau Walk", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3318083,lng:103.7281636}, img:"img/rasau.png", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
+        { id:"rasau-walk", name:"Rasau Walk", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3318083,lng:103.7281636}, img:"img/rasau.png", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
           richHistory: `You're now at Rasau Walk, a 300m boardwalk that showcases a restored freshwater swamp. Before heavy industry reached Jurong, mangroves like these were part of the range of the estuarine crocodile (Crocodylus porosus). Even the old place-names hint at this. Pulau Buaya (Malay for "Crocodile Island") appears on maps dating back all the way to the early 1800s. Reclamation has folded the islet into today's Jurong Island.
 
 [img:crocs.jpg]
@@ -326,7 +328,7 @@ Though there is only one crocodile farm left in Singapore, the city-state contin
 
 "Few Singaporeans realise that if they own a crocodile-skin bag, it was most likely dyed in their very own backyard."`, nearbyItems: ["crocodile-tooth"] },
 
-        { id:"crocodile-tooth", name:"Crocodile Tooth", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3318083,lng:103.7281636}, img:"img/tooth.jpg", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
+        { id:"crocodile-tooth", name:"Crocodile Tooth", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#FFBF00", coords:{lat:1.3318083,lng:103.7281636}, img:"img/tooth.jpg", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
           richHistory: `You're now at Rasau Walk, a 300m boardwalk that showcases a restored freshwater swamp. Before heavy industry reached Jurong, mangroves like these were part of the range of the estuarine crocodile (Crocodylus porosus). Even the old place-names hint at this. Pulau Buaya (Malay for "Crocodile Island") appears on maps dating back all the way to the early 1800s. Reclamation has folded the islet into today's Jurong Island.
 
 [img:crocs.jpg]
@@ -343,7 +345,7 @@ Though there is only one crocodile farm left in Singapore, the city-state contin
 
 "Few Singaporeans realise that if they own a crocodile-skin bag, it was most likely dyed in their very own backyard."` },
 
-        { id:"twin-pagoda", name:"Twin Pagoda", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3396371,lng:103.7283051}, img:"img/twinp.png", blurb:"Balance is one of the guiding principles of the Chinese Garden", 
+        { id:"twin-pagoda", name:"Twin Pagoda", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3396371,lng:103.7283051}, img:"img/twinp.png", blurb:"Balance is one of the guiding principles of the Chinese Garden", 
           richHistory: `Balance is one of the guiding principles of the Chinese Garden, and it greets you from the very entrance. Guarding the gates are two mighty marble lions, symbols of authority and felicity. They always appear in pairs, manifesting yin and yang. The male lion rests his paw on an embroidered ball, representing the external and material world. The female steadies a cub beneath her paw, symbolising the cycle of life and the living spirit within. Together, they protect both the structure and the soul. In some traditions the male's mouth is open while the female's is closed, forming the sacred syllable "om" - creation and completion.
 
 The Chinese phrase 乾坤清气 (qián kūn qīng qì) gracing the Grand Arch symbolises "the pure energy of Heaven and Earth", represents the balance of masculine and feminine energies (乾坤).
@@ -369,7 +371,7 @@ When Marina City Park closed in 2007 to make way for Gardens by the Bay, the sta
 
 Sam Goi's own story is tied to Jurong. Arriving in Singapore as a child migrant, he began with little, eventually setting up a mechanical engineering workshop serving businesses in Jurong. In 1977, he diversified by acquiring a small popiah skin factory, Tee Yih Jia, which he transformed into a global frozen foods leader. Its flagship brand Spring Home is now sold worldwide.` },
 
-        { id:"stoneboat", name:"Stoneboat", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.338935,lng:103.7288695}, img:"img/stoneboat.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
+        { id:"stoneboat", name:"Stoneboat", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.338935,lng:103.7288695}, img:"img/stoneboat.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
           richHistory: `The Stoneboat is a famous feature of traditional Chinese architecture, designed so visitors can admire the surrounding scenery while feeling as if they were aboard a vessel floating on water. The version here in Jurong's Chinese Garden follows the Beijing style, with some adaptations in its materials and design.
 
 [img:stoneboat.jpg]
@@ -380,7 +382,7 @@ At its peak, at least 100 couples used the Stone Boat registry each month, espec
 
 Across the pond, you'll see the Tea Pavilion, featuring three pavilions connected by a winding corridor, seemingly floating above the Lotus Pond – a design inspired by the Summer Palace. A poetic stone inscription greets visitors, inviting contemplation of the serene surroundings, including views of the Stoneboat.`, nearbyItems: ["wedding-ring"] },
 
-        { id:"wedding-ring", name:"Wedding Ring", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.338935,lng:103.7288695}, img:"img/ring.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
+        { id:"wedding-ring", name:"Wedding Ring", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.338935,lng:103.7288695}, img:"img/ring.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
           richHistory: `The Stoneboat is a famous feature of traditional Chinese architecture, designed so visitors can admire the surrounding scenery while feeling as if they were aboard a vessel floating on water. The version here in Jurong's Chinese Garden follows the Beijing style, with some adaptations in its materials and design.
 
 Stone boats are not just ornamental. Their boat-like form, blending seamlessly with the water, reflects Taoist ideals of harmony with nature. At the same time, the paradox of a vessel that cannot sail plays with the theme of illusion and reality, so central to Chinese art and literature. These pavilions also served as scholarly retreats, places for poetry and quiet contemplation, and their solidity came to symbolise permanence — an eternal counterpoint to wooden boats that decay or sink.
@@ -393,14 +395,14 @@ At its peak, at least 100 couples used the Stone Boat registry each month, espec
 
 Across the pond, you'll see the Tea Pavilion, featuring three pavilions connected by a winding corridor, seemingly floating above the Lotus Pond – a design inspired by the Summer Palace. A poetic stone inscription greets visitors, inviting contemplation of the serene surroundings, including views of the Stoneboat.` },
 
-        { id:"cloud-piercing-pagoda", name:"Cloud Piercing Pagoda", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3391409,lng:103.7309275}, img:"img/cloudp.png", blurb:"You are now standing in front of the Cloud Piercing Pagoda", 
+        { id:"cloud-piercing-pagoda", name:"Cloud Pagoda", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3391409,lng:103.7309275}, img:"img/cloudp.png", blurb:"You are now standing in front of the Cloud Piercing Pagoda", 
           richHistory: `You are now standing in front of the Cloud Piercing Pagoda (Ru Yun T'a), the seven-storey pagoda that rises over the Chinese Garden. Its design is a faithful replica of the Linggu Temple Pagoda in Nanjing, one of many landmarks carefully copied here in Jurong when the garden opened in 1975. Faithful replication was the guiding principle. As Mr Tan, the engineer in charge, explained at the time: "Everything is designed to be as authentic as possible. We don't want a watered-down version."The garden's design principles were based on classical northern Chinese imperial architecture, particular the Song Dynasty period (960-1279).
 
 The 13-arch White Rainbow Bridge echoes Beijing's Seventeen-Arch Bridge. The tea house recreates the meandering corridors of the Summer Palace. On the northern shore, the twin pagodas mirrores the Spring and Autumn Pagodas in Kaohsiung, Taiwan. Together they created, in one reporter's words, a "many-splendoured thing."
 
 But these structures were hard to build. This was the first project of its kind in Singapore, and local labourers had little experience with traditional Chinese architectural techniques. Translating two-dimensional plans into timber, stone, and tile required specialised skills. Workers were trained on the job, guided by Taiwanese mentors who brought their expertise to Jurong.`, nearbyItems: ["hardhat"] },
 
-        { id:"hardhat", name:"Hardhat", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3391409,lng:103.7309275}, img:"img/hardhat.png", blurb:"You are now standing in front of the Cloud Piercing Pagoda", 
+        { id:"hardhat", name:"Hardhat", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3391409,lng:103.7309275}, img:"img/hardhat.png", blurb:"You are now standing in front of the Cloud Piercing Pagoda", 
           richHistory: `You are now standing in front of the Cloud Piercing Pagoda (Ru Yun T'a), the seven-storey pagoda that rises over the Chinese Garden. Its design is a faithful replica of the Linggu Temple Pagoda in Nanjing, one of many landmarks carefully copied here in Jurong when the garden opened in 1975. Faithful replication was the guiding principle. As Mr Tan, the engineer in charge, explained at the time: "Everything is designed to be as authentic as possible. We don't want a watered-down version."The garden's design principles were based on classical northern Chinese imperial architecture, particular the Song Dynasty period (960-1279).
 
 The 13-arch White Rainbow Bridge echoes Beijing's Seventeen-Arch Bridge. The tea house recreates the meandering corridors of the Summer Palace. On the northern shore, the twin pagodas mirrores the Spring and Autumn Pagodas in Kaohsiung, Taiwan. Together they created, in one reporter's words, a "many-splendoured thing."
@@ -416,7 +418,7 @@ The Japanese Chamber of Commerce also contributed 500 tons of rocks, valued at o
 
 This tradition of gifting continues. In 2021, US chipmaker Micron Technology donated S$1 million to support the development of the Water Lily Pond at the Japanese Garden. Their contribution funded a smart water management system that uses natural vegetation and microbes to filter the water, with sensors monitoring quality in real time.` },
 
-        { id:"grasslands", name:"Grasslands", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3326227,lng:103.7274602}, img:"img/grassland.png", blurb:"You're now in the Grasslands of Lakeside Gardens", 
+        { id:"grasslands", name:"Grasslands", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3326227,lng:103.7274602}, img:"img/grassland.png", blurb:"You're now in the Grasslands of Lakeside Gardens", 
           richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
 
 Three bird hides ring the area, perfect for observing the over 205 bird species that have spotting at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
@@ -429,7 +431,7 @@ Keep an eye out for grassland regulars: paddyfield pipit (a brown ground-runner 
 
 This area also links to a bigger bird story. In 1967–68, Finance Minister Goh Keng Swee floated the idea of starting an aviary after visits to similar facilities in Rio and Bangkok. While a 20.4-hectare site on Jurong Hill became Jurong Bird Park in 1971, an early notion was to situate the park on the island just across the water from here. That land instead hosted a golf course from the 1970s till 2017, when it was cleared for the planned Singapore–Kuala Lumpur High-Speed Rail terminus. With the HSR cancelled, the site today remains a white plot, held for detailed planning.`, nearbyItems: ["feather"] },
 
-        { id:"feather", name:"Feather", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3326227,lng:103.7274602}, img:"img/feather.png", blurb:"You're now in the Grasslands of Lakeside Gardens", 
+        { id:"feather", name:"Feather", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3326227,lng:103.7274602}, img:"img/feather.png", blurb:"You're now in the Grasslands of Lakeside Gardens", 
           richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
 
 Three bird hides ring the area, perfect for observing the over 205 bird species that have spotting at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
@@ -494,7 +496,7 @@ Closing in 1999, the park remained abandoned till 2008, when it was levelled. To
 
 [Hyperlink: Check out this blog post from the early internet (1994) from an American couple visiting the attraction: http://www.anniebees.com/Asia/Asia6.htm]` },
 
-        { id:"grand-arch", name:"Grand Arch", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3382537,lng:103.7281902}, img:"img/arch.png", blurb:"You're now standing before the Grand Arch of the Chinese Garden", 
+        { id:"grand-arch", name:"Grand Arch", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3382537,lng:103.7281902}, img:"img/arch.png", blurb:"You're now standing before the Grand Arch of the Chinese Garden", 
           richHistory: `You're now standing before the Grand Arch of the Chinese Garden. The four characters above you, 乾坤清气 (qián kūn qīng qì), speak of "the pure energy of Heaven and Earth": 乾坤 for the cosmic pair (yang and yin), 清气 for pure vitality.
 
 Look up at the roofline. Two open-mouthed dragons bite the main ridge to "hold" it fast against ill winds, while a procession of mythical roof beasts—set out at the corners in order of seniority—stand watch.
@@ -507,7 +509,7 @@ Just behind this arch once sat a beloved oddity: the Live Turtle & Tortoise Muse
 
 Today the space behind the Grand Arch hosts a few attractions -the Jurong Lake Gardens Gallery with stories of the lake and its making; the Plant Factory, an indoor showcase for sustainable horticulture; and Canopy, a pet- and family-friendly spot looking over the Edible Garden.`, nearbyItems: ["turtle-shell"] },
 
-        { id:"turtle-shell", name:"Turtle Shell", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3382537,lng:103.7281902}, img:"img/shell.png", blurb:"You're now standing before the Grand Arch of the Chinese Garden", 
+        { id:"turtle-shell", name:"Turtle Shell", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3382537,lng:103.7281902}, img:"img/shell.png", blurb:"You're now standing before the Grand Arch of the Chinese Garden", 
           richHistory: `You're now standing before the Grand Arch of the Chinese Garden. The four characters above you, 乾坤清气 (qián kūn qīng qì), speak of "the pure energy of Heaven and Earth": 乾坤 for the cosmic pair (yang and yin), 清气 for pure vitality.
 
 Look up at the roofline. Two open-mouthed dragons bite the main ridge to "hold" it fast against ill winds, while a procession of mythical roof beasts—set out at the corners in order of seniority—stand watch.
@@ -579,6 +581,298 @@ function useHideOnScroll(){
 }
 
 // ============================
+// Icon Ticker Component
+function IconTicker() {
+  const iconImages = [
+    'img/rod.png', 'img/tire.png', 'img/yinyang.png', 'img/cannon.png', 'img/lookout.jpg',
+    'img/sandbags.jpg', 'img/chainsaw.png', 'img/ticket.png', 'img/bonsai.png', 'img/rasau.png',
+    'img/tooth.jpg', 'img/twinp.png', 'img/crown.png', 'img/stoneboat.png', 'img/ring.png',
+    'img/cloudp.png', 'img/hardhat.png', 'img/giftbox.png', 'img/grassland.png', 'img/feather.png',
+    'img/megaphone.png', 'img/cobwebs.png', 'img/bamboo.png', 'img/camera.png', 'img/arch.png',
+    'img/shell.png', 'img/snake.png'
+  ];
+
+  // Create 3 seamless random streams - each with 30 icons that repeat perfectly
+  // Use useMemo to ensure icons are generated only once and persist across re-renders
+  const row1Icons = useMemo(() => {
+    const stream = [];
+    // Create 30 random icons with no consecutive duplicates
+    for (let i = 0; i < 30; i++) {
+      let randomIcon;
+      do {
+        randomIcon = iconImages[Math.floor(Math.random() * iconImages.length)];
+      } while (i > 0 && randomIcon === stream[i - 1]); // Ensure no consecutive duplicates
+      stream.push(randomIcon);
+    }
+    return stream;
+  }, []);
+
+  const row2Icons = useMemo(() => {
+    const stream = [];
+    // Create 30 random icons with no consecutive duplicates
+    for (let i = 0; i < 30; i++) {
+      let randomIcon;
+      do {
+        randomIcon = iconImages[Math.floor(Math.random() * iconImages.length)];
+      } while (i > 0 && randomIcon === stream[i - 1]); // Ensure no consecutive duplicates
+      stream.push(randomIcon);
+    }
+    return stream;
+  }, []);
+
+  const row3Icons = useMemo(() => {
+    const stream = [];
+    // Create 30 random icons with no consecutive duplicates
+    for (let i = 0; i < 30; i++) {
+      let randomIcon;
+      do {
+        randomIcon = iconImages[Math.floor(Math.random() * iconImages.length)];
+      } while (i > 0 && randomIcon === stream[i - 1]); // Ensure no consecutive duplicates
+      stream.push(randomIcon);
+    }
+    return stream;
+  }, []);
+
+  // Create multiple rows with different speeds - TRULY SEAMLESS
+  const createTickerRow = (icons, speed, delay) => (
+    <div
+      style={{
+        display: 'flex',
+        gap: '8px', // Slight gaps between icons
+        padding: '0px',
+        width: '600%', // Six times width for 6 sets of icons
+        animation: `scroll ${speed}s linear infinite`,
+        animationDelay: `${delay}s`
+      }}
+    >
+      {/* First set of icons */}
+      {icons.map((icon, index) => (
+        <div
+          key={`first-${icon}-${index}`}
+          className="ticker-icon-container"
+          style={{
+            width: '96px', // Bigger containers for bigger icons
+            height: '96px', // Bigger containers for bigger icons
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}
+        >
+          <img
+            src={icon}
+            alt=""
+            className="ticker-icon"
+            style={{
+              width: '72px', // Even bigger icons
+              height: '72px', // Even bigger icons
+              objectFit: 'contain',
+              filter: 'brightness(1.5) contrast(1.4) saturate(1.0)' // Much brighter and more vibrant icons
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      ))}
+      {/* Second set of icons */}
+      {icons.map((icon, index) => (
+        <div
+          key={`second-${icon}-${index}`}
+          className="ticker-icon-container"
+          style={{
+            width: '96px', // Bigger containers for bigger icons
+            height: '96px', // Bigger containers for bigger icons
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}
+        >
+          <img
+            src={icon}
+            alt=""
+            className="ticker-icon"
+            style={{
+              width: '72px', // Even bigger icons
+              height: '72px', // Even bigger icons
+              objectFit: 'contain',
+              filter: 'brightness(1.8) contrast(1.4) saturate(1.3)' // Much brighter and more vibrant icons
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      ))}
+      {/* Third set of icons */}
+      {icons.map((icon, index) => (
+        <div
+          key={`third-${icon}-${index}`}
+          className="ticker-icon-container"
+          style={{
+            width: '96px', // Bigger containers for bigger icons
+            height: '96px', // Bigger containers for bigger icons
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}
+        >
+          <img
+            src={icon}
+            alt=""
+            className="ticker-icon"
+            style={{
+              width: '72px', // Even bigger icons
+              height: '72px', // Even bigger icons
+              objectFit: 'contain',
+              filter: 'brightness(1.8) contrast(1.4) saturate(1.3)' // Much brighter and more vibrant icons
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      ))}
+      {/* Fourth set of icons */}
+      {icons.map((icon, index) => (
+        <div
+          key={`fourth-${icon}-${index}`}
+          className="ticker-icon-container"
+          style={{
+            width: '96px', // Bigger containers for bigger icons
+            height: '96px', // Bigger containers for bigger icons
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}
+        >
+          <img
+            src={icon}
+            alt=""
+            className="ticker-icon"
+            style={{
+              width: '72px', // Even bigger icons
+              height: '72px', // Even bigger icons
+              objectFit: 'contain',
+              filter: 'brightness(1.8) contrast(1.4) saturate(1.3)' // Much brighter and more vibrant icons
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      ))}
+      {/* Fifth set of icons */}
+      {icons.map((icon, index) => (
+        <div
+          key={`fifth-${icon}-${index}`}
+          className="ticker-icon-container"
+          style={{
+            width: '96px', // Bigger containers for bigger icons
+            height: '96px', // Bigger containers for bigger icons
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}
+        >
+          <img
+            src={icon}
+            alt=""
+            className="ticker-icon"
+            style={{
+              width: '72px', // Even bigger icons
+              height: '72px', // Even bigger icons
+              objectFit: 'contain',
+              filter: 'brightness(1.8) contrast(1.4) saturate(1.3)' // Much brighter and more vibrant icons
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      ))}
+      {/* Sixth set for seamless loop */}
+      {icons.map((icon, index) => (
+        <div
+          key={`sixth-${icon}-${index}`}
+          className="ticker-icon-container"
+          style={{
+            width: '96px', // Bigger containers for bigger icons
+            height: '96px', // Bigger containers for bigger icons
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}
+        >
+          <img
+            src={icon}
+            alt=""
+            className="ticker-icon"
+            style={{
+              width: '72px', // Even bigger icons
+              height: '72px', // Even bigger icons
+              objectFit: 'contain',
+              filter: 'brightness(1.3) contrast(1.4) saturate(1.0)' // Much brighter and more vibrant icons
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        overflow: 'hidden',
+        zIndex: -1, // Behind everything
+        opacity: 0.5, // More visible
+        pointerEvents: 'none'
+      }}
+    >
+      {/* Gradient overlay to darken text area */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))',
+          zIndex: 1 // Above icons but below text
+        }}
+      />
+      {/* Row 1 - Slow */}
+      <div className="ticker-row-1" style={{ position: 'absolute', top: '0%', left: 0, right: 0 }}>
+        {createTickerRow(row1Icons, 600, 0)}
+      </div>
+      
+      {/* Row 2 - Medium - Centered to hero */}
+      <div className="ticker-row-2" style={{ position: 'absolute', top: '40%', left: 0, right: 0 }}>
+        {createTickerRow(row2Icons, 450, -15)}
+      </div>
+      
+      {/* Row 3 - Fast - 4 minutes */}
+      <div className="ticker-row-3" style={{ position: 'absolute', top: '80%', left: 0, right: 0 }}>
+        {createTickerRow(row3Icons, 240, -30)}
+      </div>
+
+    </div>
+  );
+}
+
 // App
 // ============================
 export default function App(){
@@ -603,7 +897,7 @@ export default function App(){
 
   return (
     <div style={styles.page}>
-      <TopBar hidden={hidden} progress={progress} />
+      <TopBar hidden={hidden} progress={progress} onAbout={()=>setView({page:'about', stackId:null})} />
               {view.page==='home' && (
           <Home stacks={DATA.stacks} progress={progress} onPlay={(stackId)=>setView({page:'splash', stackId})} />
         )}
@@ -616,17 +910,49 @@ export default function App(){
       {view.page==='finish' && (
         <FinishView stack={DATA.stacks.find(s=>s.id===view.stackId)} progress={progress} onDownloadDone={()=>{}} onReset={()=>resetStackAndHome(view.stackId)} onBack={()=>setView({page:'play', stackId:view.stackId})} />
       )}
+      {view.page==='about' && (
+        <About onBack={()=>setView({page:'home', stackId:null})} />
+      )}
     </div>
   );
 }
 
-function TopBar({ hidden, progress }){
+function TopBar({ hidden, progress, onAbout }){
   const score = Object.values(progress).reduce((a,v)=>a+(v.points||0),0);
   return (
     <div style={{ position:'sticky', top:0, zIndex:20, transform:`translateY(${hidden?-60:0}px)`, transition:'transform .25s ease', backdropFilter:'blur(6px)', background:'rgba(11,11,11,.7)', borderBottom:'1px solid #1f1f1f' }}>
       <div style={{ ...styles.container, padding:'10px 16px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+        <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+          <img 
+            src="img/crate.jpg" 
+            alt="Heartlands Logo"
+            style={{ 
+              width: '24px', 
+              height: '24px', 
+              objectFit: 'contain'
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
         <div style={{ fontWeight:700, letterSpacing:'0.02em' }}>HEARTLANDS</div>
+        </div>
+        <div style={{ display:'flex', alignItems:'center', gap:16 }}>
+          <button 
+            onClick={onAbout}
+            style={{ 
+              background:'none', 
+              border:'none', 
+              color:'#fff', 
+              cursor:'pointer',
+              fontSize:14,
+              textDecoration:'none'
+            }}
+          >
+            About
+          </button>
         <div style={{ fontSize:14 }}>Score: <span style={{ fontFamily:'ui-monospace, SFMono-Regular', fontWeight:700 }}>{score}</span></div>
+        </div>
       </div>
     </div>
   );
@@ -651,30 +977,35 @@ function Home({ stacks, progress, onPlay }){
           borderRadius:20, overflow:'hidden', border:'1px solid #232323',
           background:'linear-gradient(135deg, #0f172a 0%, #111827 50%, #0b0b0b 100%)'
         }}>
-          <div style={{ padding:'28px 24px 22px 24px' }}>
+          <div style={{ padding:'28px 24px 22px 24px', position:'relative', zIndex:2 }}>
             <h1 style={{ fontSize:40, lineHeight:1.05, fontWeight:900, letterSpacing:'-0.01em', marginBottom:10 }}>Walk. Collect. Understand.</h1>
             <p style={{ ...styles.subtle, fontSize:16, maxWidth:860 }}>
               Heartlands is a self‑guided, walking game. Discover landmarks and collect items along the way.
-              Hunt mystery circles for rarer artefacts. Share your stamp sheet when you’re done.
+              Hunt mystery circles for rarer artefacts. Share your stamp sheet when you're done.
             </p>
             <div style={{ marginTop:14 }}>
               <a href="#stacks" style={{ ...styles.button }}>Choose a stack ↓</a>
             </div>
+            
+            {/* Icon Ticker Background - only in header */}
+            <IconTicker />
           </div>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
       <section style={{ ...styles.container, paddingTop:18, paddingBottom:6 }}>
+        <h2 style={{ ...styles.h2, marginBottom:16 }}>What is Heartlands?</h2>
         <div style={{ display:'grid', gap:12, gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))' }}>
-          <HowItWorksStep n={1} title="Pick a quest" text="Each area has fixed icons (known sites) and random circles (mystery spawns)." />
-          <HowItWorksStep n={2} title="Walk & hunt" text="Use the map. Fixed icons are visible; randoms appear as search radii. Get close to collect." />
-          <HowItWorksStep n={3} title="Collect & share" text="Cards reveal context and debate prompts. Finish to export an Instagram story." />
+          <HowItWorksStep n={1} title="Pick a quest" text="Each area has fixed icons (known sites) and random circles (mystery spawns)." image="img/map.png" />
+          <HowItWorksStep n={2} title="Walk & hunt" text="Use the map. Fixed icons are visible; randoms appear as search radii. Get close to collect." image="img/compass.png" />
+          <HowItWorksStep n={3} title="Collect & share" text="Cards reveal context and debate prompts. Finish to export an Instagram story." image="img/crown.png" />
         </div>
       </section>
 
       {/* STACK CARDS */}
       <section id="stacks" style={{ ...styles.container, paddingTop:8, paddingBottom:24 }}>
+        <h2 style={{ ...styles.h2, marginBottom:16 }}>Quests</h2>
         <div style={{ display:'grid', gap:16, gridTemplateColumns:'repeat(auto-fill, minmax(300px,1fr))' }}>
           {stacks.map((s)=>{
             const all = enumerateArtefactsForStack(s);
@@ -837,14 +1168,123 @@ function SplashScreen({ stack, onPlay, onBack }){
   );
 }
 
-function HowItWorksStep({ n, title, text }){
+function HowItWorksStep({ n, title, text, image }){
   return (
     <div style={{ ...styles.card }}>
+      {image && (
+        <div style={{ marginBottom:12, borderRadius:8, overflow:'hidden' }}>
+          <img 
+            src={image} 
+            alt={title}
+            style={{ 
+              width: '100%', 
+              height: '120px', 
+              objectFit: 'cover',
+              display: 'block'
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+      )}
       <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:6 }}>
         <div style={{ width:26, height:26, borderRadius:8, background:'#fff', color:'#000', fontWeight:800, display:'grid', placeItems:'center' }}>{n}</div>
         <div style={{ fontWeight:700 }}>{title}</div>
       </div>
       <div style={{ ...styles.subtle, fontSize:14 }}>{text}</div>
+    </div>
+  );
+}
+
+// ============================
+// ABOUT PAGE
+// ============================
+function About({ onBack }){
+  return (
+    <div style={{ ...styles.container, paddingTop:24, paddingBottom:24 }}>
+      <div style={{ marginBottom:24 }}>
+        <button 
+          onClick={onBack}
+          style={{ 
+            background:'none', 
+            border:'none', 
+            color:'#fff', 
+            cursor:'pointer',
+            display:'flex',
+            alignItems:'center',
+            gap:8,
+            fontSize:14,
+            marginBottom:16
+          }}
+        >
+          ← Back
+        </button>
+        <h1 style={{ ...styles.h1, marginBottom:16 }}>About Heartlands</h1>
+      </div>
+      
+      <div style={{ ...styles.card, marginBottom:24 }}>
+        <h2 style={{ ...styles.h2, marginBottom:12 }}>What is Heartlands?</h2>
+        <p style={{ ...styles.subtle, marginBottom:16 }}>
+          Heartlands is a self-guided walking game that transforms your exploration of Singapore's neighborhoods into an interactive adventure. 
+          Discover hidden stories, collect digital artifacts, and learn about the rich history and culture of the places you visit.
+        </p>
+        <p style={{ ...styles.subtle, marginBottom:16 }}>
+          Each quest takes you through carefully curated locations, where you'll encounter both known landmarks and mysterious discoveries. 
+          Use your phone's GPS to navigate and collect items as you explore the real world.
+        </p>
+      </div>
+
+      <div style={{ ...styles.card, marginBottom:24 }}>
+        <h2 style={{ ...styles.h2, marginBottom:12 }}>How to Play</h2>
+        <div style={{ display:'grid', gap:12 }}>
+          <div style={{ display:'flex', alignItems:'flex-start', gap:12 }}>
+            <div style={{ width:24, height:24, borderRadius:12, background:'#22c55e', color:'#fff', fontWeight:700, display:'grid', placeItems:'center', fontSize:12, flexShrink:0 }}>1</div>
+            <div>
+              <div style={{ fontWeight:600, marginBottom:4 }}>Pick a Quest</div>
+              <div style={{ ...styles.subtle, fontSize:14 }}>Choose from available quests like "The Worker's Garden: Jurong Lake"</div>
+            </div>
+          </div>
+          <div style={{ display:'flex', alignItems:'flex-start', gap:12 }}>
+            <div style={{ width:24, height:24, borderRadius:12, background:'#22c55e', color:'#fff', fontWeight:700, display:'grid', placeItems:'center', fontSize:12, flexShrink:0 }}>2</div>
+            <div>
+              <div style={{ fontWeight:600, marginBottom:4 }}>Walk & Explore</div>
+              <div style={{ ...styles.subtle, fontSize:14 }}>Use the map to navigate to locations and collect items when you get close</div>
+            </div>
+          </div>
+          <div style={{ display:'flex', alignItems:'flex-start', gap:12 }}>
+            <div style={{ width:24, height:24, borderRadius:12, background:'#22c55e', color:'#fff', fontWeight:700, display:'grid', placeItems:'center', fontSize:12, flexShrink:0 }}>3</div>
+            <div>
+              <div style={{ fontWeight:600, marginBottom:4 }}>Learn & Share</div>
+              <div style={{ ...styles.subtle, fontSize:14 }}>Read about each discovery and share your completed quest as an Instagram story</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ ...styles.card, marginBottom:24 }}>
+        <h2 style={{ ...styles.h2, marginBottom:12 }}>Features</h2>
+        <ul style={{ ...styles.subtle, paddingLeft:20 }}>
+          <li style={{ marginBottom:8 }}>GPS-based navigation and collection</li>
+          <li style={{ marginBottom:8 }}>Rich historical content and context</li>
+          <li style={{ marginBottom:8 }}>Interactive map with real-time location tracking</li>
+          <li style={{ marginBottom:8 }}>Mystery items that appear as you explore</li>
+          <li style={{ marginBottom:8 }}>Shareable Instagram stories of your completed quests</li>
+          <li style={{ marginBottom:8 }}>Offline-capable for uninterrupted exploration</li>
+        </ul>
+      </div>
+
+      <div style={{ ...styles.card }}>
+        <h2 style={{ ...styles.h2, marginBottom:12 }}>About the Project</h2>
+        <p style={{ ...styles.subtle, marginBottom:16 }}>
+          Heartlands is designed to help people connect with their local communities through interactive storytelling. 
+          Each quest reveals the hidden histories and stories that make each neighborhood unique.
+        </p>
+        <p style={{ ...styles.subtle }}>
+          Built with modern web technologies to work seamlessly on mobile devices, Heartlands brings the past to life 
+          through your present-day explorations.
+        </p>
+      </div>
     </div>
   );
 }
@@ -872,6 +1312,17 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
   // Item collection popup state
   const [itemPopup, setItemPopup] = useState(null); // { item, taps: 0, stage: 'crate' | 'opening' | 'item' }
   const [crateTaps, setCrateTaps] = useState(0);
+  
+  // Safety mechanism: clear any stuck popup after 30 seconds
+  useEffect(() => {
+    if (itemPopup) {
+      const timer = setTimeout(() => {
+        console.log('Auto-closing stuck popup after 30 seconds');
+        setItemPopup(null);
+      }, 30000);
+      return () => clearTimeout(timer);
+    }
+  }, [itemPopup]);
   
   // Finish warning state
   const [showFinishWarning, setShowFinishWarning] = useState(false);
@@ -1022,30 +1473,27 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
     } 
   }
 
-  // simple responsive height
-  const mapHeight = typeof window !== 'undefined' && window.innerWidth < 640 ? '68vh' : '80vh';
+  // increased height for larger map
+  const mapHeight = typeof window !== 'undefined' && window.innerWidth < 640 ? '70vh' : '77vh';
 
   return (
-    <section style={{ ...styles.container, paddingTop:16, paddingBottom:24 }}>
-              <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:10 }}>
-          <button onClick={onBack} style={{ ...styles.button, background:'#0b0b0b', color:'#e5e5e5' }}>← Back</button>
+    <section style={{ ...styles.container, paddingTop:4, paddingBottom:8 }}>
+      {/* Header */}
+      <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:4 }}>
+        <button onClick={onBack} style={{ ...styles.button, background:'#0b0b0b', color:'#e5e5e5', padding:'6px 10px', fontSize:13 }}>← Back</button>
           <div>
-            <h2 style={{ fontWeight:800, fontSize:22, marginBottom:2 }}>
+          <h2 style={{ fontWeight:800, fontSize:18 }}>
               {stack.id === 'jurong' ? 'Jurong Lake' : stack.name}
             </h2>
-            <div style={{ ...styles.subtle, fontSize:14, color:'#a3a3a3' }}>
-              {stack.id === 'jurong' ? 'The Worker\'s Garden' : 'Historical Expedition'}
             </div>
-          </div>
-          <div style={{ marginLeft:'auto', display:'flex', gap:8, alignItems:'center' }}>
-            <div style={{ ...styles.subtle, fontSize:12 }}>{totals.gotItems}/{totals.totalItems} items • {totals.gotPts}/{totals.totalPts} pts</div>
-            <button onClick={() => setShowFinishWarning(true)} style={{ ...styles.button }}>Finish</button>
+        <div style={{ marginLeft:'auto', display:'flex', gap:6, alignItems:'center' }}>
+          <div style={{ ...styles.subtle, fontSize:11 }}>{totals.gotItems}/{totals.totalItems} items • {totals.gotPts}/{totals.totalPts} pts</div>
+          <button onClick={() => setShowFinishWarning(true)} style={{ ...styles.button, padding:'6px 10px', fontSize:13 }}>Finish</button>
           </div>
         </div>
 
-      {/* map wrapper: centered; no weird zoom on mobile */}
-      <div style={{ maxWidth:980, margin:'0 auto' }}>
-        <div style={{ position:'sticky', top:12, height:mapHeight, zIndex:10, borderRadius:16, overflow:'hidden', border:'1px solid #2a2a2a' }}>
+      {/* map wrapper: full width */}
+      <div style={{ position:'relative', height:mapHeight, zIndex:10, borderRadius:16, overflow:'hidden', border:'1px solid #2a2a2a' }}>
           <div style={{ position:'relative', width:'100%', height:'100%' }}>
             <MapBox
               stack={stack}
@@ -1078,26 +1526,21 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
         </div>
 
         {/* Map toolbar */}
-        <div style={{ marginTop:10, display:'flex', alignItems:'center', gap:8 }}>
+        <div style={{ marginTop:0, display:'flex', alignItems:'center', gap:8 }}>
           <div style={{ ...styles.subtle, fontSize:13 }}>
             {effective ? (
               <>You: <span style={{fontFamily:'ui-monospace,SFMono-Regular'}}>{effective.lat?.toFixed(5)}, {effective.lng?.toFixed(5)}</span>{typeof heading==='number'?` • ${Math.round(heading)}°`:''}{effective.speed?` • ${effective.speed.toFixed(1)} m/s`:''}</>
             ) : (error ? <span style={{ color:'#ef4444' }}>{error}</span> : 'Allow location (HTTPS on iOS) for blue dot & distances.')}
-          </div>
-          <div style={{ marginLeft:'auto', display:'flex', gap:8, flexWrap:'wrap' }}>
-            <button onClick={()=>setSimOn(v=>!v)} style={{ ...styles.button, background: simOn?'#7c3aed':'#111', color:'#fff', borderColor:'#5b21b6' }}>{simOn? 'Sim ON (drag pin)':'Sim OFF'}</button>
-            <button onClick={()=>{ setSimOn(false); setSimLoc(null); }} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>Use GPS</button>
-
-          </div>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div style={{ marginTop:18 }}>
+      {/* Tabs and Sim Button */}
+      <div style={{ marginTop:8, display:'flex', alignItems:'center', justifyContent:'space-between' }}>
         <div style={{ display:'inline-flex', background:'#111', border:'1px solid #2a2a2a', borderRadius:12, overflow:'hidden' }}>
           <button onClick={()=>setTab('landmarks')} style={{ padding:'8px 14px', fontWeight:600, color: tab==='landmarks'? '#000':'#e5e5e5', background: tab==='landmarks'? '#fff':'transparent', borderRight:'1px solid #2a2a2a' }}>Landmarks</button>
           <button onClick={()=>setTab('collected')} style={{ padding:'8px 14px', fontWeight:600, color: tab==='collected'? '#000':'#e5e5e5', background: tab==='collected'? '#fff':'transparent' }}>Items Collected ({collectedList.length}/{fixedItems.length})</button>
         </div>
+        <button onClick={()=>setSimOn(v=>!v)} style={{ ...styles.button, background: simOn?'#7c3aed':'#111', color:'#fff', borderColor:'#5b21b6' }}>{simOn? 'Sim ON':'Sim OFF'}</button>
       </div>
 
       {/* Cards list */}
@@ -1118,7 +1561,10 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
       {/* Item collection popup */}
       <ItemCollectionPopup 
         popup={itemPopup}
-        onClose={() => setItemPopup(null)}
+        onClose={() => {
+          console.log('Closing item popup');
+          setItemPopup(null);
+        }}
         onCollect={(item) => {
           runConfetti(mapConfettiRef.current);
           actuallyCollect(item);
@@ -1168,6 +1614,8 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
 // ============================
 function ItemCollectionPopup({ popup, onClose, onCollect, onTapCrate }){
   if (!popup) return null;
+  
+  console.log('ItemCollectionPopup rendering with popup:', popup);
 
   const { item, stage, taps, tapsNeeded } = popup;
 
@@ -1505,6 +1953,50 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
   const mapRef = useRef(null);
   const [labelFor, setLabelFor] = useState(null); // which fixed id has a label open
   const [triggeredItems, setTriggeredItems] = useState(new Set()); // Track which items have already triggered popup
+  const [currentZoom, setCurrentZoom] = useState(16); // Track current zoom level
+
+  // Function to add small random offset to prevent icon clustering
+  const addOffsetToCoords = (coords, id) => {
+    // Use item ID as seed for consistent offset
+    const seed = id.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+    const random1 = (seed * 9301 + 49297) % 233280 / 233280; // Simple pseudo-random
+    const random2 = ((seed * 9301 + 49297) * 9301 + 49297) % 233280 / 233280;
+    
+    // Small offset in degrees (about 10-20 meters)
+    const offsetLat = (random1 - 0.5) * 0.0002; // ~20m max offset
+    const offsetLng = (random2 - 0.5) * 0.0002;
+    
+    return {
+      lat: coords.lat + offsetLat,
+      lng: coords.lng + offsetLng
+    };
+  };
+
+  // Function to create zoom-aware landmark icon
+  const makeZoomAwareLandmarkIcon = (url, name, zoom) => {
+    const showLabel = zoom >= 16.5; // Only show labels when zoomed in to level 18 or higher
+    
+    if (showLabel) {
+      // Full icon with label
+      const html = `
+        <div style="text-align:center; width:100%;">
+          <div style="width:42px; height:42px; overflow:hidden; margin:0 auto;">
+            <img src='${asset(url)}' style='width:100%;height:100%;object-fit:cover;display:block' />
+          </div>
+          <div style="margin-top:4px; font-size:11px; font-weight:600; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.8); display:inline-block; max-width:80px; word-wrap:break-word; text-align:center; line-height:1.2;">
+            ${name}
+          </div>
+        </div>`;
+      return L.divIcon({ html, className:"", iconSize:[60,60], iconAnchor:[30,30] });
+    } else {
+      // Icon only, no label
+      const html = `
+        <div style="width:42px; height:42px; border-radius:10px; overflow:hidden; margin:0 auto;">
+          <img src='${asset(url)}' style='width:100%;height:100%;object-fit:cover;display:block' />
+        </div>`;
+      return L.divIcon({ html, className:"", iconSize:[42,42], iconAnchor:[21,21] });
+    }
+  };
 
 
 
@@ -1541,6 +2033,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
 
   return (
     <MapContainer whenCreated={(m)=>mapRef.current=m} center={[center.lat, center.lng]} zoom={16} style={{ height:'100%', width:'100%' }} scrollWheelZoom>
+      <ZoomTracker onZoomChange={setCurrentZoom} />
       {/* Dynamic map tiles based on selected style */}
       <TileLayer 
         attribution={currentStyle.attribution}
@@ -1595,7 +2088,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
           <React.Fragment key={f.id}>
             {/* Only show circle if item hasn't been collected */}
             {!collectedSet.has(f.id) && (
-              <Circle center={[f.coords.lat, f.coords.lng]} radius={f.searchRadiusM || 60} pathOptions={{ color:f.radiusColourM || '#22c55e', weight:2, opacity:0.8, fillOpacity:0.1 }} />
+              <Circle center={[f.coords.lat, f.coords.lng]} radius={f.searchRadiusM || 60} pathOptions={{ color:f.radiusColourM || '#22c55e', weight:3, opacity:1.0, fillOpacity:0.3 }} />
             )}
             
             {/* Only show item when player is close enough to the random collection point */}
@@ -1612,11 +2105,14 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
       })}
 
       {/* Landmarks - always visible, clickable for info */}
-      {landmarkItems.map(l => (
+      {landmarkItems.map(l => {
+        const offsetCoords = addOffsetToCoords(l.coords, l.id);
+        return (
         <React.Fragment key={l.id}>
-          <Marker position={[l.coords.lat, l.coords.lng]} icon={makeLandmarkIcon(l.img || thumb(l.name), l.name)} eventHandlers={{ click: ()=> onOpenModal && onOpenModal(l) }} />
+            <Marker position={[offsetCoords.lat, offsetCoords.lng]} icon={makeZoomAwareLandmarkIcon(l.img || thumb(l.name), l.name, currentZoom)} eventHandlers={{ click: ()=> onOpenModal && onOpenModal(l) }} />
         </React.Fragment>
-      ))}
+        );
+      })}
 
       {/* User / Sim markers */}
       {gpsLoc && !simOn && (
@@ -1705,6 +2201,18 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
 }
 
 function Recenter({ userLoc, centerKey }){ const map = useMap(); useEffect(()=>{ if(centerKey && userLoc) map.setView([userLoc.lat, userLoc.lng]); },[centerKey]); return null; }
+
+function ZoomTracker({ onZoomChange }){ 
+  const map = useMap(); 
+  useEffect(()=>{ 
+    const handleZoom = () => onZoomChange(map.getZoom());
+    map.on('zoom', handleZoom);
+    // Set initial zoom
+    onZoomChange(map.getZoom());
+    return () => map.off('zoom', handleZoom);
+  },[map, onZoomChange]); 
+  return null; 
+}
 
 // ============================
 // Landmark Card (non-collectible landmarks)
