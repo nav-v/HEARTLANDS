@@ -1316,7 +1316,7 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
   const [centerKey, setCenterKey] = useState(0);    // bump to recenter once
   const [compassOffset, setCompassOffset] = useState(0); // calibration offset
   const [lastHeadingUpdate, setLastHeadingUpdate] = useState(0);
-  const [mapStyle, setMapStyle] = useState('hybrid'); // 'hybrid', 'satellite', 'apple', 'standard'
+  const [mapStyle, setMapStyle] = useState('pioneer'); // 'pioneer', 'hybrid'
   
   // Item collection popup state
   const [itemPopup, setItemPopup] = useState(null); // { item, taps: 0, stage: 'crate' | 'opening' | 'item' }
@@ -1961,7 +1961,7 @@ function FinishWarningDialog({ show, onConfirm, onCancel }) {
 }
 
 function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simLoc, setSimLoc, collectedSet, withinIds, onCollectFromMap, onOpenModal, heading, centerKey, onCenter, onEnableCompass, compassOn, mapStyle, setMapStyle, onAutoTriggerPopup }){
-  const center = { lat: (stack.bbox[1] + stack.bbox[3]) / 2, lng: (stack.bbox[0] + stack.bbox[2]) / 2 };
+  const center = { lat: (stack.bbox[1] + stack.bbox[3]) / 2 + 0.0010, lng: (stack.bbox[0] + stack.bbox[2]) / 2 - 0.0035 };
   const mapRef = useRef(null);
   const [labelFor, setLabelFor] = useState(null); // which fixed id has a label open
   const [triggeredItems, setTriggeredItems] = useState(new Set()); // Track which items have already triggered popup
@@ -2038,20 +2038,26 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors',
       subdomains: "abc"
+    },
+    pioneer: {
+      url: "https://tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=360fdea37ca1496d84e959daeecb4993",
+      attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      subdomains: "",
+      maxZoom: 18
     }
   };
 
-  const currentStyle = mapStyles[mapStyle] || mapStyles.hybrid;
+  const currentStyle = mapStyles[mapStyle] || mapStyles.pioneer;
 
   return (
-    <MapContainer whenCreated={(m)=>mapRef.current=m} center={[center.lat, center.lng]} zoom={16} style={{ height:'100%', width:'100%' }} scrollWheelZoom>
+    <MapContainer whenCreated={(m)=>mapRef.current=m} center={[center.lat, center.lng]} zoom={15.5} style={{ height:'100%', width:'100%' }} scrollWheelZoom>
       <ZoomTracker onZoomChange={setCurrentZoom} />
       {/* Dynamic map tiles based on selected style */}
       <TileLayer 
         attribution={currentStyle.attribution}
         url={currentStyle.url}
         subdomains={currentStyle.subdomains}
-        maxZoom={20}
+        maxZoom={currentStyle.maxZoom || 18}
       />
       {/* Overlay for hybrid map (roads and labels on satellite) */}
       {currentStyle.overlay && (
@@ -2186,7 +2192,7 @@ function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simL
         </button>
         <button 
           onClick={() => {
-            const styles = ['hybrid', 'satellite', 'apple', 'standard'];
+            const styles = ['pioneer', 'hybrid'];
             const currentIndex = styles.indexOf(mapStyle);
             const nextIndex = (currentIndex + 1) % styles.length;
             const newStyle = styles[nextIndex];
