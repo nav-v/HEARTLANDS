@@ -250,7 +250,7 @@ In the distance, fires are shown beyond the trees, likely representing the frequ
         { id:"lake-lookout", name:"Lake Lookout", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3430237,lng:103.7227063}, img:"img/lookout.jpg", blurb:"The lake in front of you today did not exist 50 years ago", 
           richHistory: `The lake in front of you today did not exist 50 years ago. Before its creation, this was Sungei Jurong — a winding river running down to the sea, bordered by mangrove forests, mudflats, and sandbanks. In the 1960s, as part of Singapore's industrialisation push, planners at the Economic Development Board (EDB), and then the newly formed Jurong Town Corporation (JTC), decided to reshape the river into a lake. This was to make it easier to supply water for factories while also laying the groundwork for recreational amenities.
 
-[img: river.png]
+[img:river.png]
 
 Urban planners wanted Jurong to be more than just an industrial town. Conceived as Singapore's first garden industrial estate, 12 percent of its land was set aside for parks, gardens, and open spaces. The Jurong Lake area was planned as a vital green lung to separate factories from residential zones. At the inaugural JTC meeting in June 1968, Finance Minister Goh Keng Swee described a vision of eight islands within the lake, linked by bridges and landscaped into themed gardens. In practice, only three of these were built: one for the Japanese Garden, the Chinese Garden, and one for a golf course. Goh's aviary later became Jurong Bird Park near Jurong Hill, while the last two islands were never realised. In 1971, the upper section of the Jurong River was dammed, formally creating the 81-hectare Jurong Lake. Today, it functions as both a reservoir and a planned landscape`, nearbyItems: ["sandbag"] },
 
@@ -887,6 +887,13 @@ export default function App(){
     console.log('Progress:', progress);
   }, [view, progress]);
 
+  // Reset scroll position when navigating to splash or play screen
+  useEffect(() => {
+    if (view.page === 'splash' || view.page === 'play') {
+      window.scrollTo(0, 0);
+    }
+  }, [view.page]);
+
   function onCollect(stackId, artId, points){ const key=`${stackId}:${artId}`; if(progress[key]) return; const next={...progress, [key]:{ when:Date.now(), points }}; setProgress(next); saveProgress(next); }
   function goFinish(stackId){ setView({ page:'finish', stackId }); }
   function resetStackAndHome(stackId){
@@ -897,7 +904,7 @@ export default function App(){
 
   return (
     <div style={styles.page}>
-      <TopBar hidden={hidden} progress={progress} onAbout={()=>setView({page:'about', stackId:null})} />
+      <TopBar hidden={hidden} progress={progress} onAbout={()=>setView({page:'about', stackId:null})} onHome={()=>setView({page:'home', stackId:null})} />
               {view.page==='home' && (
           <Home stacks={DATA.stacks} progress={progress} onPlay={(stackId)=>setView({page:'splash', stackId})} />
         )}
@@ -917,12 +924,12 @@ export default function App(){
   );
 }
 
-function TopBar({ hidden, progress, onAbout }){
+function TopBar({ hidden, progress, onAbout, onHome }){
   const score = Object.values(progress).reduce((a,v)=>a+(v.points||0),0);
   return (
     <div style={{ position:'sticky', top:0, zIndex:20, transform:`translateY(${hidden?-60:0}px)`, transition:'transform .25s ease', backdropFilter:'blur(6px)', background:'rgba(11,11,11,.7)', borderBottom:'1px solid #1f1f1f' }}>
       <div style={{ ...styles.container, padding:'10px 16px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
-        <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+        <div style={{ display:'flex', alignItems:'center', gap:8, cursor:'pointer' }} onClick={onHome}>
           <img 
             src="img/crate.jpg" 
             alt="Heartlands Logo"
@@ -979,12 +986,12 @@ function Home({ stacks, progress, onPlay }){
         }}>
           <div style={{ padding:'28px 24px 22px 24px', position:'relative', zIndex:2 }}>
             <h1 style={{ fontSize:40, lineHeight:1.05, fontWeight:900, letterSpacing:'-0.01em', marginBottom:10 }}>Walk. Collect. Understand.</h1>
-            <p style={{ ...styles.subtle, fontSize:16, maxWidth:860 }}>
-              Heartlands is a self‑guided, walking game. Discover landmarks and collect items along the way.
-              Hunt mystery circles for rarer artefacts. Share your stamp sheet when you're done.
+            <p style={{ color:'#fff', fontSize:16, maxWidth:860, lineHeight:1.4 }}>
+              Heartlands is a self‑guided, walking game. Collect items to learn about the area's history and culture.
+              Share your collection of items with friends when you're done.
             </p>
             <div style={{ marginTop:14 }}>
-              <a href="#stacks" style={{ ...styles.button }}>Choose a stack ↓</a>
+              <a href="#stacks" style={{ ...styles.button }}>Play Now ↓</a>
             </div>
             
             {/* Icon Ticker Background - only in header */}
@@ -997,9 +1004,9 @@ function Home({ stacks, progress, onPlay }){
       <section style={{ ...styles.container, paddingTop:18, paddingBottom:6 }}>
         <h2 style={{ ...styles.h2, marginBottom:16 }}>What is Heartlands?</h2>
         <div style={{ display:'grid', gap:12, gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))' }}>
-          <HowItWorksStep n={1} title="Pick a quest" text="Each area has fixed icons (known sites) and random circles (mystery spawns)." image="img/map.png" />
-          <HowItWorksStep n={2} title="Walk & hunt" text="Use the map. Fixed icons are visible; randoms appear as search radii. Get close to collect." image="img/compass.png" />
-          <HowItWorksStep n={3} title="Collect & share" text="Cards reveal context and debate prompts. Finish to export an Instagram story." image="img/crown.png" />
+          <HowItWorksStep n={1} title="Pick a quest" text="Your map highlights places of interest. Orange circles are landmarks, must-see spots with info you can read in advance. Green circles are mystery sites that only reveal their content when you arrive." image="img/map.png" />
+          <HowItWorksStep n={2} title="Walk & collect" text="Both types of circles contain items. Step inside a circle and move around to discover its item. Each find gives you a quick story about the area’s history and culture." image="img/compass2.png" />
+          <HowItWorksStep n={3} title="Collect & share" text="At the end, you’ll see your stamp sheet with everything you unlocked, and what you missed. Save it as a keepsake, or share it on Instagram to compare with your friends. Who got the most?" image="img/share.png" />
         </div>
       </section>
 
@@ -1170,15 +1177,15 @@ function SplashScreen({ stack, onPlay, onBack }){
 
 function HowItWorksStep({ n, title, text, image }){
   return (
-    <div style={{ ...styles.card }}>
+    <div style={{ ...styles.card, padding:0, overflow:'hidden' }}>
       {image && (
-        <div style={{ marginBottom:12, borderRadius:8, overflow:'hidden' }}>
+        <div style={{ height: '120px', overflow:'hidden' }}>
           <img 
             src={image} 
             alt={title}
             style={{ 
               width: '100%', 
-              height: '120px', 
+              height: '100%', 
               objectFit: 'cover',
               display: 'block'
             }}
@@ -1188,11 +1195,13 @@ function HowItWorksStep({ n, title, text, image }){
           />
         </div>
       )}
+      <div style={{ padding:'16px' }}>
       <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:6 }}>
         <div style={{ width:26, height:26, borderRadius:8, background:'#fff', color:'#000', fontWeight:800, display:'grid', placeItems:'center' }}>{n}</div>
         <div style={{ fontWeight:700 }}>{title}</div>
       </div>
       <div style={{ ...styles.subtle, fontSize:14 }}>{text}</div>
+      </div>
     </div>
   );
 }
@@ -1526,21 +1535,24 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
         </div>
 
         {/* Map toolbar */}
-        <div style={{ marginTop:0, display:'flex', alignItems:'center', gap:8 }}>
+        <div style={{ marginTop:10, display:'flex', alignItems:'center', gap:8 }}>
           <div style={{ ...styles.subtle, fontSize:13 }}>
             {effective ? (
               <>You: <span style={{fontFamily:'ui-monospace,SFMono-Regular'}}>{effective.lat?.toFixed(5)}, {effective.lng?.toFixed(5)}</span>{typeof heading==='number'?` • ${Math.round(heading)}°`:''}{effective.speed?` • ${effective.speed.toFixed(1)} m/s`:''}</>
             ) : (error ? <span style={{ color:'#ef4444' }}>{error}</span> : 'Allow location (HTTPS on iOS) for blue dot & distances.')}
+          </div>
+          <div style={{ marginLeft:'auto', display:'flex', gap:8, flexWrap:'wrap' }}>
+            <button onClick={()=>setSimOn(v=>!v)} style={{ ...styles.button, background: simOn?'#7c3aed':'#111', color:'#fff', borderColor:'#5b21b6' }}>{simOn? 'Sim ON (drag pin)':'Sim OFF'}</button>
+            <button onClick={()=>{ setSimOn(false); setSimLoc(null); }} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>Use GPS</button>
         </div>
       </div>
 
-      {/* Tabs and Sim Button */}
-      <div style={{ marginTop:8, display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+      {/* Tabs */}
+      <div style={{ marginTop:18 }}>
         <div style={{ display:'inline-flex', background:'#111', border:'1px solid #2a2a2a', borderRadius:12, overflow:'hidden' }}>
           <button onClick={()=>setTab('landmarks')} style={{ padding:'8px 14px', fontWeight:600, color: tab==='landmarks'? '#000':'#e5e5e5', background: tab==='landmarks'? '#fff':'transparent', borderRight:'1px solid #2a2a2a' }}>Landmarks</button>
           <button onClick={()=>setTab('collected')} style={{ padding:'8px 14px', fontWeight:600, color: tab==='collected'? '#000':'#e5e5e5', background: tab==='collected'? '#fff':'transparent' }}>Items Collected ({collectedList.length}/{fixedItems.length})</button>
         </div>
-        <button onClick={()=>setSimOn(v=>!v)} style={{ ...styles.button, background: simOn?'#7c3aed':'#111', color:'#fff', borderColor:'#5b21b6' }}>{simOn? 'Sim ON':'Sim OFF'}</button>
       </div>
 
       {/* Cards list */}
