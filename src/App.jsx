@@ -2088,7 +2088,7 @@ function FinishWarningDialog({ show, onConfirm, onCancel }) {
 }
 
 function MapBox({ stack, fixedItems, landmarkItems, userLoc, gpsLoc, simOn, simLoc, setSimLoc, collectedSet, withinIds, onCollectFromMap, onOpenModal, heading, centerKey, onCenter, onEnableCompass, compassOn, mapStyle, setMapStyle, onAutoTriggerPopup }){
-  const center = { lat: (stack.bbox[1] + stack.bbox[3]) / 2 + 0.0010, lng: (stack.bbox[0] + stack.bbox[2]) / 2 - 0.0080 };
+  const center = { lat: (stack.bbox[1] + stack.bbox[3]) / 2 - 0.0020, lng: (stack.bbox[0] + stack.bbox[2]) / 2 + 0.0030 };
   const mapRef = useRef(null);
   const [labelFor, setLabelFor] = useState(null); // which fixed id has a label open
   const [triggeredItems, setTriggeredItems] = useState(new Set()); // Track which items have already triggered popup
