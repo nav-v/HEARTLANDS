@@ -227,7 +227,7 @@ The ponds you see around you today probably do not contain prawns, but they are 
 Clusia Cove also demonstrates natural water cleansing. Water circulates in a closed loop through a cleansing biotope, the playground, and an eco-pond. Sand beds and semi-aquatic plants like the Common Susum (Hanguana malayanum) filter and oxygenate the water, while ultraviolet treatment ensures it remains safe. The eco-pond itself mimics a freshwater wetland, where substrate filters debris and plants provide further purification before the loop begins again. The cove is named after one such plant — the Autograph Tree (Clusia rosea).
 
 Sources: National Archives of Singapore, NParks, Roots.sg` },
-        { id:"tire", name:"Car Tire", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.334457,lng:103.7280321}, img:"img/tire.png", blurb:"The rubber capital of the world", 
+        { id:"tire", name:"Car Tire", kind:"fixed", points:10, radiusM:30, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.334457,lng:103.7280321}, img:"img/tire.png", blurb:"The rubber capital of the world", 
           richHistory: `Take a moment to slow down and explore the allotment plots around you. Every raised bed here is lovingly tended by a local resident - some growing kangkong, chye sim, or kailan, others experimenting with cucumbers, passionfruit, ginger, or Mediterranean herbs like rosemary and dill. If you’re lucky, you might catch one of the gardeners at work; many are more than happy to share what they’re growing, and why.
 
 These gardens are part of Singapore’s Allotment Gardening Scheme, launched by NParks to bring farming closer to home. Each household can lease a 2.5m by 1m raised planter box, complete with soil and storage space, for just over $62 a year. Across the island, there are now over 2,400 plots in 28 parks, with a national target of 3,000 plots by 2030. Programmes like Gardening with Edibles aim to nurture a growing culture of food self-sufficiency, sustainability, and neighbourhood pride.
@@ -307,7 +307,7 @@ In 1971, the upper reaches of the Jurong River were dammed, officially creating 
 <i>Sources: National Archives, NParks</i>`, nearbyItems: ["sandbag"] },
 
  
-        { id:"chainsaw", name:"Chainsaw", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3381212,lng:103.7320312}, img:"img/chainsaw.png", blurb:"Fragment of lost Jurong", 
+        { id:"chainsaw", name:"Chainsaw", kind:"fixed", points:10, radiusM:40, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3381212,lng:103.7320312}, img:"img/chainsaw.png", blurb:"Fragment of lost Jurong", 
           richHistory: `You're now at Cascading Creek, a facsimile of a Southeast Asian river. It hints at what Jurong once was: a tangle of jungle and swamp stitched by the old Jurong River. An amusing account of a police raid on a Jurong counterfeiting den in 1904 captures this:
 
 "Last night at 10.45 Insp. Branagan and a party of detectives raided a house … in the jungle. It would have been a difficult matter even in daylight to get to the house, but at night it was extremely dangerous as the path led through dense jungle and swamp … when the party arrived at the house they were rather done up and some presented a wretched appearance, having been unfortunate enough to fall into swamp holes."
@@ -372,7 +372,7 @@ Beyond this garden, Jurong has another connection to Suzhou. In the early 1990s,
 
 Sources: National Archives of Singapore` },
 
-        { id:"rasau-walk", name:"Rasau Walk", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3318083,lng:103.7281636}, img:"img/rasau.png", blurb:"Crocodile encounters", 
+        { id:"rasau-walk", name:"Rasau Walk", kind:"landmark", points:0, radiusM:35, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3318083,lng:103.7281636}, img:"img/rasau.png", blurb:"Crocodile encounters", 
           richHistory: `You're now at Rasau Walk, a 300m boardwalk that showcases a restored freshwater swamp. Before heavy industry reached Jurong, mangroves like these were part of the range of the estuarine crocodile (Crocodylus porosus). Even the old place-names hint at this. Pulau Buaya (Malay for "Crocodile Island") appears on maps dating back all the way to the early 1800s. Reclamation has folded the islet into today's Jurong Island.
 
 [img:crocs.jpg: An Estuarine Crocodile]
@@ -461,7 +461,7 @@ Across the pond, you'll see the Tea Pavilion, featuring three pavilions connecte
 
 Sources: “THE CHINESE GARDEN”, The Straits Times, 2 December 1973; “Wedding bells peal at Stone Boat”, The Straits Times, 21 June 1982; NParks; Roots.sg; Teo Zhiliang (2024)`, nearbyItems: ["wedding-ring"] },
 
-        { id:"wedding-ring", name:"Wedding Ring", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.338935,lng:103.7288695}, img:"img/ring.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
+        { id:"wedding-ring", name:"Wedding Ring", kind:"fixed", points:10, radiusM:30, searchRadiusM:40, radiusColourM:"#FFBF00", coords:{lat:1.338935,lng:103.7288695}, img:"img/ring.png", blurb:"The Stoneboat is a famous feature of traditional Chinese architecture", 
           richHistory: `The Stoneboat is a famous feature of traditional Chinese architecture, designed so visitors can admire the surrounding scenery while feeling as if they were aboard a vessel floating on water. The version here in Jurong's Chinese Garden follows the Beijing style, with some adaptations in its materials and design.
 
 Stone boats are not just ornamental. Their boat-like form, blending seamlessly with the water, reflects Taoist ideals of harmony with nature. At the same time, the paradox of a vessel that cannot sail plays with the theme of illusion and reality, so central to Chinese art and literature. These pavilions also served as scholarly retreats, places for poetry and quiet contemplation, and their solidity came to symbolise permanence — an eternal counterpoint to wooden boats that decay or sink.
@@ -491,7 +491,7 @@ The 13-arch White Rainbow Bridge echoes Beijing's Seventeen-Arch Bridge. The tea
 
 But these structures were hard to build. This was the first project of its kind in Singapore, and local labourers had little experience with traditional Chinese architectural techniques. Translating two-dimensional plans into timber, stone, and tile required specialised skills. Workers were trained on the job, guided by Taiwanese mentors who brought their expertise to Jurong.` },
 
-        { id:"giftbox", name:"Giftbox", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.335076,lng:103.7295396}, img:"img/giftbox.png", blurb:"Gifts and guitars", 
+        { id:"giftbox", name:"Giftbox", kind:"fixed", points:10, radiusM:30, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.335076,lng:103.7295396}, img:"img/giftbox.png", blurb:"Gifts and guitars", 
           richHistory: `The Japanese Garden was the first island to be built out on Jurong Lake, opening in 1973 as the largest Japanese garden outside of Japan at the time. It is also known as Seiwaen, a name derived from Sei (Singapore), Wa (Japan), and En (Garden) - literally "Singapore's Japanese Garden."
 
 [img:gks_o.webp: Dr. Goh Keng Swee at the Japanese Garden opening ceremony]
@@ -504,7 +504,7 @@ That spirit of giving continues. In 2021, American chipmaker Micron Technology d
 
 Sources: NParks, Micron Technology, The Straits Times` },
 
-        { id:"grasslands", name:"Grasslands", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3326227,lng:103.7274602}, img:"img/grassland.png", blurb:"Home to over 200 types of feathery friends", 
+        { id:"grasslands", name:"Grasslands", kind:"landmark", points:0, radiusM:30, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3326227,lng:103.7274602}, img:"img/grassland.png", blurb:"Home to over 200 types of feathery friends", 
           richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
 
 Three bird hides ring the area, perfect for observing the over 205 bird species that have been spotted at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
@@ -519,7 +519,7 @@ This area also links to a bigger bird story. In 1967–68, Finance Minister Goh 
 
 Sources: NParks, Dr. Goh Keng Swee's inaugural speech at the Jurong Town Council`, nearbyItems: ["feather"] },
 
-        { id:"feather", name:"Feather", kind:"fixed", points:20, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3326227,lng:103.7274602}, img:"img/feather.png", blurb:"A reminder of the birds that call these grasslands home", 
+        { id:"feather", name:"Feather", kind:"fixed", points:20, radiusM:35, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3326227,lng:103.7274602}, img:"img/feather.png", blurb:"A reminder of the birds that call these grasslands home", 
           richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
 
 Three bird hides ring the area, perfect for observing the over 205 bird species that have spotting at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
@@ -534,7 +534,7 @@ This area also links to a bigger bird story. In 1967–68, Finance Minister Goh 
 
 Source: NParks, Dr. Goh Keng Swee's inaugural speech at the Jurong Town Council` },
 
-        { id:"megaphone", name:"Megaphone", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3353566,lng:103.7306983}, img:"img/megaphone.png", blurb:"A garden for the people, by the people", 
+        { id:"megaphone", name:"Megaphone", kind:"fixed", points:10, radiusM:45, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3353566,lng:103.7306983}, img:"img/megaphone.png", blurb:"A garden for the people, by the people", 
           richHistory: `You're now in the Sunken Garden, a gorge-like passage where walls rise to 3.5 m and drip with more than 200 epiphyte species (plants that grow on other plants or structures). A living moss wall of Paras stone keeps the air cool and damp. At its heart, a cenote-inspired water feature acts as both showpiece and rain-harvesting system – an air-well that draws daylight down to a still pool and recycles stormwater through the garden (a "cenote" is a natural sinkhole formed when limestone collapses to expose groundwater, most famously on Mexico's Yucatán Peninsula).
 
 [img:cenote.jpg]
@@ -633,7 +633,7 @@ This serpentine course inspired the plans to convert the meandering river into a
 
 Sources: National Archives of Singapore, NParks` },
 
-        { id:"lantern", name:"Lantern", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.33611,lng:103.72956}, img:"img/lantern.jpg", blurb:"Mid-Autumn in Singapore", 
+        { id:"lantern", name:"Lantern", kind:"fixed", points:10, radiusM:35, searchRadiusM:35, radiusColourM:"#22c55e", coords:{lat:1.33611,lng:103.72956}, img:"img/lantern.jpg", blurb:"Mid-Autumn in Singapore", 
           richHistory: `Lanterns have long been a symbol of celebration at Jurong Lake. From the 1970s, Mid-Autumn Festivals were marked at the Chinese Garden with hundreds of lanterns illuminating the grounds. Each year carried a different theme, and from 1987 onwards the festivities regularly drew crowds of over 100,000 visitors.
 
 In 1999, the gardens hosted their largest Mid-Autumn Festival to date, importing more than 2,000 lanterns from Guangdong, China. Its centrepiece was the dramatic Dragon and Phoenix Pillar Millennium Lantern, measuring 10 metres in length.
@@ -1669,8 +1669,9 @@ function Play({ stack, progress, onCollect, onBack, onFinish }){
             ) : (error ? <span style={{ color:'#ef4444' }}>{error}</span> : 'Allow location (HTTPS on iOS) for blue dot & distances.')}
           </div>
           <div style={{ marginLeft:'auto', display:'flex', gap:8, flexWrap:'wrap' }}>
-            <button onClick={()=>setSimOn(v=>!v)} style={{ ...styles.button, background: simOn?'#7c3aed':'#111', color:'#fff', borderColor:'#5b21b6' }}>{simOn? 'Sim ON (drag pin)':'Sim OFF'}</button>
-            <button onClick={()=>{ setSimOn(false); setSimLoc(null); }} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>Use GPS</button>
+            {/* Simulation buttons hidden */}
+            {/* <button onClick={()=>setSimOn(v=>!v)} style={{ ...styles.button, background: simOn?'#7c3aed':'#111', color:'#fff', borderColor:'#5b21b6' }}>{simOn? 'Sim ON (drag pin)':'Sim OFF'}</button>
+            <button onClick={()=>{ setSimOn(false); setSimLoc(null); }} style={{ ...styles.button, background:'#111', color:'#e5e5e5' }}>Use GPS</button> */}
         </div>
       </div>
 
