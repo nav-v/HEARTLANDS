@@ -12,7 +12,7 @@ L.Icon.Default.mergeOptions({
 });
 
 /**
- * HEARTLANDS — v0.8
+ * UNEARTHED — v0.8
  * ----------------------------------------------------------------------
  * • Fixed artefacts: visible name, thumbnail, description, marker icons on map
  * • Random artefacts: appear as mystery cards ("?") until collected; circles on map
@@ -113,7 +113,7 @@ function thumb(label){
 }
 const mysteryThumb = () => thumb('?');
 
-// Ensure images work both locally and on GitHub Pages (/HEARTLANDS/ base)
+// Ensure images work both locally and on GitHub Pages (/UNEARTHED/ base)
 function asset(p){
   if(!p) return p;
   if(/^data:/.test(p) || /^https?:\/\//.test(p)) return p;
@@ -217,13 +217,28 @@ const DATA = {
       artefacts: [
 
         // New items from database.csv
-        { id:"fishing-rod", name:"Fishing Rod", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3401631,lng:103.7247079}, img:"img/rod.png", blurb:"Prawn Ponds & More", history:"Prawn Ponds & More" },
-        { id:"tire", name:"Car Tire", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.334457,lng:103.7280321}, img:"img/tire.png", blurb:"Allotment gardens and rubber history", 
-          richHistory: `You are now standing in Jurong Lake Gardens' allotment gardens. These are green spaces where aspiring gardeners can lease small plots to grow vegetables, herbs, and fruits. Across Singapore, there are now more than 2,400 allotment plots in 28 parks and gardens. Under NParks' Allotment Gardening Scheme, households can ballot for a raised planter bed, complete with soil and storage space, at just over $62 a year. Schemes like Gardening with Edibles have encouraged more Singaporeans to grow their own food, with a goal of 3,000 allotment plots by 2030.
+        { id:"fishing-rod", name:"Fishing Rod", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3401631,lng:103.7247079}, img:"img/rod.png", blurb:"Prawns and ponds", 
+          richHistory: `Jurong was once Singapore's center for prawn farming. In the early 1900s, Chinese settlers introduced aquaculture practices, while Malay villagers combined net fishing with prawn ponds built in muddy estuaries and mangrove swamps. By the 1950s, Singapore had some 1,000 acres of prawn ponds, and half of them were in Jurong. These were the most productive in the country, yielding nearly 1,000 kilograms of prawns per acre compared to less than 45 kilograms at Pulau Ubin.
 
-This is not the first time the banks of the Jurong River have been used for farming. In the 19th century, plantations of gambier and pepper cleared the surrounding jungles, but the crop quickly exhausted the soil. By the early 1900s, global demand for rubber transformed Jurong again. With the booming automobile industry requiring rubber for tyres, Malaya supplied half the world's production by 1920. Much of it was traded through Singapore, which became the "rubber capital of the world."
+[img:prawnf.jpg]
 
-Rubber estates soon dominated Jurong's landscape, owned by figures such as Chew Boon Lay, Tan Lark Sye, and members of the Chettiar community. Chew's plantation was so extensive and prominent that the area itself, and later the Boon Lay MRT station, took his name from him.` },
+The ponds you see around you today probably do not contain prawns, but they are meant to mimic tidal patterns, ripples, and currents similar to those at coastal shores where prawn ponds once stood. Clusia Cove, a three-hectare water playground in Jurong Lake Gardens, lets children experience water play while also learning about water cycles and ecological balance.
+
+Clusia Cove also demonstrates natural water cleansing. Water circulates in a closed loop through a cleansing biotope, the playground, and an eco-pond. Sand beds and semi-aquatic plants like the Common Susum (Hanguana malayanum) filter and oxygenate the water, while ultraviolet treatment ensures it remains safe. The eco-pond itself mimics a freshwater wetland, where substrate filters debris and plants provide further purification before the loop begins again. The cove is named after one such plant — the Autograph Tree (Clusia rosea).
+
+Sources: National Archives of Singapore, NParks, Roots.sg` },
+        { id:"tire", name:"Car Tire", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.334457,lng:103.7280321}, img:"img/tire.png", blurb:"The rubber capital of the world", 
+          richHistory: `Take a moment to slow down and explore the allotment plots around you. Every raised bed here is lovingly tended by a local resident - some growing kangkong, chye sim, or kailan, others experimenting with cucumbers, passionfruit, ginger, or Mediterranean herbs like rosemary and dill. If you’re lucky, you might catch one of the gardeners at work; many are more than happy to share what they’re growing, and why.
+
+These gardens are part of Singapore’s Allotment Gardening Scheme, launched by NParks to bring farming closer to home. Each household can lease a 2.5m by 1m raised planter box, complete with soil and storage space, for just over $62 a year. Across the island, there are now over 2,400 plots in 28 parks, with a national target of 3,000 plots by 2030. Programmes like Gardening with Edibles aim to nurture a growing culture of food self-sufficiency, sustainability, and neighbourhood pride.
+
+[img:rubber_p.jpg: A rubber plantation in Singapore, early 1900s]
+
+But Jurong’s connection to farming goes much further back. In the 19th century, the surrounding jungle was cleared for gambier and pepper plantations, though these crops quickly drained the soil. By the early 1900s, global demand for rubber - driven by the booming automobile industry - transformed Jurong once again. British Malaya became the world’s top producer, and much of that rubber passed through Singapore, which earned the nickname “rubber capital of the world.”
+
+Jurong’s hills were soon covered in rubber estates, owned by figures like Chew Boon Lay, Tan Lark Sye, and members of the Chettiar community. Chew’s plantation was so prominent that the area itself took on his name - today preserved in Boon Lay MRT station.
+
+Sources: NParks, Roots.sg, National Archives of Singapore.` },
 
  
         { id:"yin-and-yang-token", name:"Yin and Yang Token", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#FFBF00", coords:{lat:1.3396371,lng:103.7283051}, img:"img/yinyang.png", blurb:"Balance is one of the guiding principles", 
@@ -238,16 +253,21 @@ More generally, during the construction of the Chinese Garden in the early 1970s
 On a grander level, when looking at the lake as a whole, where the Chinese Garden is designed to be visually exciting, the Japanese Gardens are designed with a calmness to evoke inner peace and a meditative state.` },
 
         // New items from database_2.csv
-        { id:"cannon", name:"Cannon", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3414779,lng:103.7237969}, img:"img/cannon.png", blurb:"Commodore Matthew Perry's American East India Squadron", 
-          richHistory: `Commodore Matthew Perry's American East India Squadron undertook its now-famous expedition that forced Japan to open to world trade. Less well-known is the fact that Perry's squadron stopped in Singapore before Japan, where its officers surveyed the Jurong River.
+        { id:"cannon", name:"Cannon", kind:"fixed", points:20, radiusM:25, searchRadiusM:30, radiusColourM:"#22c55e", coords:{lat:1.3414779,lng:103.7237969}, img:"img/cannon.png", blurb:"The opening of Japan to the world, and Jurong?", 
+          richHistory: `In 1853–1854, Commodore Matthew C. Perry led the U.S. East India Squadron on a historic mission to open Japan's long-secluded ports. Armed with steam-powered ships and modern naval firepower, Perry pressured the Tokugawa shogunate into signing the Convention of Kanagawa, ending over 200 years of Japanese isolation from the rest of the world (sakoku).
+
+[https://www.youtube.com/watch?v=PBn_wVXcydM&t=189s]
+
+This moment became a major turning point in world history. It marked Japan's forced entry into the global system of diplomacy and trade, exposed the military and political weakness of the Tokugawa regime, and set off a wave of internal reckoning. Just over a decade later, in 1868, the Meiji Restoration began - ushering in sweeping reforms that rapidly modernised Japan's economy, military, and government. It transformed Japan into the first non-Western industrial power, radically reshaping the balance of power in East Asia and altering the course of global geopolitics.
 
 [img:perry.jpg:The earliest known illustration of the Jurong River, created by Perry's expedition artists in 1853]
 
-The survey of Jurong produced what is today the earliest known illustration of the Jurong River. Created by the expedition's artists, Peter Wilhelm Heine and Eliphalet Brown, the lithograph depicts Malay stilt houses, a canoe flying the United States flag, and Jurong's dense vegetation.
+But did you know Jurong had a part to play in this story? From March 25–29, 1853, the squadron anchored here, and expedition officers conducted a survey of the Sungei Jurong. Among them were artists Peter Wilhelm Heine and Eliphalet Brown, who produced what is now the earliest known illustration of the Jurong River.
 
-https://www.youtube.com/watch?v=MaZ95O6RmAc
+The lithograph depicts Malay stilt houses, thick tropical vegetation, and a canoe flying the U.S. flag.
+In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves. This historical document provides a rare glimpse into Singapore's landscape before industrialisation transformed the region.
 
-In the distance, fires are shown beyond the trees, likely representing the frequent kampong blazes of the era, or the boiling cauldrons used for processing gambier leaves. This historical document provides a rare glimpse into Singapore's landscape before industrialization transformed the region.` },
+Sources: National Archives of Singapore` },
 
         { id:"lake-lookout", name:"Lake Lookout", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3430237,lng:103.7227063}, img:"img/lookout.jpg", blurb:"A beautiful view of the lake, from its northern shore.", 
           richHistory: `You're now standing on Singapore's largest man-made floating wetland. Part of PUB's ABC Waters Programme, it helps clean the water and supports wetland wildlife. Interestingly, the lake it sits on did not exist 60 years ago. Before its creation, this was Sungei Jurong, a winding river, bordered by swamps, kampungs, and crocodiles.
@@ -266,7 +286,7 @@ At JTC's first meeting in 1968, Finance Minister Goh Keng Swee proposed building
 
 In 1971, the upper reaches of the Jurong River were dammed, officially creating the 81-hectare Jurong Lake.
 
-<i>Sources: National Archives, NParks</i>`, nearbyItems: ["sandbag"] },
+Sources: National Archives, NParks`, nearbyItems: ["sandbag"] },
         { id:"sandbag", name:"Sandbag", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3430237,lng:103.7227063}, img:"img/sandbags.jpg", blurb:"A beautiful view of the lake, from its northern shore.", 
           richHistory: `You're now standing on Singapore's largest man-made floating wetland. Part of PUB's ABC Waters Programme, it helps clean the water and supports wetland wildlife. Interestingly, the lake it sits on did not exist 60 years ago. Before its creation, this was Sungei Jurong, a winding river, bordered by swamps, kampungs, and crocodiles.
 
@@ -303,18 +323,26 @@ The second upheaval was industrialisation in the 1960s–70s. As Finance Ministe
 Sources: National Library Board, National Archives of Singapore` },
 
 
-        { id:"movie-ticket", name:"Movie Ticket", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3311575,lng:103.7267383}, img:"img/ticket.png", blurb:"Where you are standing once housed the Jurong Drive-In Cinema", 
+        { id:"movie-ticket", name:"Movie Ticket", kind:"fixed", points:30, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3311575,lng:103.7267383}, img:"img/ticket.png", blurb:"Where you are standing once housed the Jurong Drive-In Cinema", 
           richHistory: `Where you are standing once housed the Jurong Drive-In Cinema, run by the Cathay Organisation. Opened on 14 July 1971, it was Singapore's first and only drive-in theatre.
+
+[img:drivein_2.png: The Jurong Drive-In under construction, 1970.]
 
 The drive-in could accommodate 900 cars and 300 walk-in visitors in a front gallery, all watching an elevated screen 14.3 by 30.4 metres wide. Tickets cost $2 for adults and $1 for children. Sound was played over nearly 900 standing speakers, with some cars having individual speakers clipped to their windows.
 
+[img:drivein_1.png: The Jurong Drive-In on opening night, 1971.]
+
 For courting couples, the cinema quickly became a popular destination due to the long drive to the west. Sales executive Felix Goh recalled going on a double date, where the prized back seats were in demand. "We tossed a coin over which couple should occupy the back seat. My friend won," he quipped.
+
+[img:drivein_3.jpg: News reports about the Drive-In, 1977-1982.]
 
 The venue also became notorious for antisocial behaviour, from car and motorcycle racing before shows to sleepless nights for nearby residents. In 1982, a police crackdown impounded 84 motorcycles and issued 20 speeding tickets. Even crime played out here, though not always successfully: in 1977, eight masked youths armed with parangs broke into the cinema office, escaping with only a torchlight worth $5.25.
 
 Practical problems plagued the venue. Without air-conditioning, cars became stifling in Singapore's humid nights, while rain left windscreens fogged or splashed. By the 1980s, attendance had dwindled to 200 viewers a night. The arrival of cheap pirated videotapes sealed its fate, and on 30 September 1985, the Jurong Drive-In closed with just 50 cars present at its final screenings.
 
-Today, both the cinema and the Cathay Organisation that ran it are gone` },
+Today, both the cinema and the Cathay Organisation that ran it are gone.
+
+Sources: The Straits Times, National Library Board, National Archives of Singapore` },
 
         { id:"bonsai-garden", name:"Bonsai Garden", kind:"landmark", points:0, radiusM:20, searchRadiusM:30, radiusColourM:"#808080", coords:{lat:1.3382391,lng:103.7301145}, img:"img/bonsai.png", blurb:"A garden within a garden", 
           richHistory: `Opened in 1992, the Bonsai Garden in Jurong's Chinese Garden is the largest Suzhou-style bonsai garden outside of China. It houses a curated collection of beautifully manicured miniature trees, shaped with artistry and patience.
@@ -344,39 +372,43 @@ Beyond this garden, Jurong has another connection to Suzhou. In the early 1990s,
 
 Sources: National Archives of Singapore` },
 
-        { id:"rasau-walk", name:"Rasau Walk", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3318083,lng:103.7281636}, img:"img/rasau.png", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
+        { id:"rasau-walk", name:"Rasau Walk", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3318083,lng:103.7281636}, img:"img/rasau.png", blurb:"Crocodile encounters", 
           richHistory: `You're now at Rasau Walk, a 300m boardwalk that showcases a restored freshwater swamp. Before heavy industry reached Jurong, mangroves like these were part of the range of the estuarine crocodile (Crocodylus porosus). Even the old place-names hint at this. Pulau Buaya (Malay for "Crocodile Island") appears on maps dating back all the way to the early 1800s. Reclamation has folded the islet into today's Jurong Island.
 
-[img:crocs.jpg]
+[img:crocs.jpg: An Estuarine Crocodile]
 
 Through the 1970s–90s, crocodiles were still occasionally reported around Jurong Lake and the Chinese/Japanese Gardens. Warning signs were still up in the 1980s, and a 1992 news report noted at least three crocodiles seen here over several years (one was even captured by a professional "croc hunter"). Today, you won't find crocodiles in Jurong Lake, with their stronghold in Singapore being up north around Sungei Buloh and the Straits of Johor. If you see a big, scaly reptile here, it's almost certainly the Malayan/Asian water monitor - a cousin of the Komodo dragon and a common sight in Jurong Lake Gardens.
 
 Jurong also had another connection to crocodiles. In the 70s and 80s, the crocodile trade was flourishing in Singapore, with about 90 farms raising crocodiles, exporting over 92,000 kg of crocodile skin in 1980. Crocodile leather handbags and clothing hence became popular items sold to tourists in this period.
 
-[img:crocparadise.jpg]
+[img:crocparadise.jpg: The entrance to the park]
 
 To capitalise on this interest, the Jurong Town Corporation (JTC) announced plans to open Jurong Crocodile Paradise in 1986. The $10 million park project, which was situated on a plot next to Jurong Bird Park, aimed to provide both entertainment and education, featuring an amusement center, tanning workshops, and a 200-seat auditorium for visitors. The park ultimately closed in 2006 due to financial reasons, being unable to compete with the Singapore Zoo or Bird Park.
 
 Though there is only one crocodile farm left in Singapore, the city-state continues to play a large role in the crocodile skin trade. In 2018, for instance, Singapore was the largest importer of reptile skins from Africa, accounting for 60% of all reptile skins exported. This dominance is largely due to the presence of major tanneries in the country - chief among them, Heng Long Leather. Heng Long has long been a global player, supplying tanned crocodile leather to fashion houses like Hermès and Gucci, even before LVMH (Louis Vuitton Moët Hennessy) acquired a 51% stake in the company in 2011. As Heng Long's executive director Koh Choon Heong once remarked to The Straits Times:
 
-"Few Singaporeans realise that if they own a crocodile-skin bag, it was most likely dyed in their very own backyard."`, nearbyItems: ["crocodile-tooth"] },
+"Few Singaporeans realise that if they own a crocodile-skin bag, it was most likely dyed in their very own backyard."
 
-        { id:"crocodile-tooth", name:"Crocodile Tooth", kind:"fixed", points:10, radiusM:25, searchRadiusM:30, radiusColourM:"#FFBF00", coords:{lat:1.3318083,lng:103.7281636}, img:"img/tooth.jpg", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
+Sources: The Straits Times, NParks, TheSmartLocal, Baldur via ZooChat"`, nearbyItems: ["crocodile-tooth"] },
+
+        { id:"crocodile-tooth", name:"Crocodile Tooth", kind:"fixed", points:20, radiusM:25, searchRadiusM:30, radiusColourM:"#FFBF00", coords:{lat:1.3318083,lng:103.7281636}, img:"img/tooth.jpg", blurb:"You're now at Rasau Walk, a 300m boardwalk", 
           richHistory: `You're now at Rasau Walk, a 300m boardwalk that showcases a restored freshwater swamp. Before heavy industry reached Jurong, mangroves like these were part of the range of the estuarine crocodile (Crocodylus porosus). Even the old place-names hint at this. Pulau Buaya (Malay for "Crocodile Island") appears on maps dating back all the way to the early 1800s. Reclamation has folded the islet into today's Jurong Island.
 
-[img:crocs.jpg]
+[img:crocs.jpg: An Estuarine Crocodile]
 
 Through the 1970s–90s, crocodiles were still occasionally reported around Jurong Lake and the Chinese/Japanese Gardens. Warning signs were still up in the 1980s, and a 1992 news report noted at least three crocodiles seen here over several years (one was even captured by a professional "croc hunter"). Today, you won't find crocodiles in Jurong Lake, with their stronghold in Singapore being up north around Sungei Buloh and the Straits of Johor. If you see a big, scaly reptile here, it's almost certainly the Malayan/Asian water monitor - a cousin of the Komodo dragon and a common sight in Jurong Lake Gardens.
 
 Jurong also had another connection to crocodiles. In the 70s and 80s, the crocodile trade was flourishing in Singapore, with about 90 farms raising crocodiles, exporting over 92,000 kg of crocodile skin in 1980. Crocodile leather handbags and clothing hence became popular items sold to tourists in this period.
 
-[img:crocparadise.jpg]
+[img:crocparadise.jpg: The entrance of the park]
 
 To capitalise on this interest, the Jurong Town Corporation (JTC) announced plans to open Jurong Crocodile Paradise in 1986. The $10 million park project, which was situated on a plot next to Jurong Bird Park, aimed to provide both entertainment and education, featuring an amusement center, tanning workshops, and a 200-seat auditorium for visitors. The park ultimately closed in 2006 due to financial reasons, being unable to compete with the Singapore Zoo or Bird Park.
 
 Though there is only one crocodile farm left in Singapore, the city-state continues to play a large role in the crocodile skin trade. In 2018, for instance, Singapore was the largest importer of reptile skins from Africa, accounting for 60% of all reptile skins exported. This dominance is largely due to the presence of major tanneries in the country - chief among them, Heng Long Leather. Heng Long has long been a global player, supplying tanned crocodile leather to fashion houses like Hermès and Gucci, even before LVMH (Louis Vuitton Moët Hennessy) acquired a 51% stake in the company in 2011. As Heng Long's executive director Koh Choon Heong once remarked to The Straits Times:
 
-"Few Singaporeans realise that if they own a crocodile-skin bag, it was most likely dyed in their very own backyard."` },
+"Few Singaporeans realise that if they own a crocodile-skin bag, it was most likely dyed in their very own backyard.
+
+Sources: The Straits Times, NParks, TheSmartLocal, Baldur via ZooChat"` },
 
         { id:"twin-pagoda", name:"Twin Pagoda", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3396371,lng:103.7283051}, img:"img/twinp.png", blurb:"Balance is one of the guiding principles of the Chinese Garden", 
           richHistory: `Balance is one of the guiding principles of the Chinese Garden, and it greets you from the very entrance. Guarding the gates are two mighty marble lions, symbols of authority and felicity. They always appear in pairs, manifesting yin and yang. The male lion rests his paw on an embroidered ball, representing the external and material world. The female steadies a cub beneath her paw, symbolising the cycle of life and the living spirit within. Together, they protect both the structure and the soul. In some traditions the male's mouth is open while the female's is closed, forming the sacred syllable "om" - creation and completion.
@@ -459,40 +491,48 @@ The 13-arch White Rainbow Bridge echoes Beijing's Seventeen-Arch Bridge. The tea
 
 But these structures were hard to build. This was the first project of its kind in Singapore, and local labourers had little experience with traditional Chinese architectural techniques. Translating two-dimensional plans into timber, stone, and tile required specialised skills. Workers were trained on the job, guided by Taiwanese mentors who brought their expertise to Jurong.` },
 
-        { id:"giftbox", name:"Giftbox", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.335076,lng:103.7295396}, img:"img/giftbox.png", blurb:"The Japanese Garden was the first island to be built out on Jurong Lake", 
-          richHistory: `The Japanese Garden was the first island to be built out on Jurong Lake, opening in 1973 as the largest Japanese garden outside of Japan at the time. It is also known as Seiwaen, a name derived from Sei (Singapore), Wa (Japan), and En (Garden) — literally "Singapore's Japanese Garden."
+        { id:"giftbox", name:"Giftbox", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.335076,lng:103.7295396}, img:"img/giftbox.png", blurb:"Gifts and guitars", 
+          richHistory: `The Japanese Garden was the first island to be built out on Jurong Lake, opening in 1973 as the largest Japanese garden outside of Japan at the time. It is also known as Seiwaen, a name derived from Sei (Singapore), Wa (Japan), and En (Garden) - literally "Singapore's Japanese Garden."
 
-The project cost about $3 million, with $1.8 million provided by a Singapore Government grant and the remainder donated, largely by the Japanese Government. Through its Overseas Technical Cooperation Agency, Japan contributed the expertise of Professor Kinsaku Nakane, the country's leading garden and landscape artist at the time. Designing the garden with his assistants, he took inspiration from the aesthetics of gardens during the Muromachi period (1392-1568) and the Momoyama period (1568-1615).
+[img:gks_o.webp: Dr. Goh Keng Swee at the Japanese Garden opening ceremony]
 
-The Japanese Chamber of Commerce also contributed 500 tons of rocks, valued at over $180,000, along with 10 stone lanterns. Some of these lanterns can still be seen in front of you today.
+Interestingly, at the garden’s opening ceremony in 1973, Finance Minister Dr. Goh Keng Swee -the project’s chief backer - used his speech to take aim not at landscaping, but at rock music. Goh condemned what he called “barbarous music,” blaming the electric steel guitar and sound amplification for encouraging drug abuse, moral decline, and the “mindless young.” He called for the establishment of a national symphony orchestra, citing Plato and Confucius on music’s power to shape moral and well-rounded citizens.
 
-This tradition of gifting continues. In 2021, US chipmaker Micron Technology donated S$1 million to support the development of the Water Lily Pond at the Japanese Garden. Their contribution funded a smart water management system that uses natural vegetation and microbes to filter the water, with sensors monitoring quality in real time.` },
+The project cost about $3 million, with $1.8 million provided by a Singapore Government grant and the remainder donated, largely by the Japanese Government. Through its Overseas Technical Cooperation Agency, Japan contributed the expertise of Professor Kinsaku Nakane, the country's leading garden and landscape artist at the time. Designing the garden with his assistants, he took inspiration from the aesthetics of gardens during the Muromachi period (1392-1568) and the Momoyama period (1568-1615). The Japanese Chamber of Commerce also contributed 500 tons of rocks, valued at over $180,000, along with 10 stone lanterns. Some of these lanterns can still be seen in front of you today.
 
-        { id:"grasslands", name:"Grasslands", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3326227,lng:103.7274602}, img:"img/grassland.png", blurb:"You're now in the Grasslands of Lakeside Gardens", 
+That spirit of giving continues. In 2021, American chipmaker Micron Technology donated S$1 million through the Garden City Fund, a registered charity established by NParks. The donation supported the creation of the Water Lily Pond, including a smart water management system that filters water naturally and tracks quality with real-time sensors. The Garden City Fund also welcomes public contributions to support Singapore’s broader City in Nature vision, across gardens, parks, and nature reserves.
+
+Sources: NParks, Micron Technology, The Straits Times` },
+
+        { id:"grasslands", name:"Grasslands", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3326227,lng:103.7274602}, img:"img/grassland.png", blurb:"Home to over 200 types of feathery friends", 
+          richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
+
+Three bird hides ring the area, perfect for observing the over 205 bird species that have been spotted at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
+
+[img:brahminy.jpg: A Brahminy Kite]
+
+Keep an eye out for grassland regulars: paddyfield pipit (a brown ground-runner that tail-bobs between clumps) and the long-tailed shrike (the black-masked perch-hunter). Listen for the zitting cisticola (making its "zit-zit" display flights overhead). Over the mounds, raptors patrol – black-winged kite (hovering white-grey in the wind) and the brahminy kite (chestnut body, white head and breast) which has even been seen perching on the Lone Tree. Speaking of the Lone Tree, it is a sculpture, forged from recycled iron reinforcing bars salvaged from the old Jurong Lake Park, alluding to Jurong's industrial origins.
+
+[img:lonetree.jpg: The Lone Tree sculpture, made from recycled iron reinforcing bars]
+
+This area also links to a bigger bird story. In 1967–68, Finance Minister Goh Keng Swee floated the idea of starting an aviary after visits to similar facilities in Rio and Bangkok. While a 20.4-hectare site on Jurong Hill became Jurong Bird Park in 1971, an early notion was to situate the park on the island just across the water from here. That land instead hosted a golf course from the 1970s till 2017, when it was cleared for the planned Singapore–Kuala Lumpur High-Speed Rail terminus. With the HSR cancelled, the site today remains a white plot, held for detailed planning.
+
+Sources: NParks, Dr. Goh Keng Swee's inaugural speech at the Jurong Town Council`, nearbyItems: ["feather"] },
+
+        { id:"feather", name:"Feather", kind:"fixed", points:20, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3326227,lng:103.7274602}, img:"img/feather.png", blurb:"A reminder of the birds that call these grasslands home", 
           richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
 
 Three bird hides ring the area, perfect for observing the over 205 bird species that have spotting at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
 
-[img:brahminy.jpg]
+[img:brahminy.jpg: A Brahminy Kite]
 
 Keep an eye out for grassland regulars: paddyfield pipit (a brown ground-runner that tail-bobs between clumps) and the long-tailed shrike (the black-masked perch-hunter. Listen for the zitting cisticola (making its "zit-zit" display flights overhead). Over the mounds, raptors patrol – black-winged kite (hovering white-grey in the wind, and the brahminy kite (chestnut body, white head and breast) which has even been seen perching on the Lone Tree. Speaking of the Lone Tree, it is a sculpture, forged from recycled iron reinforcing bars salvaged from the old Jurong Lake Park, alluding to Jurong's industrial origins.
 
-[img:lonetree.jpg]
+[img:lonetree.jpg: The Lone Tree sculpture]
 
-This area also links to a bigger bird story. In 1967–68, Finance Minister Goh Keng Swee floated the idea of starting an aviary after visits to similar facilities in Rio and Bangkok. While a 20.4-hectare site on Jurong Hill became Jurong Bird Park in 1971, an early notion was to situate the park on the island just across the water from here. That land instead hosted a golf course from the 1970s till 2017, when it was cleared for the planned Singapore–Kuala Lumpur High-Speed Rail terminus. With the HSR cancelled, the site today remains a white plot, held for detailed planning.`, nearbyItems: ["feather"] },
+This area also links to a bigger bird story. In 1967–68, Finance Minister Goh Keng Swee floated the idea of starting an aviary after visits to similar facilities in Rio and Bangkok. While a 20.4-hectare site on Jurong Hill became Jurong Bird Park in 1971, an early notion was to situate the park on the island just across the water from here. That land instead hosted a golf course from the 1970s till 2017, when it was cleared for the planned Singapore–Kuala Lumpur High-Speed Rail terminus. With the HSR cancelled, the site today remains a white plot, held for detailed planning.
 
-        { id:"feather", name:"Feather", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#FFBF00", coords:{lat:1.3326227,lng:103.7274602}, img:"img/feather.png", blurb:"You're now in the Grasslands of Lakeside Gardens", 
-          richHistory: `You're now in the Grasslands of Lakeside Gardens, a rolling patch of tall grass and gentle mounds. It forms part of the intertidal habitat, found within freshwater swamp forests, transiting from dry grassland of the inland area towards wet grasslands at the shore edge. Over 3.5 hectare in size, the Grasslands aim to create a transition that provides refuge areas and nesting grounds for both migratory and resident avian population.
-
-Three bird hides ring the area, perfect for observing the over 205 bird species that have spotting at Jurong Lake. The gardens is said to be one of the five bird watching hotspots in Singapore with over 200 species recorded.
-
-[img:brahminy.jpg]
-
-Keep an eye out for grassland regulars: paddyfield pipit (a brown ground-runner that tail-bobs between clumps) and the long-tailed shrike (the black-masked perch-hunter. Listen for the zitting cisticola (making its "zit-zit" display flights overhead). Over the mounds, raptors patrol – black-winged kite (hovering white-grey in the wind, and the brahminy kite (chestnut body, white head and breast) which has even been seen perching on the Lone Tree. Speaking of the Lone Tree, it is a sculpture, forged from recycled iron reinforcing bars salvaged from the old Jurong Lake Park, alluding to Jurong's industrial origins.
-
-[img:lonetree.jpg]
-
-This area also links to a bigger bird story. In 1967–68, Finance Minister Goh Keng Swee floated the idea of starting an aviary after visits to similar facilities in Rio and Bangkok. While a 20.4-hectare site on Jurong Hill became Jurong Bird Park in 1971, an early notion was to situate the park on the island just across the water from here. That land instead hosted a golf course from the 1970s till 2017, when it was cleared for the planned Singapore–Kuala Lumpur High-Speed Rail terminus. With the HSR cancelled, the site today remains a white plot, held for detailed planning.` },
+Source: NParks, Dr. Goh Keng Swee's inaugural speech at the Jurong Town Council` },
 
         { id:"megaphone", name:"Megaphone", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3353566,lng:103.7306983}, img:"img/megaphone.png", blurb:"A garden for the people, by the people", 
           richHistory: `You're now in the Sunken Garden, a gorge-like passage where walls rise to 3.5 m and drip with more than 200 epiphyte species (plants that grow on other plants or structures). A living moss wall of Paras stone keeps the air cool and damp. At its heart, a cenote-inspired water feature acts as both showpiece and rain-harvesting system – an air-well that draws daylight down to a still pool and recycles stormwater through the garden (a "cenote" is a natural sinkhole formed when limestone collapses to expose groundwater, most famously on Mexico's Yucatán Peninsula).
@@ -533,7 +573,7 @@ Jurong has another connection to waterfalls. When Jurong Bird Park opened in 197
 
 Singapore's obsession with artificial large waterfalls (literally) reached new heights in 2019, when Jewel Changi Airport – a nature-themed entertainment and retail complex – opened with a a 40-metre indoor waterfall, that is the world's largest.` },
 
-        { id:"film-camera", name:"Film Camera", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3280068,lng:103.728657}, img:"img/camera.png", blurb:"You're looking at a construction site that was once a theme park and film set", 
+        { id:"film-camera", name:"Film Camera", kind:"fixed", points:50, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.3280068,lng:103.728657}, img:"img/camera.png", blurb:"Ghosts of a theme park and film set", 
           richHistory: `You're looking at a construction site that was once a theme park and film set. Tang Dynasty City was a film-town theme park was built to jump-start a local screen industry, with backing from Economic Development Board and the Singapore Tourism Promotion Board. The park had many attractions – a 3m tall life-size replica of the Great Wall of China, arched bridges, pagodas, and, later, replica terracotta warriors.
 
 [img:tangcity.jpg]
@@ -548,7 +588,7 @@ As a studio, it saw little camera time. One notable feature film, the 1993 Hong 
 
 Closing in 1999, the park remained abandoned till 2008, when it was levelled. Today the plot is being remade as Taman Jurong Skyline, a new HDB blocks with views over Jurong Lake Gardens.
 
-[Hyperlink: Check out this blog post from the early internet (1994) from an American couple visiting the attraction: http://www.anniebees.com/Asia/Asia6.htm]` },
+Sources: The Straits Times, National Library Board, National Archives of Singapore, Mothership.sg, u/Dumas1108` },
 
         { id:"grand-arch", name:"Grand Arch", kind:"landmark", points:0, radiusM:25, searchRadiusM:50, radiusColourM:"#808080", coords:{lat:1.3382537,lng:103.7281902}, img:"img/arch.png", blurb:"Dragons and turtles", 
           richHistory: `You're now standing before the Grand Arch of the Chinese Garden. The four characters above you, 乾坤清气 (qián kūn qīng qì), speak of "the pure energy of Heaven and Earth": 乾坤 for the cosmic pair (yang and yin), 清气 for pure vitality.
@@ -584,7 +624,7 @@ Today the space behind the Grand Arch hosts a few attractions -the Jurong Lake G
 
 Sources: NParks, The Straits Times` },
 
-        { id:"snake", name:"Snake", kind:"fixed", points:10, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.33321,lng:103.73348}, img:"img/snake.png", blurb:"Where you are standing lies one of the original bends of the Sungei Jurong", 
+        { id:"snake", name:"Snake", kind:"fixed", points:30, radiusM:25, searchRadiusM:50, radiusColourM:"#22c55e", coords:{lat:1.33321,lng:103.73348}, img:"img/snake.png", blurb:"Where you are standing lies one of the original bends of the Sungei Jurong", 
           richHistory: `Where you are standing lies one of the original bends of the Sungei Jurong, the river that was later dammed and reshaped into Jurong Lake. Before its transformation, the river wound its way across the landscape, forming a distinctive "S" shape — curving east of today's Japanese Garden and then west of the Chinese Garden.
 
 [img:old_river.jpg]
@@ -655,8 +695,8 @@ function findArtefactById(itemId){
 // ============================
 // Local Storage
 // ============================
-const KEY = "heartlands_progress_v05";
-const USER_ID_KEY = "heartlands_user_id_v01";
+const KEY = "unearthed_progress_v05";
+const USER_ID_KEY = "unearthed_user_id_v01";
 
 function loadProgress(){ try{ return JSON.parse(localStorage.getItem(KEY)||"{}"); }catch{ return {}; } }
 function saveProgress(state){ localStorage.setItem(KEY, JSON.stringify(state)); }
@@ -987,7 +1027,7 @@ export default function App(){
 
   // Debug logging
   useEffect(() => {
-    console.log('HEARTLANDS App loaded successfully');
+    console.log('UNEARTHED App loaded successfully');
     console.log('Current view:', view);
     console.log('Progress:', progress);
   }, [view, progress]);
@@ -1009,9 +1049,9 @@ export default function App(){
 
   return (
     <div style={styles.page}>
-      <TopBar hidden={hidden} progress={progress} onAbout={()=>setView({page:'about', stackId:null})} onHome={()=>setView({page:'home', stackId:null})} />
+      <TopBar hidden={hidden} progress={progress} onHome={()=>setView({page:'home', stackId:null})} />
               {view.page==='home' && (
-          <Home stacks={DATA.stacks} progress={progress} onPlay={(stackId)=>setView({page:'splash', stackId})} />
+          <Home stacks={DATA.stacks} progress={progress} onPlay={(stackId)=>setView({page:'splash', stackId})} setView={setView} />
         )}
         {view.page==='splash' && (
           <SplashScreen stack={DATA.stacks.find(s=>s.id===view.stackId)} onPlay={()=>setView({page:'play', stackId:view.stackId})} onBack={()=>setView({page:'home', stackId:null})} />
@@ -1029,39 +1069,24 @@ export default function App(){
   );
 }
 
-function TopBar({ hidden, progress, onAbout, onHome }){
+function TopBar({ hidden, progress, onHome }){
   return (
     <div style={{ position:'sticky', top:0, zIndex:20, transform:`translateY(${hidden?-60:0}px)`, transition:'transform .25s ease', backdropFilter:'blur(6px)', background:'rgba(11,11,11,.7)', borderBottom:'1px solid #1f1f1f' }}>
-      <div style={{ ...styles.container, padding:'10px 16px', display:'flex', alignItems:'center', justifyContent:'space-between' }}>
+      <div style={{ ...styles.container, padding:'10px 16px', display:'flex', alignItems:'center', justifyContent:'center' }}>
         <div style={{ display:'flex', alignItems:'center', gap:8, cursor:'pointer' }} onClick={onHome}>
           <img 
-            src="img/crate.jpg" 
-            alt="Heartlands Logo"
+            src="img/logo_ue.png" 
+            alt="Unearthed Logo"
             style={{ 
-              width: '24px', 
-              height: '24px', 
+              width: '32px', 
+              height: '32px', 
               objectFit: 'contain'
             }}
             onError={(e) => {
               e.target.style.display = 'none';
             }}
           />
-        <div style={{ fontWeight:700, letterSpacing:'0.02em' }}>HEARTLANDS</div>
-        </div>
-        <div style={{ display:'flex', alignItems:'center', gap:16 }}>
-          <button 
-            onClick={onAbout}
-            style={{ 
-              background:'none', 
-              border:'none', 
-              color:'#fff', 
-              cursor:'pointer',
-              fontSize:14,
-              textDecoration:'none'
-            }}
-          >
-            About
-          </button>
+        <div style={{ fontWeight:700, letterSpacing:'0.02em' }}>UNEARTHED</div>
         </div>
       </div>
     </div>
@@ -1071,7 +1096,7 @@ function TopBar({ hidden, progress, onAbout, onHome }){
 // ============================
 // HOME — Stacks with thumbnails
 // ============================
-function Home({ stacks, progress, onPlay }){
+function Home({ stacks, progress, onPlay, setView }){
   const coverFor = (s) => asset(s.cover) || asset(s.artefacts.find(a=>a.kind==='fixed')?.images?.[0]) || thumb(s.name);
   const introFor = (s) => s.intro || (
     s.id === 'jurong' ? "The banks of the Jurong River were once a lush tangle of jungle and swamp, home to fishing villages, crocodiles, and even possibly a mystery waterfall. It wasn’t until the 1970s that the river was reshaped into the lake we know today, carved out to serve Singapore’s first industrial estate and the growing communities around it." :
@@ -1090,7 +1115,7 @@ function Home({ stacks, progress, onPlay }){
           <div style={{ padding:'28px 24px 22px 24px', position:'relative', zIndex:2 }}>
             <h1 style={{ fontSize:40, lineHeight:1.05, fontWeight:900, letterSpacing:'-0.01em', marginBottom:10 }}>Explore. Collect. Understand.</h1>
             <p style={{ color:'#fff', fontSize:16, maxWidth:860, lineHeight:1.4 }}>
-              Heartlands is a real-world exploration game. Collect items to learn about an area's history and culture.
+              Unearthed is a real-world exploration game. Collect items to learn about an area's history and culture.
               Share your loot with friends when you're done.
             </p>
             <div style={{ marginTop:14 }}>
@@ -1105,7 +1130,7 @@ function Home({ stacks, progress, onPlay }){
 
       {/* HOW IT WORKS */}
       <section style={{ ...styles.container, paddingTop:18, paddingBottom:6 }}>
-        <h2 style={{ ...styles.h2, marginBottom:16 }}>What is Heartlands?</h2>
+        <h2 style={{ ...styles.h2, marginBottom:16 }}>What is Unearthed?</h2>
         <div style={{ display:'grid', gap:12, gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))' }}>
           <HowItWorksStep n={1} title="Pick a quest" text="Your map highlights places of interest. Orange circles are landmarks, must-see spots with info you can read in advance. Green circles are mystery sites that only reveal their content when you arrive." image="img/map.png" />
           <HowItWorksStep n={2} title="Walk & collect" text="Both types of circles contain items. Step inside a circle and move around to discover its item. Each find gives you a quick story about the area’s history and culture." image="img/compass2.png" />
@@ -1119,8 +1144,9 @@ function Home({ stacks, progress, onPlay }){
         <div style={{ display:'grid', gap:16, gridTemplateColumns:'repeat(auto-fill, minmax(300px,1fr))' }}>
           {stacks.map((s)=>{
             const all = enumerateArtefactsForStack(s);
-            const collected = all.filter(a=>progress[`${s.id}:${a.id}`]);
-            const totalPts = all.reduce((a,v)=>a+v.points,0); const gotPts = collected.reduce((a,v)=>a+v.points,0);
+            const fixedItems = all.filter(a => a.kind === 'fixed'); // Only show collectible items, not landmarks
+            const collected = fixedItems.filter(a=>progress[`${s.id}:${a.id}`]);
+            const totalPts = fixedItems.reduce((a,v)=>a+v.points,0); const gotPts = collected.reduce((a,v)=>a+v.points,0);
             const cover = coverFor(s);
             const intro = introFor(s);
             return (
@@ -1140,7 +1166,7 @@ function Home({ stacks, progress, onPlay }){
                 <div style={{ padding:16 }}>
                   <p style={{ ...styles.subtle, fontSize:14, marginBottom:10 }}>{intro}</p>
                   <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between', gap:10 }}>
-                    <div style={{ ...styles.subtle, fontSize:12 }}>{collected.length}/{all.length} items • {gotPts}/{totalPts} pts</div>
+                    <div style={{ ...styles.subtle, fontSize:12 }}>{collected.length}/{fixedItems.length} items • {gotPts}/{totalPts} pts</div>
                     <button style={{ ...styles.button }} onClick={()=>onPlay(s.id)}>Play</button>
                   </div>
                 </div>
@@ -1149,6 +1175,30 @@ function Home({ stacks, progress, onPlay }){
           })}
         </div>
       </section>
+
+      {/* FOOTER */}
+      <footer style={{ ...styles.container, paddingTop:32, paddingBottom:24, borderTop:'1px solid #232323', marginTop:32 }}>
+        <div style={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
+          <button 
+            onClick={()=>setView({page:'about', stackId:null})}
+            style={{ 
+              background:'none', 
+              border:'none', 
+              color:'#a3a3a3', 
+              cursor:'pointer',
+              fontSize:14,
+              textDecoration:'none',
+              padding:'8px 16px',
+              borderRadius:8,
+              transition:'color 0.2s ease'
+            }}
+            onMouseEnter={(e) => e.target.style.color = '#fff'}
+            onMouseLeave={(e) => e.target.style.color = '#a3a3a3'}
+          >
+            About
+          </button>
+        </div>
+      </footer>
     </>
   );
 }
@@ -1216,7 +1266,7 @@ function SplashScreen({ stack, onPlay, onBack }){
             <div style={{ ...styles.subtle, fontSize:14 }}>Kilometers</div>
           </div>
           <div style={{ textAlign:'center', padding:'16px 12px', background:'rgba(255,255,255,0.05)', borderRadius:12 }}>
-            <div style={{ fontSize:24, fontWeight:800, color:'#22c55e', marginBottom:4 }}>20</div>
+            <div style={{ fontSize:24, fontWeight:800, color:'#22c55e', marginBottom:4 }}>21</div>
             <div style={{ ...styles.subtle, fontSize:14 }}>Items to Collect</div>
           </div>
         </div>
@@ -1336,69 +1386,39 @@ function About({ onBack }){
         >
           ← Back
         </button>
-        <h1 style={{ ...styles.h1, marginBottom:16 }}>About Heartlands</h1>
+        <h1 style={{ ...styles.h1, marginBottom:16 }}>About Unearthed</h1>
       </div>
       
       <div style={{ ...styles.card, marginBottom:24 }}>
-        <h2 style={{ ...styles.h2, marginBottom:12 }}>What is Heartlands?</h2>
+        <h2 style={{ ...styles.h2, marginBottom:12 }}>🪧 About the Project</h2>
         <p style={{ ...styles.subtle, marginBottom:16 }}>
-          Heartlands is a self-guided walking game that transforms your exploration of Singapore's neighborhoods into an interactive adventure. 
-          Discover hidden stories, collect digital artifacts, and learn about the rich history and culture of the places you visit.
+          This app was created as a fun side project.
         </p>
         <p style={{ ...styles.subtle, marginBottom:16 }}>
-          Each quest takes you through carefully curated locations, where you'll encounter both known landmarks and mysterious discoveries. 
-          Use your phone's GPS to navigate and collect items as you explore the real world.
+          Jurong Lake has shaped me. As a child, I spent countless hours getting lost in the Chinese and Japanese Gardens with friends. In adulthood, the park has become a space for reflection, ideation, exercise, and escape. This project is my way of sharing what I’ve come to learn over the years about the lake and its rich history.
         </p>
-      </div>
-
-      <div style={{ ...styles.card, marginBottom:24 }}>
-        <h2 style={{ ...styles.h2, marginBottom:12 }}>How to Play</h2>
-        <div style={{ display:'grid', gap:12 }}>
-          <div style={{ display:'flex', alignItems:'flex-start', gap:12 }}>
-            <div style={{ width:24, height:24, borderRadius:12, background:'#22c55e', color:'#fff', fontWeight:700, display:'grid', placeItems:'center', fontSize:12, flexShrink:0 }}>1</div>
-            <div>
-              <div style={{ fontWeight:600, marginBottom:4 }}>Pick a Quest</div>
-              <div style={{ ...styles.subtle, fontSize:14 }}>Choose from available quests like "The Worker's Garden: Jurong Lake"</div>
-            </div>
-          </div>
-          <div style={{ display:'flex', alignItems:'flex-start', gap:12 }}>
-            <div style={{ width:24, height:24, borderRadius:12, background:'#22c55e', color:'#fff', fontWeight:700, display:'grid', placeItems:'center', fontSize:12, flexShrink:0 }}>2</div>
-            <div>
-              <div style={{ fontWeight:600, marginBottom:4 }}>Walk & Explore</div>
-              <div style={{ ...styles.subtle, fontSize:14 }}>Use the map to navigate to locations and collect items when you get close</div>
-            </div>
-          </div>
-          <div style={{ display:'flex', alignItems:'flex-start', gap:12 }}>
-            <div style={{ width:24, height:24, borderRadius:12, background:'#22c55e', color:'#fff', fontWeight:700, display:'grid', placeItems:'center', fontSize:12, flexShrink:0 }}>3</div>
-            <div>
-              <div style={{ fontWeight:600, marginBottom:4 }}>Learn & Share</div>
-              <div style={{ ...styles.subtle, fontSize:14 }}>Read about each discovery and share your completed quest as an Instagram story</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style={{ ...styles.card, marginBottom:24 }}>
-        <h2 style={{ ...styles.h2, marginBottom:12 }}>Features</h2>
-        <ul style={{ ...styles.subtle, paddingLeft:20 }}>
-          <li style={{ marginBottom:8 }}>GPS-based navigation and collection</li>
-          <li style={{ marginBottom:8 }}>Rich historical content and context</li>
-          <li style={{ marginBottom:8 }}>Interactive map with real-time location tracking</li>
-          <li style={{ marginBottom:8 }}>Mystery items that appear as you explore</li>
-          <li style={{ marginBottom:8 }}>Shareable Instagram stories of your completed quests</li>
-          <li style={{ marginBottom:8 }}>Offline-capable for uninterrupted exploration</li>
-        </ul>
+        <p style={{ ...styles.subtle, marginBottom:16 }}>
+          I also felt there had to be a more interesting way to do walking guides. Most tell you where to go - this one doesn't. There's no fixed path. You explore, wander, and uncover stories on your own. Each journey should feel uniquely yours.
+        </p>
+        <p style={{ ...styles.subtle }}>
+          Lastly, this was a way for me to learn. I've just started teaching myself to code and experimenting with AI tools (ChatGPT ImageGen for icons, Cursor etc). I wanted to see what's possible (it turns out: quite a lot), and how best to use these tools.
+        </p>
       </div>
 
       <div style={{ ...styles.card }}>
-        <h2 style={{ ...styles.h2, marginBottom:12 }}>About the Project</h2>
-        <p style={{ ...styles.subtle, marginBottom:16 }}>
-          Heartlands is designed to help people connect with their local communities through interactive storytelling. 
-          Each quest reveals the hidden histories and stories that make each neighborhood unique.
+        <h2 style={{ ...styles.h2, marginBottom:12 }}>✍️ Notes & Credits</h2>
+        <ul style={{ ...styles.subtle, paddingLeft:0, listStyle:'none' }}>
+          <li style={{ marginBottom:12 }}>The items and stories in this app draw from the internet, public records, news archives, and site signage. Citations are a work in progress. If you spot something missing or wrong, reach out!</li>
+          <li style={{ marginBottom:12 }}>The app can expand over time. Future "quests" could include your neighbourhoods, parks, or other places close to your heart.</li>
+        </ul>
+        <p style={{ ...styles.subtle, marginTop:20, marginBottom:12 }}>
+          Want to help write one? Found a bug?
+        </p>
+        <p style={{ ...styles.subtle, marginBottom:12 }}>
+          Want your neighbourhood featured?
         </p>
         <p style={{ ...styles.subtle }}>
-          Built with modern web technologies to work seamlessly on mobile devices, Heartlands brings the past to life 
-          through your present-day explorations.
+          📬 Email me at XXX@gmail.com
         </p>
       </div>
     </div>
@@ -3212,49 +3232,58 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
     
     let yPos = 60;
     
-    // Main title - bigger and more prominent
+    // Main title and location on same line
     ctx.fillStyle='#ffffff'; 
     ctx.font='700 64px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
-    ctx.fillText('HEARTLANDS', 60, yPos);
-    yPos += 80;
+    ctx.fillText('UNEARTHED:', 60, yPos);
     
-    // Stack name - clean typography
+    // Stack name positioned properly after title
+    const displayName = stack.id === 'jurong' ? 'Jurong Lake Gardens' : stack.name;
     ctx.fillStyle='#ffffff'; 
-    ctx.font='600 36px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
-    ctx.fillText(stack.name, 60, yPos);
-    yPos += 50;
+    ctx.font='600 52px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+    ctx.fillText(displayName, 520, yPos);
+    yPos += 70;
     
-    // Stack blurb/description
-    if(stack.desc) {
-      ctx.fillStyle='rgba(255,255,255,0.7)'; 
-      ctx.font='400 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
-      const descLines = stack.desc.match(/.{1,60}/g) || [stack.desc];
-      for(const line of descLines) {
-        ctx.fillText(line, 60, yPos);
-        yPos += 28;
-      }
-      yPos += 20;
-    }
+    // Completion date/time - right after title
+    const now = new Date();
+    const completionDate = now.toLocaleDateString('en-US', { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+    const completionTime = now.toLocaleTimeString('en-US', { 
+      hour: 'numeric', 
+      minute: '2-digit', 
+      hour12: true 
+    });
     
-    // Progress summary - clean stats
+    ctx.fillStyle='rgba(255,255,255,0.7)'; 
+    ctx.font='500 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+    ctx.fillText(`Completed on ${completionDate}`, 60, yPos);
+    
+    // Progress summary - positioned to the right, ensuring no overlap
     ctx.fillStyle='rgba(255,255,255,0.8)'; 
-    ctx.font='500 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
-    ctx.fillText(`${totals.gotItems}/${totals.totalItems} items • ${totals.gotPts}/${totals.totalPts} pts`, 60, yPos);
-    yPos += 60;
+    ctx.font='500 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+    ctx.fillText(`${totals.gotItems}/${totals.totalItems} items • ${totals.gotPts}/${totals.totalPts} pts`, 650, yPos);
+    
+    yPos += 35;
+    ctx.fillText(`at ${completionTime}`, 60, yPos);
+    yPos += 40;
     
     // Landmarks Section - First
     const allLandmarks = all.filter(a => a.kind === 'landmark');
     if(allLandmarks.length > 0) {
       // Section title - larger
       ctx.fillStyle='#ffffff'; 
-      ctx.font='600 32px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+      ctx.font='600 36px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
       ctx.fillText('🏛️ Landmarks', 60, yPos);
-      yPos += 50;
+      yPos += 45;
       
       // Landmarks grid - 5 columns like items
       const landmarkCols = 5;
-      const landmarkSize = 160;
-      const landmarkGap = 20;
+      const landmarkSize = 140;
+      const landmarkGap = 15;
       const landmarkGridWidth = landmarkCols * landmarkSize + (landmarkCols - 1) * landmarkGap;
       const landmarkStartX = (1080 - landmarkGridWidth) / 2;
       
@@ -3299,13 +3328,13 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
         
         // Landmark name below - larger
         ctx.fillStyle = isDiscovered ? '#22c55e' : 'rgba(255,255,255,0.7)';
-        ctx.font = '500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.font = '500 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(landmark.name, x + landmarkSize/2, cy + landmarkSize + 25);
         ctx.textAlign = 'left';
       }
       
-      yPos += Math.ceil(allLandmarks.length / landmarkCols) * (landmarkSize + 50) + 60;
+      yPos += Math.ceil(allLandmarks.length / landmarkCols) * (landmarkSize + 40) + 30;
     }
     
     // Items Section
@@ -3313,14 +3342,14 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
     if(allFixedItems.length > 0) {
       // Section title - larger
       ctx.fillStyle='#ffffff'; 
-      ctx.font='600 32px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+      ctx.font='600 36px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
       ctx.fillText('📖 Collection', 60, yPos);
-      yPos += 50;
+      yPos += 45;
       
       // Items grid - simple squares with names
       const cols = 5;
-      const itemSize = 160;
-      const itemGap = 20;
+      const itemSize = 140;
+      const itemGap = 15;
       const gridWidth = cols * itemSize + (cols - 1) * itemGap;
       const startX = (1080 - gridWidth) / 2;
       
@@ -3368,24 +3397,24 @@ function FinishView({ stack, progress, onDownloadDone, onReset, onBack }){
         
         // Item name below - larger
         ctx.fillStyle = isCollected ? '#22c55e' : 'rgba(255,255,255,0.7)';
-        ctx.font = '500 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.font = '500 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
         ctx.textAlign = 'center';
         ctx.fillText(a.name, x + itemSize/2, cy + itemSize + 25);
         ctx.textAlign = 'left';
       }
       
-      yPos += Math.ceil(allFixedItems.length / cols) * (itemSize + 50) + 40;
+      yPos += Math.ceil(allFixedItems.length / cols) * (itemSize + 40) + 20;
     }
     
-    // Footer - clean and minimal
-    ctx.fillStyle='rgba(255,255,255,0.5)'; 
-    ctx.font='400 18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
-    ctx.fillText('Explore. Collect. Understand.', 60, 1850);
+    // Footer - app link (positioned below collection)
+    ctx.fillStyle='#22c55e'; 
+    ctx.font='500 24px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'; 
+    ctx.fillText('Play Unearthed at nav-v.github.io/UNEARTHED', 60, yPos + 40);
 
     const url = canvas.toDataURL('image/png'); 
     const a = document.createElement('a'); 
     a.href = url; 
-    a.download = `heartlands-${stack.id}-story.png`; 
+    a.download = `unearthed-${stack.id}-story.png`; 
     a.click(); 
     onDownloadDone && onDownloadDone();
   }
